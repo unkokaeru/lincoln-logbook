@@ -1,0 +1,15 @@
+---
+module:
+    code: MTH2008
+    name: Scientific Computing Logbook
+    semester: Semester A
+output:
+    format: PDF
+    generator: pandoc
+statement:
+    text: I confirm that this logbook is entirely my own work and that all references and quotations, from both primary and secondary sources, have been fully identified and properly acknowledged.
+student:
+    id: '27378661'
+    name: William Fayers
+university:
+    text: University of Lincoln
