@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Directories containing compiled files
+output/
+
+# VS Code files
+.vscode/
