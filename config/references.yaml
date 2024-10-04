@@ -1,0 +1,14 @@
+---
+references:
+    -   author: Author, A. A.
+        description: Brief description of the book.
+        publisher: Publisher
+        title: Title of the Book
+        type: book
+        year: "2023"
+    -   author: Website Name
+        description: Brief description of the content.
+        title: Title of the Webpage
+        type: website
+        url: https://example.com
+        year: "2023"

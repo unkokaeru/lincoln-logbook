@@ -4,10 +4,10 @@
 #include <iomanip> /* For std::setw */
 
 /**
- * @file lab1_introduction_to_cpp.cpp
- * @brief Contains the first lab session of the scientific computing module.
- * @details This lab is designed to explain the basics of C++ programming,
- * hence excessive comments are provided to explain the code.
+ * @file e01-pascal_triangle-extended_project.cpp
+ * @brief Outputs Pascal's triangle to the console.
+ * @details This program extends the concepts from lab 1 and explores new
+ * concepts such as error handling, loops, libraries, and functions in C++.
  */
 
 const int MAX_ROWS = 29;
