@@ -10,6 +10,7 @@ import yaml
 
 TASK_ANNOTATION = dict[str, str]
 WEEK_ANNOTATION = dict[str, str | dict[Literal["lab", "extra"], dict[str, TASK_ANNOTATION]]]
+DATE_FORMAT = "%Y-%m-%d"
 
 
 def load_yaml(yaml_path: Path) -> dict[str, Any]:
@@ -162,7 +163,7 @@ def generate_week_context(
     number 1, topic "variables", and task name "introduction".
     """
     context: dict[str, dict[str, WEEK_ANNOTATION]] = {"weeks": {}}
-    start_date = datetime.datetime.strptime(logbook_start_date, "%Y-%m-%d")
+    start_date = datetime.datetime.strptime(logbook_start_date, DATE_FORMAT)
 
     for week_index, weekly_cpp_files in enumerate(cpp_files, start=1):
         week_key = str(week_index)
@@ -175,8 +176,8 @@ def generate_week_context(
 
         context["weeks"][week_key] = {
             "number": week_key,
-            "start_date": week_start_date.strftime("%Y-%m-%d"),
-            "end_date": week_end_date.strftime("%Y-%m-%d"),
+            "start_date": week_start_date.strftime(DATE_FORMAT),
+            "end_date": week_end_date.strftime(DATE_FORMAT),
             "reflection": reflection_content,
             "tasks": {
                 "lab": {},
