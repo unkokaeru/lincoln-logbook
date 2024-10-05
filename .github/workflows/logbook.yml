@@ -30,7 +30,7 @@ jobs:
         -   name: Convert Markdown to DOCX
             run: |
                 sudo apt-get install -y pandoc
-                pandoc markdown/logbook.md -o renders/logbook.docx --reference-doc=config/template.docx
+                pandoc markdown/logbook.md -o renders/logbook.docx --reference-doc=templates/reference.docx
 
         -   name: Upload Logbook Artifacts
             uses: actions/upload-artifact@v4
