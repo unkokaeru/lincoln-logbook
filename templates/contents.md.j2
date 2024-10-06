@@ -7,12 +7,16 @@
 | [**Week {{ week.number }}** – {{ week.start_date }} to {{ week.end_date }} ](#week-{{ week.number }}-{{ week.start_date }}-to-{{ week.end_date }}) | {{ loop.index0 + 2 }}        |
 {% set lab_index = loop.index0 + 1 %}
 {% for lab_key, lab in week.tasks.lab.items() %}
+{% if lab.topic and lab.name %}
 | &nbsp;&nbsp;&nbsp;&nbsp;{{ week.number }}.{{ loop.index }} [{{ lab.topic }}: {{ lab.name }}](#{{ lab.topic | lower | replace(' ', '-') }}-{{ lab.name | lower | replace(' ', '-') }}) | {{ lab_index + 1 }}        |
+{% endif %}
 {% set lab_index = lab_index + 1 %}
 {% endfor %}
 {% set extra_index = lab_index %}
 {% for extra_key, extra in week.tasks.extra.items() %}
-| &nbsp;&nbsp;&nbsp;&nbsp;*{{ week.number }}.{{ extra_index - loop.index0 }} [{{ extra.topic }}: {{ extra.name }}](#{{ extra.topic | lower | replace(' ', '-') }}-{{ extra.topic | lower | replace(' ', '-') }})* | {{ extra_index + 1 }}        |
+{% if extra.topic and extra.name %}
+| &nbsp;&nbsp;&nbsp;&nbsp;*{{ week.number }}.{{ extra_index - loop.index0 }} [{{ extra.topic }}: {{ extra.name }}](#{{ extra.topic | lower | replace(' ', '-') }}-{{ extra.name | lower | replace(' ', '-') }})* | {{ extra_index + 1 }}        |
+{% endif %}
 {% set extra_index = extra_index + 1 %}
 {% endfor %}
 {% endfor %}
