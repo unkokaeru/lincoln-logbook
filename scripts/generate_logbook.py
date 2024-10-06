@@ -134,6 +134,7 @@ def generate_logbook_cover(
 
 
 def generate_week_context(
+    WEEKS_PATH: Path,
     logbook_start_date: str,
     cpp_files: list[dict[str, str]]
 ) -> dict[str, dict[str, WEEK_ANNOTATION]]:
@@ -142,6 +143,8 @@ def generate_week_context(
 
     Parameters
     ----------
+    WEEKS_PATH : Path
+        Path to the weeks folder.
     logbook_start_date : str
         Start date of the logbook.
     cpp_files : list[dict[str, str]]
@@ -174,9 +177,14 @@ def generate_week_context(
         week_start_date = start_date + datetime.timedelta(weeks=week_index - 1)
         week_end_date = week_start_date + datetime.timedelta(weeks=1)
 
-        reflection_path = Path(list(weekly_cpp_files.keys())[0]).parent / "reflection.md"
-        with open(reflection_path, "r") as file:
-            reflection_content = file.read()
+        week_folder_path = WEEKS_PATH / f"week {week_index}"
+        reflection_path = week_folder_path / "reflection.md"
+
+        if reflection_path.exists():
+            with open(reflection_path, "r") as file:
+                reflection_content = file.read()
+        else:
+            reflection_content = ""
 
         context["weeks"][week_key] = {
             "number": week_key,
@@ -284,7 +292,11 @@ def main() -> None:
     )
 
     # Generate the logbook contents
-    week_context = generate_week_context(config["university"]["start"], cpp_files)
+    week_context = generate_week_context(
+        WEEKS_PATH,
+        config["university"]["start"],
+        cpp_files,
+    )
     generate_logbook_contents(
         MARKDOWN_PATH / "contents.md",
         TEMPLATES_PATH / "contents.md.j2",
