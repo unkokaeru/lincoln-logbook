@@ -38,3 +38,13 @@ jobs:
                 name: logbook
                 path: |
                     renders/
+
+        -   name: Commit and push changes
+            run: |
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git add renders/
+                git commit -m "chore: render logbook" || echo "No changes to commit"
+                git push origin main || echo "No changes to push"
+            env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
