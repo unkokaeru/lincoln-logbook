@@ -37,5 +37,4 @@ jobs:
             with:
                 name: logbook
                 path: |
-                    markdown/logbook.md
-                    renders/logbook.docx
+                    renders/
