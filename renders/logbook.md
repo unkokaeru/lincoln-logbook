@@ -15,14 +15,191 @@ geometry: margin=1in
 |-----------------------------------------------------------------------------|----------|
 | **Disclaimer**                                                              | 1        | 
 | [**Week 1** – 2024-09-23 to 2024-09-30 ](#week-1-2024-09-23-to-2024-09-30) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.1 [Basic Use: Special Characters](#basic-use-special-characters) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.2 [Basic Use: Pascals Triangle](#basic-use-pascals-triangle) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.3 [Basic Use: Using Cout](#basic-use-using-cout) | 2        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;*1.1 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 2        |
 
 \newpage
 
 ## **Week 1** – 2024-09-23 to 2024-09-30
 
+**What did you learn in the lab tasks this week?**
+
+In the lab session this week we focused on outputting to a data stream and handling special characters. In order to output to a data stream, I learned we use `cout` to declare console output and insert data into this with the insertion operator, `<<` - this differs from Python's `print` function, but is essentially how it works. This is because C++ is a lower level language, just above assembly code, and is thus more lightweight and efficient, e.g. you don't need input/output capabilities with all programs, as not all programs need a command-line interface, hence we include the line `#include <iostream>`to access these stream commands.
+
+Additionally, we explored special characters (`\n`, `\a`, `\b`, `\f`, `\r`, and `\t`), escape sequences (`\\`, `\'`, `\"`, and `\?`), and the line terminator (`endl`). The special characters and escape sequences are similar to those used in Python, but the line terminator was completely new for me. Functionally, it seems to act the same as a newline character, but works by ending the data stream started by `cout`.
+
+**How well did I learn it?**
+
+I learned everything pretty quickly, making parallels with Python quite often. It's been really fun learning a completely new, more low-level language and deepening my understanding of programming in general. I did some extra work outside of my lab session, too, which definitely helped me reinforce any new knowledge and understand C++ even quicker.
+
+**How does my solution compare with the official solution?**
+
+There aren't any official solutions right now, so I'll write this next week if they get released.
+
+**How can I extend the concepts used in the tasks to form a new project**
+
+In my extra work this week, I've extended the concepts used to make Pascal's triangle by changing the logic to a more loop-based system so that I can use render any number of rows. I also tried an alternative to using the tab characters, `setd::setw`. Not only this, but I decided to take this number of rows as a user input with `std::cin` and validated the input, throwing an exception if invalid.
+
+I also researched C++ best practices and styling guidelines, referencing documents like Google Style Guides and Doxygen. The main points are learned from this were: consistent comment style (I opted for /* and /**), function return rationale (i.e. when to use `void`), explicitly returning 0 in a main function (to tell the console it ran correctly), docstring placement (before a function, contrasting with Python), and function declaration (placing the opening curly bracket on the same line).
+
+Finally, with the project I already explained, I explored functions, for loops, conditional statements, exception handling, and some basic libraries: `cmath`, `stdexcept`, and `iomanip`.
+
+**Lesson Review Question Answers**
+
+1. Facilitates complex simulations; differs by enabling exploration beyond physical limits.
+2. Climate modeling, drug discovery, astrophysics simulations.
+3. First computer-assisted proof; raises questions about proof validity.
+4. Cost/feasibility issues; safety concerns.
+5. From serial to parallel computing; enhances computational power for complex problems.
+6. Serial: sequential processing; Parallel: simultaneous processing.
+7. Physical limits in miniaturization; heat dissipation, quantum effects.
+8. FLOPS: Floating Point Operations Per Second; measures computational performance.
+9. Binary: two digits (0, 1); used for electronic circuitry efficiency.
+10. Encapsulation, inheritance, polymorphism.
+
+Multiple choice: BCCBCCBBBA
+
+### Basic Use: Special Characters
+
+```
+/*
+* PROGRAM: l02-basic_use-special_characters.cpp
+* DESCRIPTION: Use of special characters
+* AUTHOR: William Fayers
+* DATE: 2024-09-30
+*/
+
+#include <iostream>
+
+using namespace std;
 
 
+int main()
+{
+    /* Starting string (for comparison) */
+    cout << "Starting string: Welcome to C++ Programming\n" << "---\n";
+
+    /* Without newline */
+    cout << "Without newline: Welcome to C++ Programming" << "---\n";
+    /**
+     * ANSWER (Task 1.1):
+     * Removing `/n` causes the output to not start a new line after the string.
+     */
+
+    /* With bell character */
+    cout << "With bell character: Welcome to C++ Programming\a" << "---\n";
+    /* ANSWER (Task 1.3): The bell character `\a` makes a sound in some environments. */
+
+    /* With backspace character */
+    cout << "With backspace character: Welcome to C++ Programming\b" << "---\n";
+    /* ANSWER (Task 1.3): The backspace character \b removes the last character. */
+
+    /* With formfeed character */
+    cout << "With formfeed character: Welcome to C++ Programming\f" << "---\n";
+    /**
+     * ANSWER (Task 1.3):
+     * The formfeed character \f displays a `♀` character, representing a page break.
+     */
+
+    /* With return character */
+    cout << "With return character: Welcome to C++ Programming\r" << "---\n";
+    /* ANSWER (Task 1.3): The return character \r returns to the start of the line. */
+
+    /* With tab character */
+    cout << "With tab character: Welcome to C++ Programming\t" << "---\n";
+    /* ANSWER (Task 1.3): The tab character \t adds a tab space. */
+
+    /* Escaped characters demonstration */
+    cout << "Escaped characters: Is the symbol \\n called \' Newline \' \? \n";
+    /* ANSWER (Task 1.4): Removing the backslash before the single quote causes a syntax error. */
+
+    /* Line terminator */
+    cout << "A rose by any other name would smell as sweet";
+    cout << endl;
+    /* ANSWER (Task 2.1): The line terminator `endl` starts a new line. */
+
+    /* Line terminator insertion */
+    cout << "A rose by any other name would smell as sweet" << endl;
+    /**
+     * ANSWER (Task 2.2):
+     * There's no change in output if `endl` is inserted at the end of the string.
+     */
+
+    return 0;
+}
+```
+### Basic Use: Pascals Triangle
+
+```
+/*
+* PROGRAM: l03-basic_use-pascals_triangle.cpp
+* DESCRIPTION: Pracisting cout and special characters
+* AUTHOR: William Fayers
+* DATE: 2024-09-30
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    /* Print Pascal's Triangle up to n=5 with cout and the tab character to center the numbers */
+    cout << "n\t\t\t\t   Pascal's Triangle up to n=5\n";
+    cout << "0\t\t\t\t\t\t1\n";
+    cout << "1\t\t\t\t\t1\t\t1\n";
+    cout << "2\t\t\t\t1\t\t2\t\t1\n";
+    cout << "3\t\t\t1\t\t3\t\t3\t\t1\n";
+    cout << "4\t\t1\t\t4\t\t6\t\t4\t\t1\n";
+    cout << "5\t1\t\t5\t\t10\t\t10\t\t5\t\t1\n";
+
+    cout << "\t\t\t\t      Made by William Fayers\n";
+    /**
+     * ANSWER (Task 3.1):
+     * I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with
+     * `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle:
+     * ```
+     * n                                  Pascal's Triangle up to n=5
+     * 0                                               1
+     * 1                                       1               1
+     * 2                               1               2               1
+     * 3                       1               3               3               1
+     * 4               1               4               6               4               1
+     * 5       1               5               10              10              5               1
+     *                                       Made by William Fayers
+     * ```
+     */
+
+    return 0;
+}
+```
+### Basic Use: Using Cout
+
+```
+/*
+* PROGRAM: l01-basic_use-using_cout.cpp
+* DESCRIPTION: Use of the cout statment
+* AUTHOR: William Fayers
+* DATE: 2024-09-30
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    /* Print a welcome message */
+    cout << "Welcome to C++ Programming\n";
+    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
+
+    return 0;
+}
+```
 
 ### Pascal Triangle: Extended Project
 
@@ -40,7 +217,8 @@ geometry: margin=1in
  */
 
 const int MAX_ROWS = 29;
-const std::string ERROR_MESSAGE = "Error: rows must be between 0 and " + std::to_string(MAX_ROWS) + "!";
+const std::string ERROR_MESSAGE = "Error: rows must be between 0 and "
+                                    + std::to_string(MAX_ROWS) + "!";
 
 /**
  * @brief Outputs Pascal's triangle to the console.
@@ -55,7 +233,9 @@ const std::string ERROR_MESSAGE = "Error: rows must be between 0 and " + std::to
  * power of 2 to estimate the width of the largest coefficient.
  * 
  * @note Designed to test the use of output streams, loops, error handling, libraries,
- * and functions in C++.
+ * and functions in C++. Extends the concepts from lab 1, exploring new concepts
+ * like using the `std::setw` function to set the width of the output instead of
+ * using the tab character.
  * 
  * @param rows The number of rows to output in Pascal's triangle. Must be non-negative
  * and less than or equal to MAX_ROWS.
@@ -125,7 +305,8 @@ void output_pascals_triangle(int rows) {
  */
 int main() {
     /* Prompt the user for the number of rows to output. */
-    std::cout << "Please enter the number of rows you would like to output (0 to " << MAX_ROWS << "): ";
+    std::cout << "Please enter the number of rows you would like to output (0 to "
+                << MAX_ROWS << "): ";
     int rows;
     std::cin >> rows;
 
