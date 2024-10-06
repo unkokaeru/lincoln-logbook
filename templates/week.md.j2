@@ -1,0 +1,21 @@
+## **Week {{ number }}** – {{ start_date }} to {{ end_date }}
+
+{{ reflection }}
+
+{% for lab_key, lab_value in tasks['lab'].items() %}
+### {{ lab_value['topic'] }}: {{ lab_value['name'] }}
+
+```
+{{ lab_value['code'] }}
+```
+
+{% endfor %}
+
+{% for extra_key, extra_value in tasks['extra'].items() %}
+### {{ extra_value['topic'] }}: {{ extra_value['name'] }}
+
+```
+{{ extra_value['code'] }}
+```
+
+{% endfor %}

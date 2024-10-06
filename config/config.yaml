@@ -1,13 +1,15 @@
 ---
 module:
     code: MTH2008
-    name: Scientific Computing Logbook
+    name: Scientific Computing
     semester: Semester A
+    year: "2024"
 statement:
     text: I confirm that this logbook is entirely my own work and that all references and quotations, from both primary and secondary sources, have been fully identified and properly acknowledged.
 student:
     id: "27378661"
     name: William Fayers
 university:
+    department: School of Engineering and Physical Sciences
+    name: University of Lincoln
     start: "2024-09-23"
-    text: University of Lincoln

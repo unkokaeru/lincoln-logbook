@@ -105,7 +105,7 @@ def combine_logbook(markdown_path: Path, logbook_path: Path) -> None:
     with open(logbook_path, "w") as logbook:
         for markdown_file in markdown_path.glob("*.md"):
             with open(markdown_file, "r") as file:
-                logbook.write(file.read() + "\n\n\\newpage")
+                logbook.write(file.read() + "\n\n")
 
 
 def generate_logbook_cover(
