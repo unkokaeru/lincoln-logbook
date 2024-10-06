@@ -11,7 +11,8 @@
  */
 
 const int MAX_ROWS = 29;
-const std::string ERROR_MESSAGE = "Error: rows must be between 0 and " + std::to_string(MAX_ROWS) + "!";
+const std::string ERROR_MESSAGE = "Error: rows must be between 0 and "
+                                    + std::to_string(MAX_ROWS) + "!";
 
 /**
  * @brief Outputs Pascal's triangle to the console.
@@ -26,7 +27,9 @@ const std::string ERROR_MESSAGE = "Error: rows must be between 0 and " + std::to
  * power of 2 to estimate the width of the largest coefficient.
  * 
  * @note Designed to test the use of output streams, loops, error handling, libraries,
- * and functions in C++.
+ * and functions in C++. Extends the concepts from lab 1, exploring new concepts
+ * like using the `std::setw` function to set the width of the output instead of
+ * using the tab character.
  * 
  * @param rows The number of rows to output in Pascal's triangle. Must be non-negative
  * and less than or equal to MAX_ROWS.
@@ -96,7 +99,8 @@ void output_pascals_triangle(int rows) {
  */
 int main() {
     /* Prompt the user for the number of rows to output. */
-    std::cout << "Please enter the number of rows you would like to output (0 to " << MAX_ROWS << "): ";
+    std::cout << "Please enter the number of rows you would like to output (0 to "
+                << MAX_ROWS << "): ";
     int rows;
     std::cin >> rows;
 
