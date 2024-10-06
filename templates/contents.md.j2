@@ -2,9 +2,9 @@
 
 | **Section**                                                                 | **Page** |
 |-----------------------------------------------------------------------------|----------|
-| **Disclaimer**                                                              | 1        |{% for week_key, week in weeks.items() %} 
-| [**Week {{ week.number }}** – {{ week.start_date }} to {{ week.end_date }} ](#week-{{ week.number }}-{{ week.start_date }}-to-{{ week.end_date }}) | {{ loop.index0 + 2 }}        |{% set lab_index = loop.index0 + 1 %}{% for lab_key, lab in week.tasks.lab.items() %} 
-| &nbsp;&nbsp;&nbsp;&nbsp;{{ week.number }}.{{ loop.index }} [{{ lab.topic }}: {{ lab.name }}](#{{ lab.topic | lower | replace(' ', '-') }}-{{ lab.name | lower | replace(' ', '-') }}) | {{ lab_index + 1 }}        |{% set lab_index = lab_index + 1 %}{% endfor %}{% set extra_index = lab_index %}{% for extra_key, extra in week.tasks.extra.items() %} 
+| **Disclaimer**                                                              | 1        |{% set current_page = 2 %}{% for week_key, week in weeks.items() %} 
+| [**Week {{ week.number }}** – {{ week.start_date }} to {{ week.end_date }} ](#week-{{ week.number }}-{{ week.start_date }}-to-{{ week.end_date }}) | {{ current_page }}        |{% set lab_index = current_page %}{% for lab_key, lab in week.tasks.lab.items() %} 
+| &nbsp;&nbsp;&nbsp;&nbsp;{{ week.number }}.{{ loop.index }} [{{ lab.topic }}: {{ lab.name }}](#{{ lab.topic | lower | replace(' ', '-') }}-{{ lab.name | lower | replace(' ', '-') }}) | {{ lab_index + 1 }}        |{% set lab_index = lab_index + 1 %}{% set current_page = lab_index + 1 %}{% endfor %}{% set extra_index = lab_index %}{% for extra_key, extra in week.tasks.extra.items() %} 
 | &nbsp;&nbsp;&nbsp;&nbsp;*{{ week.number }}.{{ extra_index - loop.index0 }} [{{ extra.topic }}: {{ extra.name }}](#{{ extra.topic | lower | replace(' ', '-') }}-{{ extra.name | lower | replace(' ', '-') }})* | {{ extra_index + 1 }}        |{% set extra_index = extra_index + 1 %}{% endfor %}{% endfor %}
 
 \newpage
