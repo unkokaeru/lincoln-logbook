@@ -67,7 +67,7 @@ def save_file(file_path: Path, content: str) -> None:
     """
     # Create any necessary directories
     file_path.parent.mkdir(parents=True, exist_ok=True)
-    
+
     # Save the content to the file
     with open(file_path, "w") as file:
         file.write(content)
