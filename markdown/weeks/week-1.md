@@ -1,4 +1,4 @@
-## **Week 1** – 2024-09-23 to 2024-09-30
+## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
 
