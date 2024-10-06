@@ -256,12 +256,13 @@ def generate_logbook_weeks(
 def main() -> None:
     """Generate a logbook based on config and cpp/md files."""
     # Paths
-    CONFIG_PATH = Path("../config/config.yaml")
-    # REFERENCES_PATH = Path("../config/references.yaml")
-    WEEKS_PATH = Path("../weeks/")
-    MARKDOWN_PATH = Path("../markdown/")
-    RENDER_PATH = Path("../renders/")
-    TEMPLATES_PATH = Path("../templates/")
+    PROJECT_PATH = Path(__file__).resolve().parent.parent
+    CONFIG_PATH = PROJECT_PATH / "config" / "config.yaml"
+    # REFERENCES_PATH = PROJECT_PATH / "config" / "references.yaml"
+    WEEKS_PATH = PROJECT_PATH / "weeks"
+    MARKDOWN_PATH = PROJECT_PATH / "markdown"
+    RENDER_PATH = PROJECT_PATH / "renders"
+    TEMPLATES_PATH = PROJECT_PATH / "templates"
 
     # Load the config and references
     config: dict[str, dict[str, str]] = load_yaml(CONFIG_PATH)
