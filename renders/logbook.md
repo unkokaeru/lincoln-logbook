@@ -24,8 +24,6 @@ geometry: margin=1in
 
 
 
-
-
 ### Pascal Triangle: Extended Project
 
 ```
@@ -145,6 +143,5 @@ int main() {
     return 0;
 }
 ```
-
 
 
