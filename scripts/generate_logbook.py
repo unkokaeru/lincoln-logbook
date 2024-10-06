@@ -108,7 +108,7 @@ def combine_logbook(markdown_path: Path, logbook_path: Path) -> None:
     """
     combined_content = ""
 
-    for markdown_file in markdown_path.glob("*.md"):
+    for markdown_file in markdown_path.rglob("*.md"):
         with open(markdown_file, "r") as file:
             combined_content += file.read() + "\n\n"
 
