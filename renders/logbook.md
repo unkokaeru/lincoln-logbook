@@ -20,7 +20,9 @@ geometry: margin=1in
 
 
 
-| &nbsp;&nbsp;&nbsp;&nbsp;*1.1 [Pascal Triangle: Extended Project](#pascal-triangle-pascal-triangle)* | 2        |
+
+| &nbsp;&nbsp;&nbsp;&nbsp;*1.1 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 2        |
+
 
 
 
