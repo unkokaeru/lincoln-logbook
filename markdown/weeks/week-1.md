@@ -37,6 +37,30 @@ Finally, with the project I already explained, I explored functions, for loops, 
 
 Multiple choice: BCCBCCBBBA
 
+### Basic Use: Using Cout
+
+```
+/*
+* PROGRAM: l01-basic_use-using_cout.cpp
+* DESCRIPTION: Use of the cout statment
+* AUTHOR: William Fayers
+* DATE: 2024-09-30
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    /* Print a welcome message */
+    cout << "Welcome to C++ Programming\n";
+    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
+
+    return 0;
+}
+```
 ### Basic Use: Special Characters
 
 ```
@@ -148,30 +172,6 @@ int main()
      *                                       Made by William Fayers
      * ```
      */
-
-    return 0;
-}
-```
-### Basic Use: Using Cout
-
-```
-/*
-* PROGRAM: l01-basic_use-using_cout.cpp
-* DESCRIPTION: Use of the cout statment
-* AUTHOR: William Fayers
-* DATE: 2024-09-30
-*/
-
-#include <iostream>
-
-using namespace std;
-
-
-int main()
-{
-    /* Print a welcome message */
-    cout << "Welcome to C++ Programming\n";
-    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
 
     return 0;
 }

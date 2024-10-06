@@ -15,12 +15,10 @@ geometry: margin=1in
 |-----------------------------------------------------------------------------|----------|
 | **Disclaimer**                                                              | 1        | 
 | [**Week 1** – 2024-09-30 to 2024-10-07 ](#week-1-2024-09-30-to-2024-10-07) | 2        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.1 [Basic Use: Special Characters](#basic-use-special-characters) | 3        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.2 [Basic Use: Pascals Triangle](#basic-use-pascals-triangle) | 3        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.3 [Basic Use: Using Cout](#basic-use-using-cout) | 3        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;*1.2 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 3        |
-
-\newpage
+| &nbsp;&nbsp;&nbsp;&nbsp;1.1 [Basic Use: Using Cout](#basic-use-using-cout) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.2 [Basic Use: Special Characters](#basic-use-special-characters) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.3 [Basic Use: Pascals Triangle](#basic-use-pascals-triangle) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;*1.2 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 2        |
 
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
@@ -61,6 +59,30 @@ Finally, with the project I already explained, I explored functions, for loops, 
 
 Multiple choice: BCCBCCBBBA
 
+### Basic Use: Using Cout
+
+```
+/*
+* PROGRAM: l01-basic_use-using_cout.cpp
+* DESCRIPTION: Use of the cout statment
+* AUTHOR: William Fayers
+* DATE: 2024-09-30
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    /* Print a welcome message */
+    cout << "Welcome to C++ Programming\n";
+    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
+
+    return 0;
+}
+```
 ### Basic Use: Special Characters
 
 ```
@@ -172,30 +194,6 @@ int main()
      *                                       Made by William Fayers
      * ```
      */
-
-    return 0;
-}
-```
-### Basic Use: Using Cout
-
-```
-/*
-* PROGRAM: l01-basic_use-using_cout.cpp
-* DESCRIPTION: Use of the cout statment
-* AUTHOR: William Fayers
-* DATE: 2024-09-30
-*/
-
-#include <iostream>
-
-using namespace std;
-
-
-int main()
-{
-    /* Print a welcome message */
-    cout << "Welcome to C++ Programming\n";
-    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
 
     return 0;
 }
