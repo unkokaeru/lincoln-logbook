@@ -221,6 +221,13 @@ def generate_week_context(
                 "code": code,  # TODO: Add code processing for comments
             }
 
+        if type(tasks_dict) is not dict:
+            raise ValueError("Task type is not valid.")  # Should be unreachable
+
+        # Sort tasks in alphabetical order by task number
+        for task_type in tasks_dict:
+            tasks_dict[task_type] = dict(sorted(tasks_dict[task_type].items()))
+
     return context
 
 
