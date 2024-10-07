@@ -226,7 +226,7 @@ def process_cpp_code_for_comments(
 
         # Check for inline comments
         elif line.startswith(INLINE_COMMENT_START):
-            match = re.match(INLINE_ANSWER_COMMENT, line)
+            match = re.match(INLINE_ANSWER_COMMENT, line.strip("/* "))
             if match:
                 comment_id = f"task_{match.group(1)}_{match.group(2)}"  # Extract the id
                 print(f"found inline comment id: {comment_id}")
