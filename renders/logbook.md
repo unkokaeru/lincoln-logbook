@@ -82,11 +82,12 @@ int main()
 {
     /* Print a welcome message */
     cout << "Welcome to C++ Programming\n";
-    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
+    /* ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
 
     return 0;
 }
 ```
+
 ### Basic Use: Special Characters
 
 #### Task .
@@ -95,18 +96,21 @@ int main()
 ```
 cout << "Without newline: Welcome to C++ Programming" << "---\n";
 ```
+
 #### Task .
      * The formfeed character \f displays a `♀` character, representing a page break. 
 
 ```
 cout << "With formfeed character: Welcome to C++ Programming\f" << "---\n";
 ```
+
 #### Task .
      * There's no change in output if `endl` is inserted at the end of the string. 
 
 ```
 cout << "A rose by any other name would smell as sweet" << endl;
 ```
+
 
 ### Basic Use: Pascals Triangle
 
@@ -124,6 +128,7 @@ cout << "5\t1\t\t5\t\t10\t\t10\t\t5\t\t1\n";
 
 cout << "\t\t\t\t      Made by William Fayers\n";
 ```
+
 
 
 
