@@ -18,7 +18,7 @@ BLOCK_COMMENT_START = "/**"
 BLOCK_COMMENT_MIDDLE = "*"
 COMMENT_END = "*/"
 ANSWER_ID_DELIMITERS = "()"
-INLINE_ANSWER_COMMENT = f"{ANSWER_KEYWORD} {r'\((\d+)\): (.+)'}"
+INLINE_ANSWER_COMMENT = f"{ANSWER_KEYWORD} {r'\(Task (\d+).(\d+)\): (.+)'}"
 CODE_COMMENT_DELIMITER = "```"
 
 
@@ -228,8 +228,8 @@ def process_cpp_code_for_comments(
         elif line.startswith(INLINE_COMMENT_START):
             match = re.match(INLINE_ANSWER_COMMENT, line)
             if match:
-                comment_id = match.group(1).replace(" ", "_").replace(".", "_")  # Extract the id
-                comment_content = match.group(2).strip()  # Extract the comment
+                comment_id = f"task_{match.group(1)}_{match.group(2)}"  # Extract the id
+                comment_content = match.group(3).strip()  # Extract the comment
 
                 task_comments.setdefault(comment_id, [])
                 task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
