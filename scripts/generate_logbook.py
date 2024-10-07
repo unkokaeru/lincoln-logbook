@@ -10,7 +10,9 @@ import jinja2
 import yaml
 
 TASK_ANNOTATION = dict[str, str | dict[str, list[tuple[str, str]]]]
-WEEK_ANNOTATION = dict[str, str | dict[Literal["lab", "extra"], dict[str, TASK_ANNOTATION]]]
+WEEK_ANNOTATION = dict[
+    str, str | dict[Literal["lab", "extra"], dict[str, TASK_ANNOTATION]]
+]
 DATE_FORMAT = "%Y-%m-%d"
 ANSWER_KEYWORD = "ANSWER"
 INLINE_COMMENT_START = "/*"
@@ -125,9 +127,7 @@ def combine_logbook(markdown_path: Path, logbook_path: Path) -> None:
 
 
 def generate_logbook_cover(
-    cover_path: Path,
-    template_path: Path,
-    config: dict[str, dict[str, str]]
+    cover_path: Path, template_path: Path, config: dict[str, dict[str, str]]
 ) -> None:
     """
     Generate the cover of the logbook.
@@ -187,15 +187,21 @@ def process_cpp_code_for_comments(
                 if cpp_code_lines[line_count].strip() == COMMENT_END:
                     break
 
-                comment_content = cpp_code_lines[line_count].strip(f"{BLOCK_COMMENT_MIDDLE} ")
+                comment_content = cpp_code_lines[line_count].strip(
+                    f"{BLOCK_COMMENT_MIDDLE} "
+                )
                 current_comment_lines.append(comment_content)
                 line_count += 1
 
             # Process the comment lines
-            if current_comment_lines and current_comment_lines[0].startswith(ANSWER_KEYWORD):
+            if current_comment_lines and current_comment_lines[0].startswith(
+                ANSWER_KEYWORD
+            ):
                 # Fetch the comment id from the first line
                 first_comment_line = current_comment_lines[0]
-                comment_id = first_comment_line.strip(f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS} :")
+                comment_id = first_comment_line.strip(
+                    f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS} :"
+                )
                 comment_id = comment_id.replace(" ", "_").replace(".", "_")
                 task_comments.setdefault(comment_id, [])
 
@@ -205,7 +211,9 @@ def process_cpp_code_for_comments(
                     if comment_line.startswith(CODE_COMMENT_DELIMITER):
                         comment_line_count = current_comment_lines.index(comment_line)
                         while comment_line_count < len(current_comment_lines):
-                            current_comment_line = current_comment_lines[comment_line_count]
+                            current_comment_line = current_comment_lines[
+                                comment_line_count
+                            ]
                             comment_content += current_comment_line + "\n"
                             comment_line_count += 1
 
@@ -216,7 +224,9 @@ def process_cpp_code_for_comments(
                         comment_content += comment_line + " "
 
                 task_comments.setdefault(comment_id, [])
-                task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
+                task_comments[comment_id].append(
+                    (comment_content, "\n".join(current_code_lines))
+                )
 
             # Reset for the next line
             current_code_lines = []
@@ -229,15 +239,12 @@ def process_cpp_code_for_comments(
             match = re.match(INLINE_ANSWER_COMMENT, line.strip("/* "))
             if match:
                 comment_id = f"task_{match.group(1)}_{match.group(2)}"  # Extract the id
-                print(f"found inline comment id: {comment_id}")
                 comment_content = match.group(3).strip()  # Extract the comment
-                print(f"found inline comment content: {comment_content}")
 
                 task_comments.setdefault(comment_id, [])
-                task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
-                print(f"current task comments: {task_comments}")
-
-            print(f"no match found for: {line}")
+                task_comments[comment_id].append(
+                    (comment_content, "\n".join(current_code_lines))
+                )
 
             # Reset for the next line
             current_code_lines = []
@@ -259,9 +266,7 @@ def process_cpp_code_for_comments(
 
 
 def generate_week_context(
-    WEEKS_PATH: Path,
-    logbook_start_date: str,
-    cpp_files: list[dict[str, str]]
+    WEEKS_PATH: Path, logbook_start_date: str, cpp_files: list[dict[str, str]]
 ) -> dict[str, dict[str, WEEK_ANNOTATION]]:
     """
     Generate the context for the weeks.
@@ -470,9 +475,6 @@ def main() -> None:
 
     # Combine the logbook
     combine_logbook(MARKDOWN_PATH, RENDER_PATH / "logbook.md")
-
-    # Print the logbook path
-    print(f"Logbook generated at {RENDER_PATH / "logbook.md"}")
 
 
 if __name__ == "__main__":
