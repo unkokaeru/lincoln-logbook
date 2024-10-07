@@ -35,6 +35,10 @@ jobs:
                 sudo apt-get install -y pandoc
                 pandoc renders/logbook.md -o renders/logbook.docx --reference-doc=config/style-reference.docx --lua-filter=scripts/pagebreak.lua
 
+        -   name: Convert Markdown to HTML
+            run: |
+                pandoc renders/logbook.md -o renders/html/logbook.html
+
         -   name: Upload Logbook Artifacts
             uses: actions/upload-artifact@v4
             with:
@@ -59,16 +63,6 @@ jobs:
         steps:
             -   name: Checkout the repository
                 uses: actions/checkout@v4
-
-            -   name: Set up Python
-                uses: actions/setup-python@v5
-                with:
-                    python-version: '3.12'
-
-            -   name: Build the site
-                run: |
-                    sudo apt-get install -y pandoc
-                    pandoc renders/logbook.md -o renders/html/logbook.html
 
             -   name: Deploy the site
                 uses: JamesIves/github-pages-deploy-action@v4
