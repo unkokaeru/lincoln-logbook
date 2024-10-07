@@ -229,10 +229,13 @@ def process_cpp_code_for_comments(
             match = re.match(INLINE_ANSWER_COMMENT, line)
             if match:
                 comment_id = f"task_{match.group(1)}_{match.group(2)}"  # Extract the id
+                print(f"found inline comment id: {comment_id}")
                 comment_content = match.group(3).strip()  # Extract the comment
+                print(f"found inline comment content: {comment_content}")
 
                 task_comments.setdefault(comment_id, [])
                 task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
+                print(f"current task comments: {task_comments}")
 
             # Reset for the next line
             current_code_lines = []
