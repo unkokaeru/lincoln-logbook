@@ -397,12 +397,33 @@ def generate_logbook_weeks(
         save_file(weeks_path / f"week-{week}.md", week_content)
 
 
+def generate_logbook_references(
+    references_path: Path,
+    template_path: Path,
+    references: list[dict[str, str]],
+) -> None:
+    """
+    Generate the references of the logbook.
+
+    Parameters
+    ----------
+    references_path : Path
+        Path to save the references to.
+    template_path : Path
+        Path to the template to use.
+    references : list[dict[str, str]]
+        References to generate the references.
+    """
+    references_content = render_template(template_path, {"references": references})
+    save_file(references_path, references_content)
+
+
 def main() -> None:
     """Generate a logbook based on config and cpp/md files."""
     # Paths
     PROJECT_PATH = Path(__file__).resolve().parent.parent
     CONFIG_PATH = PROJECT_PATH / "config" / "config.yaml"
-    # REFERENCES_PATH = PROJECT_PATH / "config" / "references.yaml"
+    REFERENCES_PATH = PROJECT_PATH / "config" / "references.yaml"
     WEEKS_PATH = PROJECT_PATH / "weeks"
     MARKDOWN_PATH = PROJECT_PATH / "markdown"
     RENDER_PATH = PROJECT_PATH / "renders"
@@ -410,7 +431,7 @@ def main() -> None:
 
     # Load the config and references
     config: dict[str, dict[str, str]] = load_yaml(CONFIG_PATH)
-    # references: list[dict[str, str]] = load_yaml(REFERENCES_PATH)["references"]
+    references: list[dict[str, str]] = load_yaml(REFERENCES_PATH)["references"]
 
     # Parse the C++ files for each week
     weeks = sorted(os.listdir(WEEKS_PATH))
@@ -440,12 +461,12 @@ def main() -> None:
         week_context,
     )
 
-    # TODO: Generate the logbook references
-    #  generate_logbook_references(
-    #      MARKDOWN_PATH / "references.md",
-    #      TEMPLATES_PATH / "references.md.j2",
-    #      references,
-    #  ) -> Complete this function!
+    # Generate the logbook references
+    generate_logbook_references(
+        MARKDOWN_PATH / "references.md",
+        TEMPLATES_PATH / "references.md.j2",
+        references,
+    )
 
     # Combine the logbook
     combine_logbook(MARKDOWN_PATH, RENDER_PATH / "logbook.md")
