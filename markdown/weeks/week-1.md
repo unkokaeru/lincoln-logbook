@@ -38,6 +38,7 @@ Finally, with the project I already explained, I explored functions, for loops, 
 Multiple choice: BCCBCCBBBA
 
 ### Basic Use: Using Cout
+
 ```
 /*
 * PROGRAM: l01-basic_use-using_cout.cpp
@@ -60,22 +61,28 @@ int main()
     return 0;
 }
 ```### Basic Use: Special Characters
+
 #### Task .
      * Removing `/n` causes the output to not start a new line after the string. 
+
 ```
 cout << "Without newline: Welcome to C++ Programming" << "---\n";
 ```#### Task .
      * The formfeed character \f displays a `♀` character, representing a page break. 
+
 ```
 cout << "With formfeed character: Welcome to C++ Programming\f" << "---\n";
 ```#### Task .
      * There's no change in output if `endl` is inserted at the end of the string. 
+
 ```
 cout << "A rose by any other name would smell as sweet" << endl;
 ```
 ### Basic Use: Pascals Triangle
+
 #### Task .
      * I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with      * `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle:      * ```      * n                                  Pascal's Triangle up to n=5      * 0                                               1      * 1                                       1               1      * 2                               1               2               1      * 3                       1               3               3               1      * 4               1               4               6               4               1      * 5       1               5               10              10              5               1      *                                       Made by William Fayers      * ``` 
+
 ```
 cout << "n\t\t\t\t   Pascal's Triangle up to n=5\n";
 cout << "0\t\t\t\t\t\t1\n";
@@ -90,8 +97,10 @@ cout << "\t\t\t\t      Made by William Fayers\n";
 
 
 ### Pascal Triangle: Extended Project
+
 #### Task *.@file
  * @brief Outputs Pascal's triangle to the console.  * @details This program extends the concepts from lab 1 and explores new  * concepts such as error handling, loops, libraries, and functions in C++. 
+
 ```
 #include <iostream> /* For std::cout, std::cin */
 #include <cmath> /* For std::ceil, std::pow */
@@ -100,6 +109,7 @@ cout << "\t\t\t\t      Made by William Fayers\n";
 
 ```#### Task *.@brief
  *   * @details Calculates Pascal's triangle iteratively using the formula:  * \f[  * C(n, k+1) = C(n, k) \times \frac{n - k}{k + 1}  * \f]  * where \f$C(n, k)\f$ is the coefficient at row \f$n\f$ and column \f$k\f$.  * Ensures the triangle is centered in the console by calculating the maximum  * width of the triangle and the maximum width of the coefficients, using the  * power of 2 to estimate the width of the largest coefficient.  *   * @note Designed to test the use of output streams, loops, error handling, libraries,  * and functions in C++. Extends the concepts from lab 1, exploring new concepts  * like using the `std::setw` function to set the width of the output instead of  * using the tab character.  *   * @param rows The number of rows to output in Pascal's triangle. Must be non-negative  * and less than or equal to MAX_ROWS.    * @throw std::invalid_argument Throws an error if rows is less than 0 or greater than MAX_ROWS.    * @warning Since the coefficients in Pascal's triangle can grow very large, this  * function may not work as expected for rows greater than 29.    * @example  * \code{.cpp}  * output_pascals_triangle(4);  * \endcode    * Expected Output:  * \code{.plaintext}  *     1  *    1 1  *   1 2 1  *  1 3 3 1  * 1 4 6 4 1  * \endcode 
+
 ```
 
 const int MAX_ROWS = 29;
@@ -108,6 +118,7 @@ const std::string ERROR_MESSAGE = "Error: rows must be between 0 and "
 
 ```#### Task *.@brief
    * @details This function prompts the user for the number of rows to output  * in Pascal's triangle and calls the output_pascals_triangle function.    * @return Returns 0 to indicate the program has run successfully. 
+
 ```
 std::cout << std::endl;
 }
