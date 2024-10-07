@@ -9,10 +9,14 @@
 
 ```
 {{ task_code }}
-```{% endfor %}{% endfor %}
-{% else %}```
+```
+{% endfor %}{% endfor %}
+{% else %}
+
+```
 {{ lab_value['code'] }}
-```{% endif %}{% endfor %}
+```
+{% endif %}{% endfor %}
 
 {% for extra_key, extra_value in tasks['extra'].items() %}### {{ extra_value['topic'] }}: {{ extra_value['name'] }}
 
@@ -21,6 +25,11 @@
 
 ```
 {{ task_code }}
-```{% endfor %}{% endfor %}{% else %}```
+```
+{% endfor %}{% endfor %}
+{% else %}
+
+```
 {{ extra_value['code'] }}
-```{% endif %}{% endfor %}
+```
+{% endif %}{% endfor %}
