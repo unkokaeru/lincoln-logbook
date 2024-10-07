@@ -192,7 +192,7 @@ def process_cpp_code_for_comments(
                 line_count += 1
 
             # Process the comment lines
-            if current_comment_lines:
+            if current_comment_lines and current_comment_lines[0].startswith(ANSWER_KEYWORD):
                 # Fetch the comment id from the first line
                 first_comment_line = current_comment_lines[0]
                 comment_id = first_comment_line.strip(f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS} :")
