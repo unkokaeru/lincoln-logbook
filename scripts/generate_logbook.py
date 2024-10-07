@@ -2,15 +2,24 @@
 
 import datetime
 import os
+import re
 from pathlib import Path
 from typing import Any, Literal
 
 import jinja2
 import yaml
 
-TASK_ANNOTATION = dict[str, str]
+TASK_ANNOTATION = dict[str, str | dict[str, list[tuple[str, str]]]]
 WEEK_ANNOTATION = dict[str, str | dict[Literal["lab", "extra"], dict[str, TASK_ANNOTATION]]]
 DATE_FORMAT = "%Y-%m-%d"
+ANSWER_KEYWORD = "ANSWER"
+INLINE_COMMENT_START = "/*"
+BLOCK_COMMENT_START = "/**"
+BLOCK_COMMENT_MIDDLE = "*"
+COMMENT_END = "*/"
+ANSWER_ID_DELIMITERS = "()"
+INLINE_ANSWER_COMMENT = f"{ANSWER_KEYWORD} {r'\((\d+)\): (.+)'}"
+CODE_COMMENT_DELIMITER = "```"
 
 
 def load_yaml(yaml_path: Path) -> dict[str, Any]:
@@ -136,6 +145,114 @@ def generate_logbook_cover(
     save_file(cover_path, cover)
 
 
+def process_cpp_code_for_comments(
+    cpp_code_lines: list[str],
+) -> dict[str, list[tuple[str, str]]] | str:
+    """
+    Process the C++ code to extract answer comments and related code. If the code
+    contains no answer comments, the function returns the entire code as a string.
+
+    Parameters
+    ----------
+    cpp_code_lines : list[str]
+        List of C++ code lines.
+
+    Returns
+    -------
+    dict[str, list[tuple[str, str]]]
+        A dictionary where keys are task identifiers and values are lists of tuples
+        containing comments and associated code.
+
+    Notes
+    -----
+    The function processes the C++ code line by line, looking for block comments
+    and inline comments that contain the string "ANSWER". It extracts the comment
+    identifier and content, and associates it with the code that follows the comment.
+    If the code contains no answer comments, the function returns the entire code as a string.
+    """
+    task_comments: dict[str, list[tuple[str, str]]] = {}
+    current_code_lines: list[str] = []
+    current_comment_lines: list[str] = []
+    line_count: int = 0
+
+    while line_count < len(cpp_code_lines):
+        line = cpp_code_lines[line_count].strip()
+
+        # Check for comments
+        if line.startswith(BLOCK_COMMENT_START):
+            line_count += 1  # Skip the start of the block comment
+
+            # Collect the comment lines
+            while line_count < len(cpp_code_lines):
+                if cpp_code_lines[line_count].strip() == COMMENT_END:
+                    break
+
+                comment_content = cpp_code_lines[line_count].rstrip(BLOCK_COMMENT_MIDDLE)
+                current_comment_lines.append(comment_content)
+                line_count += 1
+
+            # Process the comment lines
+            if current_comment_lines:
+                # Fetch the comment id from the first line
+                first_comment_line = current_comment_lines[0]
+                comment_id = first_comment_line.rstrip(f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS}")
+                comment_id = comment_id.replace(" ", "_").replace(".", "_")
+                task_comments.setdefault(comment_id, [])
+
+                # Fetch the comment content from the remaining lines
+                comment_content = ""
+                for comment_line in current_comment_lines[1:]:
+                    if comment_line.startswith(CODE_COMMENT_DELIMITER):
+                        comment_line_count = current_comment_lines.index(comment_line) + 1
+                        while comment_line_count < len(current_comment_lines):
+                            current_comment_line = current_comment_lines[comment_line_count]
+
+                            if current_comment_line == CODE_COMMENT_DELIMITER:
+                                break
+
+                            comment_content += current_comment_line + "\n"
+                            comment_line_count += 1
+                    else:
+                        comment_content += comment_line + " "
+
+                task_comments.setdefault(comment_id, [])
+                task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
+
+            # Reset for the next line
+            current_code_lines = []
+            current_comment_lines = []
+            line_count += 1
+            continue
+
+        # Check for inline comments
+        elif line.startswith(INLINE_COMMENT_START):
+            match = re.match(INLINE_ANSWER_COMMENT, line)
+            if match:
+                comment_id = match.group(1).replace(" ", "_").replace(".", "_")  # Extract the id
+                comment_content = match.group(2)  # Extract the comment
+
+                task_comments.setdefault(comment_id, [])
+                task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
+
+            # Reset for the next line
+            current_code_lines = []
+            current_comment_lines = []
+            line_count += 1
+            continue
+
+        # If it's a line of code, add it to current_code_lines
+        else:
+            current_code_lines.append(line)
+            line_count += 1
+            continue
+
+    # If there are no answer comments, return the entire code as a string
+    if not task_comments:
+        return "\n".join(cpp_code_lines)
+    else:
+        return task_comments
+
+
 def generate_week_context(
     WEEKS_PATH: Path,
     logbook_start_date: str,
@@ -218,7 +335,7 @@ def generate_week_context(
             tasks_dict[task_type][task_number] = {
                 "topic": task_topic,
                 "name": task_name,
-                "code": code,  # TODO: Add code processing for comments
+                "code": process_cpp_code_for_comments(code.splitlines()),
             }
 
         if type(tasks_dict) is not dict:
