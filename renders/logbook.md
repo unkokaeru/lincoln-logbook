@@ -116,9 +116,7 @@ cout << "A rose by any other name would smell as sweet" << endl;
 ### 1. Basic Use: Pascals Triangle
 
 #### Task 1.1
-I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle: ```
-n                                  Pascal's Triangle up to n=5 0                                               1 1                                       1               1 2                               1               2               1 3                       1               3               3               1 4               1               4               6               4               1 5       1               5               10              10              5               1 Made by William Fayers ```
-
+I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle. 
 
 ```
 cout << "n\t\t\t\t   Pascal's Triangle up to n=5\n";
