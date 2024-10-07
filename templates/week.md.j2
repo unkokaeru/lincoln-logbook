@@ -11,7 +11,7 @@
 {{ task_code }}
 ```
 
-{% endfor %}{% endfor %}
+{% endfor %}{% set lab_counter = lab_counter + 1 %}{% endfor %}
 {% else %}
 
 
@@ -29,7 +29,7 @@
 ```
 {{ task_code }}
 ```
-{% endfor %}{% endfor %}
+{% endfor %}{% set extra_counter = extra_counter + 1 %}{% endfor %}
 {% else %}
 
 
