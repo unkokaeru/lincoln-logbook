@@ -187,7 +187,7 @@ def process_cpp_code_for_comments(
                 if cpp_code_lines[line_count].strip() == COMMENT_END:
                     break
 
-                comment_content = cpp_code_lines[line_count].strip(BLOCK_COMMENT_MIDDLE)
+                comment_content = cpp_code_lines[line_count].strip(f"{BLOCK_COMMENT_MIDDLE} ")
                 current_comment_lines.append(comment_content)
                 line_count += 1
 
@@ -195,7 +195,7 @@ def process_cpp_code_for_comments(
             if current_comment_lines:
                 # Fetch the comment id from the first line
                 first_comment_line = current_comment_lines[0]
-                comment_id = first_comment_line.strip(f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS}")
+                comment_id = first_comment_line.strip(f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS} :")
                 comment_id = comment_id.replace(" ", "_").replace(".", "_")
                 task_comments.setdefault(comment_id, [])
 
@@ -229,7 +229,7 @@ def process_cpp_code_for_comments(
             match = re.match(INLINE_ANSWER_COMMENT, line)
             if match:
                 comment_id = match.group(1).replace(" ", "_").replace(".", "_")  # Extract the id
-                comment_content = match.group(2)  # Extract the comment
+                comment_content = match.group(2).strip()  # Extract the comment
 
                 task_comments.setdefault(comment_id, [])
                 task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
