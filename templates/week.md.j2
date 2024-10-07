@@ -3,8 +3,10 @@
 {{ reflection }}
 
 {% for lab_key, lab_value in tasks['lab'].items() %}### {{ lab_value['topic'] }}: {{ lab_value['name'] }}
+
 {% if lab_value['code'] is mapping %}{% for task_id, task_answers in lab_value['code'].items() %}{% set parts = task_id.split('_') %}{% set formatted_task_id = 'Task ' ~ parts[1] ~ '.' ~ parts[2] %}#### {{ formatted_task_id }}
 {% for task_answer, task_code in task_answers %}{{ task_answer }}
+
 ```
 {{ task_code }}
 ```{% endfor %}{% endfor %}
@@ -13,8 +15,10 @@
 ```{% endif %}{% endfor %}
 
 {% for extra_key, extra_value in tasks['extra'].items() %}### {{ extra_value['topic'] }}: {{ extra_value['name'] }}
+
 {% if extra_value['code'] is mapping %}{% for task_id, task_answers in extra_value['code'].items() %}{% set parts = task_id.split('_') %}{% set formatted_task_id = 'Task ' ~ parts[1] ~ '.' ~ parts[2] %}#### {{ formatted_task_id }}
 {% for task_answer, task_code in task_answers %}{{ task_answer }}
+
 ```
 {{ task_code }}
 ```{% endfor %}{% endfor %}{% else %}```
