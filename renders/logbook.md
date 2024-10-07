@@ -8,7 +8,6 @@ geometry: margin=1in
 *"I confirm that this logbook is entirely my own work and that all references and quotations, from both primary and secondary sources, have been fully identified and properly acknowledged."* - William Fayers (27378661).
 
 ---
-
 ## 📚 Table of Contents
 
 | **Section**                                                                 | **Page** |
@@ -22,15 +21,6 @@ geometry: margin=1in
 | **[References](#references)**                                                   | 6        |
 
 \newpage
-
-## 📓 References
-
-
-[1] "A comprehensive guide to C++ coding standards and best practices," *C++ Style Guide*, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).
-
-[2] "Official documentation for Doxygen's documentation blocks and usage," *Doxygen Manual - Documentation Blocks*, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).
-
-
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
@@ -290,6 +280,5 @@ int main() {
     return 0;
 }
 ```
-
 
 
