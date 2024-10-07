@@ -15,10 +15,10 @@ geometry: margin=1in
 |-----------------------------------------------------------------------------|----------|
 | **Disclaimer**                                                              | 1        | 
 | [**Week 1** – 2024-09-30 to 2024-10-07 ](#week-1-2024-09-30-to-2024-10-07) | 2        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.1 [Basic Use: Using Cout](#1-basic-use-using-cout) | 2        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.2 [Basic Use: Special Characters](#2-basic-use-special-characters) | 2        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;1.3 [Basic Use: Pascals Triangle](#3-basic-use-pascals-triangle) | 2        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;*1.4 [Pascal Triangle: Extended Project](#1-pascal-triangle-extended-project)* | 2        |
+| &nbsp;&nbsp;&nbsp;&nbsp;1.1 [Basic Use: Using Cout](#basic-use-using-cout) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.2 [Basic Use: Special Characters](#basic-use-special-characters) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1.3 [Basic Use: Pascals Triangle](#basic-use-pascals-triangle) | 2        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;*1.4 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 2        |
 
 \newpage
 
@@ -61,35 +61,17 @@ Finally, with the project I already explained, I explored functions, for loops, 
 
 Multiple choice: BCCBCCBBBA
 
-### 1. Basic Use: Using Cout
+### Basic Use: Using Cout
 
-
-
+#### Task 1.5
+The first bit of C++ code I've ever written!
 
 ```
-/*
-* PROGRAM: l01-basic_use-using_cout.cpp
-* DESCRIPTION: Use of the cout statment
-* AUTHOR: William Fayers
-* DATE: 2024-09-30
-*/
-
-#include <iostream>
-
-using namespace std;
-
-
-int main()
-{
-    /* Print a welcome message */
-    cout << "Welcome to C++ Programming\n";
-    /* ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
-
-    return 0;
-}
+cout << "Welcome to C++ Programming\n";
 ```
 
-### 1. Basic Use: Special Characters
+
+### Basic Use: Special Characters
 
 #### Task 1.1
 Removing `/n` causes the output to not start a new line after the string. 
@@ -99,10 +81,50 @@ cout << "Without newline: Welcome to C++ Programming" << "---\n";
 ```
 
 #### Task 1.3
+The bell character `\a` makes a sound in some environments.
+
+```
+cout << "With bell character: Welcome to C++ Programming\a" << "---\n";
+```
+
+The backspace character \b removes the last character.
+
+```
+cout << "With backspace character: Welcome to C++ Programming\b" << "---\n";
+```
+
+The return character \r returns to the start of the line.
+
+```
+cout << "With return character: Welcome to C++ Programming\r" << "---\n";
+```
+
+The tab character \t adds a tab space.
+
+```
+cout << "With tab character: Welcome to C++ Programming\t" << "---\n";
+```
+
+#### Task 1.3
 The formfeed character \f displays a `♀` character, representing a page break. 
 
 ```
 cout << "With formfeed character: Welcome to C++ Programming\f" << "---\n";
+```
+
+#### Task 1.4
+Removing the backslash before the single quote causes a syntax error.
+
+```
+cout << "Escaped characters: Is the symbol \\n called \' Newline \' \? \n";
+```
+
+#### Task 2.1
+The line terminator `endl` starts a new line.
+
+```
+cout << "A rose by any other name would smell as sweet";
+cout << endl;
 ```
 
 #### Task 2.2
@@ -113,7 +135,7 @@ cout << "A rose by any other name would smell as sweet" << endl;
 ```
 
 
-### 1. Basic Use: Pascals Triangle
+### Basic Use: Pascals Triangle
 
 #### Task 1.1
 I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle. 
@@ -133,7 +155,7 @@ cout << "\t\t\t\t      Made by William Fayers\n";
 
 
 
-### 1. Pascal Triangle: Extended Project
+### Pascal Triangle: Extended Project
 
 #### Task e01-pascal.triangle-extended
 @brief Outputs Pascal's triangle to the console. @details This program extends the concepts from lab 1 and explores new concepts such as error handling, loops, libraries, and functions in C++. 
