@@ -419,6 +419,7 @@ def generate_logbook_references(
     references : list[dict[str, str]]
         References to generate the references.
     """
+    print({"references": references})
     references_content = render_template(template_path, {"references": references})
     save_file(references_path, references_content)
 
