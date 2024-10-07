@@ -37,7 +37,7 @@ jobs:
 
         -   name: Convert Markdown to HTML
             run: |
-                pandoc renders/logbook.md -o renders/html/logbook.html
+                pandoc renders/logbook.md -o renders/html/index.html
 
         -   name: Upload Logbook Artifacts
             uses: actions/upload-artifact@v4
