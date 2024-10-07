@@ -237,6 +237,8 @@ def process_cpp_code_for_comments(
                 task_comments[comment_id].append((comment_content, "\n".join(current_code_lines)))
                 print(f"current task comments: {task_comments}")
 
+            print(f"no match found for: {line}")
+
             # Reset for the next line
             current_code_lines = []
             current_comment_lines = []
