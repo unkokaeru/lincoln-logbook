@@ -203,15 +203,15 @@ def process_cpp_code_for_comments(
                 comment_content = ""
                 for comment_line in current_comment_lines[1:]:
                     if comment_line.startswith(CODE_COMMENT_DELIMITER):
-                        comment_line_count = current_comment_lines.index(comment_line) + 1
+                        comment_line_count = current_comment_lines.index(comment_line)
                         while comment_line_count < len(current_comment_lines):
                             current_comment_line = current_comment_lines[comment_line_count]
+                            comment_content += current_comment_line + "\n"
+                            comment_line_count += 1
 
                             if current_comment_line == CODE_COMMENT_DELIMITER:
                                 break
 
-                            comment_content += current_comment_line + "\n"
-                            comment_line_count += 1
                     else:
                         comment_content += comment_line + " "
 
