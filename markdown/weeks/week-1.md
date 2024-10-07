@@ -37,7 +37,8 @@ Finally, with the project I already explained, I explored functions, for loops, 
 
 Multiple choice: BCCBCCBBBA
 
-### Basic Use: Using Cout
+### 1. Basic Use: Using Cout
+
 
 
 
@@ -64,7 +65,7 @@ int main()
 }
 ```
 
-### Basic Use: Special Characters
+### 1. Basic Use: Special Characters
 
 #### Task 1.1
 Removing `/n` causes the output to not start a new line after the string. 
@@ -88,25 +89,11 @@ cout << "A rose by any other name would smell as sweet" << endl;
 ```
 
 
-### Basic Use: Pascals Triangle
+### 1. Basic Use: Pascals Triangle
 
-#### Task 3.1
-I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle: n                                  Pascal's Triangle up to n=5
-0                                               1
-1                                       1               1
-2                               1               2               1
-3                       1               3               3               1
-4               1               4               6               4               1
-5       1               5               10              10              5               1
-Made by William Fayers
-n                                  Pascal's Triangle up to n=5 0                                               1 1                                       1               1 2                               1               2               1 3                       1               3               3               1 4               1               4               6               4               1 5       1               5               10              10              5               1 Made by William Fayers n                                  Pascal's Triangle up to n=5
-0                                               1
-1                                       1               1
-2                               1               2               1
-3                       1               3               3               1
-4               1               4               6               4               1
-5       1               5               10              10              5               1
-Made by William Fayers
+#### Task 1.1
+I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle: ```
+n                                  Pascal's Triangle up to n=5 0                                               1 1                                       1               1 2                               1               2               1 3                       1               3               3               1 4               1               4               6               4               1 5       1               5               10              10              5               1 Made by William Fayers ```
 
 
 ```
@@ -124,7 +111,7 @@ cout << "\t\t\t\t      Made by William Fayers\n";
 
 
 
-### Pascal Triangle: Extended Project
+### 1. Pascal Triangle: Extended Project
 
 #### Task e01-pascal.triangle-extended
 @brief Outputs Pascal's triangle to the console. @details This program extends the concepts from lab 1 and explores new concepts such as error handling, loops, libraries, and functions in C++. 
