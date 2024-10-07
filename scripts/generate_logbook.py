@@ -118,10 +118,38 @@ def combine_logbook(markdown_path: Path, logbook_path: Path) -> None:
         Path to save the logbook to.
     """
     combined_content = ""
+    markdown_files = markdown_path.rglob("*.md")
 
-    for markdown_file in markdown_path.rglob("*.md"):
-        with open(markdown_file, "r") as file:
-            combined_content += file.read() + "\n\n"
+    # Add the cover
+    cover_file = next((file for file in markdown_files if file.stem == "cover"), None)
+    if cover_file:
+        with open(cover_file, "r") as file:
+            combined_content += file.read() + "\n"
+
+    # Add the contents
+    content_file = next(
+        (file for file in markdown_files if file.stem == "contents"), None
+    )
+    if content_file:
+        with open(content_file, "r") as file:
+            combined_content += file.read() + "\n"
+
+    # Add the weeks
+    week_files = sorted(
+        (file for file in markdown_files if file.stem.startswith("week")),
+        key=lambda file: int(file.stem.split("-")[1]),
+    )
+    for week_file in week_files:
+        with open(week_file, "r") as file:
+            combined_content += file.read() + "\n"
+
+    # Add the references
+    reference_file = next(
+        (file for file in markdown_files if file.stem == "references"), None
+    )
+    if reference_file:
+        with open(reference_file, "r") as file:
+            combined_content += file.read() + "\n"
 
     save_file(logbook_path, combined_content)
 
