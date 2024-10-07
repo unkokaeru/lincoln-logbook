@@ -14,7 +14,7 @@ int main()
 {
     /* Print a welcome message */
     cout << "Welcome to C++ Programming\n";
-    /* QUESTION ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
+    /* ANSWER (Task 1.5): The first bit of C++ code I've ever written! */
 
     return 0;
 }
