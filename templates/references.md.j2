@@ -1,5 +1,5 @@
 ## 📓 References
 
 {% for reference in data.references %}
-[{{ loop.index }}] "{{ reference.description }}," *{{ reference.title }}*, {{ reference.year }}. [Online] Available: {{ reference.url }} (accessed {{ "now"|date("Y-m-d") }}).
+[{{ loop.index }}] "{{ reference.description }}," *{{ reference.title }}*, {{ reference.year }}. [Online] Available: {{ reference.url }} (accessed {{ reference.date_accessed }}).
 {% endfor %}

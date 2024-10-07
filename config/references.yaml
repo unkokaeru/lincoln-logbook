@@ -1,11 +1,13 @@
 ---
 references:
     -   author: Google
+        date_accessed: "2024-10-05"
         description: A comprehensive guide to C++ coding standards and best practices
         title: C++ Style Guide
         url: https://google.github.io/styleguide/cppguide.html
         year: "2024"
     -   author: Doxygen
+        date_accessed: "2024-10-05"
         description: Official documentation for Doxygen's documentation blocks and usage
         title: Doxygen Manual - Documentation Blocks
         url: https://www.doxygen.nl/manual/docblocks.html
