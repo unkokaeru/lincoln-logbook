@@ -23,7 +23,7 @@ int main()
 
     cout << "\t\t\t\t      Made by William Fayers\n";
     /**
-     * ANSWER (Task 3.1):
+     * ANSWER (Task 1.1):
      * I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with
      * `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle:
      * ```
