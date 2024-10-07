@@ -10,12 +10,14 @@
 ```
 {{ task_code }}
 ```
+
 {% endfor %}{% endfor %}
 {% else %}
 
 ```
 {{ lab_value['code'] }}
 ```
+
 {% endif %}{% endfor %}
 
 {% for extra_key, extra_value in tasks['extra'].items() %}### {{ extra_value['topic'] }}: {{ extra_value['name'] }}
@@ -29,7 +31,9 @@
 {% endfor %}{% endfor %}
 {% else %}
 
+
 ```
 {{ extra_value['code'] }}
 ```
+
 {% endif %}{% endfor %}
