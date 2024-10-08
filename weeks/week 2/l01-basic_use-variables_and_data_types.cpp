@@ -46,12 +46,12 @@ int main() {
      */
 
     /* Output results */
-    cout << "HALLOWEEN CANDY CALCULATOR" << endl;
-    cout << "Total Children: " << total_children << endl;
-    cout << "Candies per Child: " << candies_per_child << endl;
-    cout << "Extra Candies: " << extra_candies << endl;
-    cout << "---" << endl;
-    cout << "Total Candies: " << total_candies << endl;
+    std::cout << "HALLOWEEN CANDY CALCULATOR" << std::endl;
+    std::cout << "Total Children: " << total_children << std::endl;
+    std::cout << "Candies per Child: " << candies_per_child << std::endl;
+    std::cout << "Extra Candies: " << extra_candies << std::endl;
+    std::cout << "---" << std::endl;
+    std::cout << "Total Candies: " << total_candies << std::endl;
     /* ANSWER (Task 1.2): Output the starting values and the total number of candies */
 
     /* Return 0 to indicate the program ran successfully */
