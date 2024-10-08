@@ -6,7 +6,7 @@
 #include <map>
 
 /**
- * @file e01-coursework_calculator.cpp
+ * @file e01-coursework-calculator.cpp
  * @brief A simple calculator program for basic mathematical operations.
  * @details This program allows the user to perform basic mathematical operations
  * defined in the operation map. The user can select an operation from the menu
