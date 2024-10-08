@@ -1,231 +1,62 @@
 <p><em>“I confirm that this logbook is entirely my own work and that all references and quotations, from both primary and secondary sources, have been fully identified and properly acknowledged.”</em> - William Fayers (27378661).</p>
-<hr />
-<h2 id="table-of-contents">📚 Table of Contents</h2>
-<table>
-<thead>
-<tr class="header">
-<th><strong>Section</strong></th>
-<th><strong>Page</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Disclaimer</strong></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td><a href="#week-1-2024-09-30-to-2024-10-07"><strong>Week 1</strong> – 2024-09-30 to 2024-10-07</a></td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>    1.1 <a href="#basic-use-using-cout">Basic Use: Using Cout</a></td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>    1.2 <a href="#basic-use-special-characters">Basic Use: Special Characters</a></td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>    1.3 <a href="#basic-use-pascals-triangle">Basic Use: Pascals Triangle</a></td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>    <em>1.4 <a href="#pascal-triangle-extended-project">Pascal Triangle: Extended Project</a></em></td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td><strong><a href="#references">References</a></strong></td>
-<td>6</td>
-</tr>
-</tbody>
-</table>
-<h2 id="week-1-2024-09-30-to-2024-10-07"><strong>Week 1</strong> – 2024-09-30 to 2024-10-07</h2>
-<p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>In the lab session this week we focused on outputting to a data stream and handling special characters. In order to output to a data stream, I learned we use <code>cout</code> to declare console output and insert data into this with the insertion operator, <code>&lt;&lt;</code> - this differs from Python’s <code>print</code> function, but is essentially how it works. This is because C++ is a lower level language, just above assembly code, and is thus more lightweight and efficient, e.g. you don’t need input/output capabilities with all programs, as not all programs need a command-line interface, hence we include the line <code>#include &lt;iostream&gt;</code>to access these stream commands.</p>
-<p>Additionally, we explored special characters (<code>\n</code>, <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\r</code>, and <code>\t</code>), escape sequences (<code>\\</code>, <code>\'</code>, <code>\"</code>, and <code>\?</code>), and the line terminator (<code>endl</code>). The special characters and escape sequences are similar to those used in Python, but the line terminator was completely new for me. Functionally, it seems to act the same as a newline character, but works by ending the data stream started by <code>cout</code>.</p>
 <p><strong>How well did I learn it?</strong></p>
-<p>I learned everything pretty quickly, making parallels with Python quite often. It’s been really fun learning a completely new, more low-level language and deepening my understanding of programming in general. I did some extra work outside of my lab session, too, which definitely helped me reinforce any new knowledge and understand C++ even quicker.</p>
+<p>…</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>There aren’t any official solutions right now, so I’ll write this next week if they get released.</p>
+<p>…</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>In my extra work this week, I’ve extended the concepts used to make Pascal’s triangle by changing the logic to a more loop-based system so that I can use render any number of rows. I also tried an alternative to using the tab characters, <code>setd::setw</code>. Not only this, but I decided to take this number of rows as a user input with <code>std::cin</code> and validated the input, throwing an exception if invalid.</p>
-<p>I also researched C++ best practices and styling guidelines, referencing documents like Google Style Guides <a href="#references">[1]</a> and Doxygen <a href="#references">[2]</a>. The main points are learned from this were: consistent comment style (I opted for /* and /**), function return rationale (i.e. when to use <code>void</code>), explicitly returning 0 in a main function (to tell the console it ran correctly), docstring placement (before a function, contrasting with Python), and function declaration (placing the opening curly bracket on the same line).</p>
-<p>Finally, with the project I already explained, I explored functions, for loops, conditional statements, exception handling, and some basic libraries: <code>cmath</code>, <code>stdexcept</code>, and <code>iomanip</code>.</p>
+<p>…</p>
 <p><strong>Lesson Review Question Answers</strong></p>
-<ol type="1">
-<li>Facilitates complex simulations; differs by enabling exploration beyond physical limits.</li>
-<li>Climate modeling, drug discovery, astrophysics simulations.</li>
-<li>First computer-assisted proof; raises questions about proof validity.</li>
-<li>Cost/feasibility issues; safety concerns.</li>
-<li>From serial to parallel computing; enhances computational power for complex problems.</li>
-<li>Serial: sequential processing; Parallel: simultaneous processing.</li>
-<li>Physical limits in miniaturization; heat dissipation, quantum effects.</li>
-<li>FLOPS: Floating Point Operations Per Second; measures computational performance.</li>
-<li>Binary: two digits (0, 1); used for electronic circuitry efficiency.</li>
-<li>Encapsulation, inheritance, polymorphism.</li>
-</ol>
-<p>Multiple choice: BCCBCCBBBA</p>
-<h3 id="basic-use-using-cout">Basic Use: Using Cout</h3>
-<h4 id="task-1.5">Task 1.5</h4>
-<p>The first bit of C++ code I’ve ever written!</p>
-<pre><code>cout &lt;&lt; &quot;Welcome to C++ Programming\n&quot;;</code></pre>
-<h3 id="basic-use-special-characters">Basic Use: Special Characters</h3>
-<h4 id="task-1.1">Task 1.1</h4>
-<p>Removing <code>/n</code> causes the output to not start a new line after the string.</p>
-<pre><code>cout &lt;&lt; &quot;Without newline: Welcome to C++ Programming&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<h4 id="task-1.3">Task 1.3</h4>
-<p>The bell character <code>\a</code> makes a sound in some environments.</p>
-<pre><code>cout &lt;&lt; &quot;With bell character: Welcome to C++ Programming\a&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>The backspace character  the last character.</p>
-<pre><code>cout &lt;&lt; &quot;With backspace character: Welcome to C++ Programming\b&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>The return character  to the start of the line.</p>
-<pre><code>cout &lt;&lt; &quot;With return character: Welcome to C++ Programming\r&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>The tab character  a tab space.</p>
-<pre><code>cout &lt;&lt; &quot;With tab character: Welcome to C++ Programming\t&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<h4 id="task-1.3-1">Task 1.3</h4>
-<p>The formfeed character  a <code>♀</code> character, representing a page break.</p>
-<pre><code>cout &lt;&lt; &quot;With formfeed character: Welcome to C++ Programming\f&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<h4 id="task-1.4">Task 1.4</h4>
-<p>Removing the backslash before the single quote causes a syntax error.</p>
-<pre><code>cout &lt;&lt; &quot;Escaped characters: Is the symbol \\n called \&#39; Newline \&#39; \? \n&quot;;</code></pre>
-<h4 id="task-2.1">Task 2.1</h4>
-<p>The line terminator <code>endl</code> starts a new line.</p>
-<pre><code>cout &lt;&lt; &quot;A rose by any other name would smell as sweet&quot;;
-cout &lt;&lt; endl;</code></pre>
+<p>…</p>
+<h3 id="basic-use-variables-and-data-types">Basic Use: Variables And Data Types</h3>
+<h4 id="task-1.2">Task 1.2</h4>
+<p>Declare and initalise the variables</p>
+<pre><code>int total_children = 10;
+int candies_per_child = 5;
+int extra_candies = 10;</code></pre>
+<p>Output the starting values and the total number of candies</p>
+<pre><code>std::cout &lt;&lt; &quot;HALLOWEEN CANDY CALCULATOR&quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Total Children: &quot; &lt;&lt; total_children &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Candies per Child: &quot; &lt;&lt; candies_per_child &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Extra Candies: &quot; &lt;&lt; extra_candies &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;---&quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Total Candies: &quot; &lt;&lt; total_candies &lt;&lt; std::endl;</code></pre>
+<p>Return 0 to indicate the program ran successfully</p>
+<pre><code>return 0;</code></pre>
+<h4 id="task-1.2-1">Task 1.2</h4>
+<p><code>unsigned short int</code> can be broken down into three parts:- <code>unsigned</code>: This means the variable can only store positive values, which fits the context of candies, as we cannot have a negative number of candies.- <code>short</code>: This means the variable can store values between 0 and 65,535, which is more than enough for the number of candies we are calculating.- <code>int</code>: This means the variable is an integer, which is the type of data we are working with.Hence, <code>unsigned short int</code> is the most appropriate data type for the variable <code>total_candies</code>.</p>
+<pre><code>unsigned short int total_candies;</code></pre>
+<p>Calculate the total number of candies by multipling the average per child by the total number of children, then adding the extra candies.</p>
+<pre><code>total_candies = total_children * candies_per_child + extra_candies;</code></pre>
+<h3 id="basic-use-input-and-math">Basic Use: Input And Math</h3>
 <h4 id="task-2.2">Task 2.2</h4>
-<p>There’s no change in output if <code>endl</code> is inserted at the end of the string.</p>
-<pre><code>cout &lt;&lt; &quot;A rose by any other name would smell as sweet&quot; &lt;&lt; endl;</code></pre>
-<h3 id="basic-use-pascals-triangle">Basic Use: Pascals Triangle</h3>
-<h4 id="task-1.1-1">Task 1.1</h4>
-<p>I used the tab character, <code>\t</code> to center the numbers in the Pascal’s Triangle, along with <code>cout</code> to print the numbers. This ended up with a fairly nice looking Pascal’s Triangle.</p>
-<pre><code>cout &lt;&lt; &quot;n\t\t\t\t   Pascal&#39;s Triangle up to n=5\n&quot;;
-cout &lt;&lt; &quot;0\t\t\t\t\t\t1\n&quot;;
-cout &lt;&lt; &quot;1\t\t\t\t\t1\t\t1\n&quot;;
-cout &lt;&lt; &quot;2\t\t\t\t1\t\t2\t\t1\n&quot;;
-cout &lt;&lt; &quot;3\t\t\t1\t\t3\t\t3\t\t1\n&quot;;
-cout &lt;&lt; &quot;4\t\t1\t\t4\t\t6\t\t4\t\t1\n&quot;;
-cout &lt;&lt; &quot;5\t1\t\t5\t\t10\t\t10\t\t5\t\t1\n&quot;;
-
-cout &lt;&lt; &quot;\t\t\t\t      Made by William Fayers\n&quot;;</code></pre>
-<h3 id="pascal-triangle-extended-project">Pascal Triangle: Extended Project</h3>
-<pre><code>#include &lt;iostream&gt; /* For std::cout, std::cin */
-#include &lt;cmath&gt; /* For std::ceil, std::pow */
-#include &lt;stdexcept&gt; /* For std::invalid_argument */
-#include &lt;iomanip&gt; /* For std::setw */
-
-/**
- * @file e01-pascal_triangle-extended_project.cpp
- * @brief Outputs Pascal&#39;s triangle to the console.
- * @details This program extends the concepts from lab 1 and explores new
- * concepts such as error handling, loops, libraries, and functions in C++.
- */
-
-const int MAX_ROWS = 29;
-const std::string ERROR_MESSAGE = &quot;Error: rows must be between 0 and &quot;
-                                    + std::to_string(MAX_ROWS) + &quot;!&quot;;
-
-/**
- * @brief Outputs Pascal&#39;s triangle to the console.
- * 
- * @details Calculates Pascal&#39;s triangle iteratively using the formula:
- * \f[
- * C(n, k+1) = C(n, k) \times \frac{n - k}{k + 1}
- * \f]
- * where \f$C(n, k)\f$ is the coefficient at row \f$n\f$ and column \f$k\f$.
- * Ensures the triangle is centered in the console by calculating the maximum
- * width of the triangle and the maximum width of the coefficients, using the
- * power of 2 to estimate the width of the largest coefficient.
- * 
- * @note Designed to test the use of output streams, loops, error handling, libraries,
- * and functions in C++. Extends the concepts from lab 1, exploring new concepts
- * like using the `std::setw` function to set the width of the output instead of
- * using the tab character.
- * 
- * @param rows The number of rows to output in Pascal&#39;s triangle. Must be non-negative
- * and less than or equal to MAX_ROWS.
- *
- * @throw std::invalid_argument Throws an error if rows is less than 0 or greater than MAX_ROWS.
- *
- * @warning Since the coefficients in Pascal&#39;s triangle can grow very large, this
- * function may not work as expected for rows greater than 29.
- *
- * @example
- * \code{.cpp}
- * output_pascals_triangle(4);
- * \endcode
- *
- * Expected Output:
- * \code{.plaintext}
- *     1
- *    1 1
- *   1 2 1
- *  1 3 3 1
- * 1 4 6 4 1
- * \endcode
- */
-void output_pascals_triangle(int rows) {
-    /* Throw an error if rows is less than 0 or greater than MAX_ROWS. */
-    if (rows &lt; 0 || rows &gt; MAX_ROWS) {
-        throw std::invalid_argument(ERROR_MESSAGE);
-    }
-
-    /* Estimate the width of the largest coefficient using the power of 2 */
-    int estimated_max_coefficient = std::ceil(std::pow(2, rows));
-    int max_coefficient_width = std::to_string(estimated_max_coefficient).length() + 1;
-
-    /* Calculate the maximum width of the triangle. */
-    int max_triangle_width = max_coefficient_width * (rows + 1);
-
-    /* Loop through each row in Pascal&#39;s triangle. */
-    for (int row = 0; row &lt;= rows; row++) {
-        /* Set the first coefficient to 1 */
-        int coefficient = 1;
-
-        /* Add leading spaces to center the triangle. */
-        int leading_spaces = (max_triangle_width - (max_coefficient_width * (row + 1))) / 2;
-        std::cout &lt;&lt; std::string(leading_spaces, &#39; &#39;);
-
-        /* Loop through each column in the current row. */
-        for (int column = 0; column &lt;= row; column++) {
-            /* Output the current coefficient. */
-            std::cout &lt;&lt; std::setw(max_coefficient_width) &lt;&lt; coefficient;
-
-            /* Calculate the next coefficient. */
-            coefficient = coefficient * (row - column) / (column + 1);
-        }
-
-        /* Move to the next row. */
-        std::cout &lt;&lt; std::endl;
-    }
+<p>To calculate the remainder of two floats without using any library functions, we can cast the result of the division to an integer, multiply it by the second number, and subtract it from the first number. This will give us the remainder of the division.</p>
+<pre><code>result = number1 - (static_cast&lt;int&gt;(number1 / number2) * number2);
+std::cout &lt;&lt; &quot;Remainder: &quot; &lt;&lt; result &lt;&lt; std::endl;</code></pre>
+<h4 id="task-2.3">Task 2.3</h4>
+<p>We can create a function called <code>calculate_gravitational_force</code> that takes the masses of two objects and the distance between them as input parameters. The function calculates the gravitational force between the two objects using the formula:<span class="math inline">$F = \frac{G * m_{1} * m_{2}}{d^{2}}$</span></p>
+<pre><code>float calculate_gravitational_force(float mass1, float mass2, float distance) {
+const float G = 6.67430e-11;
+if (distance == 0) {
+throw std::invalid_argument(&quot;Distance cannot be zero.&quot;);
 }
-
-/**
- * @brief Main function to run the program.
- *
- * @details This function prompts the user for the number of rows to output
- * in Pascal&#39;s triangle and calls the output_pascals_triangle function.
- *
- * @return Returns 0 to indicate the program has run successfully.
- */
-int main() {
-    /* Prompt the user for the number of rows to output. */
-    std::cout &lt;&lt; &quot;Please enter the number of rows you would like to output (0 to &quot;
-                &lt;&lt; MAX_ROWS &lt;&lt; &quot;): &quot;;
-    int rows;
-    std::cin &gt;&gt; rows;
-
-    /* Output Pascal&#39;s triangle to the console. */
-    try {
-        output_pascals_triangle(rows);
-    } catch (const std::invalid_argument&amp; e) {
-        std::cout &lt;&lt; e.what() &lt;&lt; std::endl;
-    }
-
-    /* Output a goodbye message to the user. */
-    std::cout &lt;&lt; &quot;Made by William Fayers :)&quot; &lt;&lt; std::endl;
-
-    /* Return 0 to indicate the function has run successfully. */
-    return 0;
+return (G * mass1 * mass2) / (distance * distance);
+}</code></pre>
+<h4 id="task-2.3-1">Task 2.3</h4>
+<p>Declare variables to store the masses and distance.</p>
+<pre><code>float mass1, mass2, distance;</code></pre>
+<p>We then input the masses and distance.</p>
+<pre><code>std::cout &lt;&lt; &quot;Enter the mass of the first object (kg): &quot;;
+std::cin &gt;&gt; mass1;
+std::cout &lt;&lt; &quot;Enter the mass of the second object (kg): &quot;;
+std::cin &gt;&gt; mass2;
+std::cout &lt;&lt; &quot;Enter the distance between the objects (m): &quot;;
+std::cin &gt;&gt; distance;</code></pre>
+<p>And finally we call the function, catching any exceptions that occur.</p>
+<pre><code>try {
+float force = calculate_gravitational_force(mass1, mass2, distance);
+std::cout &lt;&lt; &quot;Gravitational Force: &quot; &lt;&lt; force &lt;&lt; &quot; N&quot; &lt;&lt; std::endl;
+} catch (std::invalid_argument&amp; error) {
+std::cerr &lt;&lt; &quot;Error: &quot; &lt;&lt; error.what() &lt;&lt; std::endl;
 }</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
