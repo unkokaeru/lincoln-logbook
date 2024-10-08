@@ -25,6 +25,7 @@ geometry: margin=1in
 | **[References](#references)**                                                   | 8        |
 
 \newpage
+
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
@@ -286,6 +287,7 @@ int main() {
 ```
 
 
+
 ## **Week 2** – 2024-10-07 to 2024-10-14
 
 **What did you learn in the lab tasks this week?**
@@ -406,10 +408,12 @@ std::cerr << "Error: " << error.what() << std::endl;
 
 
 
+
 ## 📓 References
 
 
 [1] "A comprehensive guide to C++ coding standards and best practices," *C++ Style Guide*, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).
 
 [2] "Official documentation for Doxygen's documentation blocks and usage," *Doxygen Manual - Documentation Blocks*, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).
+
 
