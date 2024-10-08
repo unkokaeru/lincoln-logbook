@@ -46,8 +46,12 @@
 <td>7</td>
 </tr>
 <tr class="even">
-<td><strong><a href="#references">References</a></strong></td>
+<td>    <em>2.3 <a href="#coursework-calculator">Coursework: Calculator</a></em></td>
 <td>8</td>
+</tr>
+<tr class="odd">
+<td><strong><a href="#references">References</a></strong></td>
+<td>9</td>
 </tr>
 </tbody>
 </table>
@@ -248,8 +252,19 @@ int main() {
 <p>…</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
 <p>…</p>
-<p><strong>Lesson Review Question Answers</strong></p>
-<p>…</p>
+<p><strong>Coursework Question Answers</strong></p>
+<ol type="1">
+<li>True.</li>
+<li>Device.</li>
+<li><code>.cpp</code> extension.</li>
+<li>Translate source code into machine readable code (or exectuable program) that the computer can run.</li>
+<li>8 bits.</li>
+<li>Hexadecimal (base 16).</li>
+<li><span class="math inline">15 * 16<sup>5</sup> + 10 * 16<sup>4</sup> + 12 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 13 * 16<sup>1</sup> + 14 * 16<sup>0</sup> = 16435934</span>.</li>
+<li>True.</li>
+<li><code>cout</code> is used without the namespace <code>std</code>, and line 5 is missing a semicolon at the end of the line.</li>
+<li>Missing the insertion operator on line 8, correct line is <code>cin &gt;&gt; num1 &gt;&gt; num2;</code></li>
+</ol>
 <h3 id="basic-use-variables-and-data-types">Basic Use: Variables And Data Types</h3>
 <h4 id="task-1.2">Task 1.2</h4>
 <p>Declare and initalise the variables</p>
@@ -301,6 +316,27 @@ std::cout &lt;&lt; &quot;Gravitational Force: &quot; &lt;&lt; force &lt;&lt; &qu
 } catch (std::invalid_argument&amp; error) {
 std::cerr &lt;&lt; &quot;Error: &quot; &lt;&lt; error.what() &lt;&lt; std::endl;
 }</code></pre>
+<h3 id="coursework-calculator">Coursework: Calculator</h3>
+<h4 id="task-1.1-2">Task 1.1</h4>
+<p>Input the radius of the circle.</p>
+<pre><code>float radius;
+input_number(radius, &quot;Enter the radius of the circle: &quot;);</code></pre>
+<p>Calculate the area and circumference of the circle.</p>
+<pre><code>float area = M_PI * radius * radius;
+float circumference = 2 * M_PI * radius;
+std::cout &lt;&lt; &quot;Area of a circle with radius &quot; &lt;&lt; radius &lt;&lt; &quot; = &quot; &lt;&lt; area &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Circumference of a circle with radius &quot; &lt;&lt; radius &lt;&lt; &quot; = &quot; &lt;&lt; circumference
+&lt;&lt; std::endl;</code></pre>
+<h4 id="task-1.2-2">Task 1.2</h4>
+<p>Input the principal amount, rate of interest, and time period.</p>
+<pre><code>float principal, rate, time;
+input_number(principal, &quot;Enter the principal amount: &quot;);
+input_number(rate, &quot;Enter the rate of interest (%): &quot;);
+input_number(time, &quot;Enter the time period (years): &quot;);</code></pre>
+<p>Calculate the simple interest.</p>
+<pre><code>float simple_interest = (principal * rate * time) / 100;
+std::cout &lt;&lt; &quot;Simple Interest on a principal amount of &quot; &lt;&lt; principal &lt;&lt; &quot; at a rate of &quot;
+&lt;&lt; rate &lt;&lt; &quot;% for &quot; &lt;&lt; time &lt;&lt; &quot; years = &quot; &lt;&lt; simple_interest &lt;&lt; std::endl;</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
 <p>[2] “Official documentation for Doxygen’s documentation blocks and usage,” <em>Doxygen Manual - Documentation Blocks</em>, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).</p>

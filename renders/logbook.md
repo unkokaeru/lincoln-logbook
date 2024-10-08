@@ -21,8 +21,9 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;*1.4 [Pascal Triangle: Extended Project](#pascal-triangle-extended-project)* | 5        | 
 | [**Week 2** – 2024-10-07 to 2024-10-14 ](#week-2-2024-10-07-to-2024-10-14) | 6        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Basic Use: Variables And Data Types](#basic-use-variables-and-data-types) | 6        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Basic Use: Input And Math](#basic-use-input-and-math) | 7        |
-| **[References](#references)**                                                   | 8        |
+| &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Basic Use: Input And Math](#basic-use-input-and-math) | 7        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;*2.3 [Coursework: Calculator](#coursework-calculator)* | 8        |
+| **[References](#references)**                                                   | 9        |
 
 \newpage
 
@@ -306,9 +307,18 @@ int main() {
 
 ...
 
-**Lesson Review Question Answers**
+**Coursework Question Answers**
 
-...
+1. True.
+2. Device.
+3. `.cpp` extension.
+4. Translate source code into machine readable code (or exectuable program) that the computer can run.
+5. 8 bits.
+6. Hexadecimal (base 16).
+7. $15 * 16^5 + 10 * 16^4 + 12 * 16^3 + 10 * 16^2 + 13 * 16^1 + 14 * 16^0 = 16435934$.
+8. True.
+9. `cout` is used without the namespace `std`, and line 5 is missing a semicolon at the end of the line.
+10. Missing the insertion operator on line 8, correct line is `cin >> num1 >> num2;`
 
 ### Basic Use: Variables And Data Types
 
@@ -406,6 +416,41 @@ std::cerr << "Error: " << error.what() << std::endl;
 
 
 
+
+### Coursework: Calculator
+
+#### Task 1.1
+Input the radius of the circle.
+
+```
+float radius;
+input_number(radius, "Enter the radius of the circle: ");
+```
+Calculate the area and circumference of the circle.
+
+```
+float area = M_PI * radius * radius;
+float circumference = 2 * M_PI * radius;
+std::cout << "Area of a circle with radius " << radius << " = " << area << std::endl;
+std::cout << "Circumference of a circle with radius " << radius << " = " << circumference
+<< std::endl;
+```
+#### Task 1.2
+Input the principal amount, rate of interest, and time period.
+
+```
+float principal, rate, time;
+input_number(principal, "Enter the principal amount: ");
+input_number(rate, "Enter the rate of interest (%): ");
+input_number(time, "Enter the time period (years): ");
+```
+Calculate the simple interest.
+
+```
+float simple_interest = (principal * rate * time) / 100;
+std::cout << "Simple Interest on a principal amount of " << principal << " at a rate of "
+<< rate << "% for " << time << " years = " << simple_interest << std::endl;
+```
 
 
 
