@@ -1,4 +1,4 @@
-name: Generate Logbook
+name: Continuous Integration (CI)
 
 on:
     push:
