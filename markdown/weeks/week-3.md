@@ -16,6 +16,11 @@
 
 ...
 
+**Coursework Question Answers**
+
+Multiple choice: bba.
+True or false: TTTT (note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there).
+
 ### Basic Use: Data Size
 
 #### Task 1.1
