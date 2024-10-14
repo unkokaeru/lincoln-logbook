@@ -1,14 +1,19 @@
+/**
+ * @file e01-pascal_triangle-extended_project.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Outputs Pascal's triangle to the console, extending the concepts from lab 1.
+ * @version 0.1.0
+ * @date 2024-10-14
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <iostream> /* For std::cout, std::cin */
 #include <cmath> /* For std::ceil, std::pow */
 #include <stdexcept> /* For std::invalid_argument */
 #include <iomanip> /* For std::setw */
 
-/**
- * @file e01-pascal_triangle-extended_project.cpp
- * @brief Outputs Pascal's triangle to the console.
- * @details This program extends the concepts from lab 1 and explores new
- * concepts such as error handling, loops, libraries, and functions in C++.
- */
 
 const int MAX_ROWS = 29;
 const std::string ERROR_MESSAGE = "Error: rows must be between 0 and "

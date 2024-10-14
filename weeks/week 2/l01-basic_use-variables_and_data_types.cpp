@@ -1,10 +1,15 @@
-#include <iostream>
-
 /**
  * @file l01-basic_use-variables_and_data_types.cpp
- * @brief Declaration and use of variables and data types in C++.
- * @details Only covers integer data types.
+ * @author William Fayers (william@fayers.com)
+ * @brief Declaration and use of integer variables and data types in C++.
+ * @version 0.1.0
+ * @date 2024-10-14
+ * 
+ * @copyright Copyright (c) 2024
+ * 
  */
+
+#include <iostream>
 
 
 /**

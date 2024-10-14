@@ -1,11 +1,16 @@
-#include <iostream>
-#include <stdexcept>
-
 /**
  * @file l02-basic_use-input_and_math.cpp
- * @brief Use the input/output stream and basic math operators in C++.
- * @details Demonstrates the use of `cin` and standard operators.
+ * @author William Fayers (william@fayers.com)
+ * @brief Demonstrating basic input and math operations in C++
+ * @version 0.1.1
+ * @date 2024-10-14
+ * 
+ * @copyright Copyright (c) 2024
+ * 
  */
+
+#include <iostream>
+#include <stdexcept>
 
 
 /**

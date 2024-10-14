@@ -1,17 +1,20 @@
+/**
+ * @file e01-coursework-calculator.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief A simple calculator program for pre-defined mathematical operations.
+ * @version 0.1.0
+ * @date 2024-10-14
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <iostream>
 #include <cmath>
 #include <limits>
 #include <string>
 #include <functional>
 #include <map>
-
-/**
- * @file e01-coursework-calculator.cpp
- * @brief A simple calculator program for basic mathematical operations.
- * @details This program allows the user to perform basic mathematical operations
- * defined in the operation map. The user can select an operation from the menu
- * and input the required values to perform the operation.
- */
 
 
 /**
