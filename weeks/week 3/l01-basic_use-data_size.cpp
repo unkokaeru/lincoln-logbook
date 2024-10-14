@@ -1,6 +1,3 @@
-#include <climits>
-#include <iostream>
-
 /**
  * @file l01-basic_use-data_size.cpp
  * @author William Fayers (william@fayers.com)
@@ -12,7 +9,15 @@
  * 
  */
 
+#include <climits>
+#include <iostream>
 
+
+/**
+ * @brief Experimenting with the size of data types in C++.
+ * 
+ * @return int 
+ */
 int main() {
     unsigned short int unsigned_small_number = 65535;
 
