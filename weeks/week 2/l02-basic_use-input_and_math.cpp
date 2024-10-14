@@ -46,6 +46,8 @@ void basic_calculator() {
      * To calculate the remainder of two floats without using any library functions, we can cast
      * the result of the division to an integer, multiply it by the second number, and subtract
      * it from the first number. This will give us the remainder of the division.
+     * If we used the `fmod` function from the `cmath` library, we could calculate the remainder
+     * directly without the need for casting. I only found this out after writing the code, though.
      */
 }
 
