@@ -74,7 +74,7 @@ total_candies = total_children * candies_per_child + extra_candies;
 ### Basic Use: Input And Math
 
 #### Task 2.2
-To calculate the remainder of two floats without using any library functions, we can cast the result of the division to an integer, multiply it by the second number, and subtract it from the first number. This will give us the remainder of the division. 
+To calculate the remainder of two floats without using any library functions, we can cast the result of the division to an integer, multiply it by the second number, and subtract it from the first number. This will give us the remainder of the division. If we used the `fmod` function from the `cmath` library, we could calculate the remainder directly without the need for casting. I only found this out after writing the code, though. 
 
 ```
 result = number1 - (static_cast<int>(number1 / number2) * number2);
