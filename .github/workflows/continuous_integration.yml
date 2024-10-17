@@ -28,7 +28,7 @@ jobs:
                 pip install -r requirements.txt
 
         -   name: Run logbook generation script
-            run: python scripts/generate_logbook.py
+            run: python scripts/logbook.py
 
         -   name: Convert Markdown to DOCX
             run: |
