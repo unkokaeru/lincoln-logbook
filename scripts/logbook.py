@@ -9,19 +9,7 @@ from typing import Any, Literal
 import jinja2
 import yaml
 
-TASK_ANNOTATION = dict[str, str | dict[str, list[tuple[str, str]]]]
-WEEK_ANNOTATION = dict[
-    str, str | dict[Literal["lab", "extra"], dict[str, TASK_ANNOTATION]]
-]
-DATE_FORMAT = "%Y-%m-%d"
-ANSWER_KEYWORD = "ANSWER"
-INLINE_COMMENT_START = "/*"
-BLOCK_COMMENT_START = "/**"
-BLOCK_COMMENT_MIDDLE = "*"
-COMMENT_END = "*/"
-ANSWER_ID_DELIMITERS = "()"
-INLINE_ANSWER_COMMENT = f"{ANSWER_KEYWORD} {r'\(Task (\d+).(\d+)\): (.+)'}"
-CODE_COMMENT_DELIMITER = "```"
+from config.constants import Constants
 
 
 def load_yaml(yaml_path: Path) -> dict[str, Any]:
@@ -197,28 +185,28 @@ def process_cpp_code_for_comments(
         line = cpp_code_lines[line_count].strip()
 
         # Check for comments
-        if line.startswith(BLOCK_COMMENT_START):
+        if line.startswith(Constants.BLOCK_COMMENT_START):
             line_count += 1  # Skip the start of the block comment
 
             # Collect the comment lines
             while line_count < len(cpp_code_lines):
-                if cpp_code_lines[line_count].strip() == COMMENT_END:
+                if cpp_code_lines[line_count].strip() == Constants.COMMENT_END:
                     break
 
                 comment_content = cpp_code_lines[line_count].strip(
-                    f"{BLOCK_COMMENT_MIDDLE} "
+                    f"{Constants.BLOCK_COMMENT_MIDDLE} "
                 )
                 current_comment_lines.append(comment_content)
                 line_count += 1
 
             # Process the comment lines
             if current_comment_lines and current_comment_lines[0].startswith(
-                ANSWER_KEYWORD
+                Constants.ANSWER_KEYWORD
             ):
                 # Fetch the comment id from the first line
                 first_comment_line = current_comment_lines[0]
                 comment_id = first_comment_line.strip(
-                    f"{ANSWER_KEYWORD}{ANSWER_ID_DELIMITERS} :"
+                    f"{Constants.ANSWER_KEYWORD}{Constants.ANSWER_ID_DELIMITERS} :"
                 )
                 comment_id = comment_id.replace(" ", "_").replace(".", "_")
                 task_comments.setdefault(comment_id, [])
@@ -226,7 +214,7 @@ def process_cpp_code_for_comments(
                 # Fetch the comment content from the remaining lines
                 comment_content = ""
                 for comment_line in current_comment_lines[1:]:
-                    if comment_line.startswith(CODE_COMMENT_DELIMITER):
+                    if comment_line.startswith(Constants.CODE_COMMENT_DELIMITER):
                         comment_line_count = current_comment_lines.index(comment_line)
                         while comment_line_count < len(current_comment_lines):
                             current_comment_line = current_comment_lines[
@@ -235,7 +223,7 @@ def process_cpp_code_for_comments(
                             comment_content += current_comment_line + "\n"
                             comment_line_count += 1
 
-                            if current_comment_line == CODE_COMMENT_DELIMITER:
+                            if current_comment_line == Constants.CODE_COMMENT_DELIMITER:
                                 break
 
                     else:
@@ -253,8 +241,8 @@ def process_cpp_code_for_comments(
             continue
 
         # Check for inline comments
-        elif line.startswith(INLINE_COMMENT_START):
-            match = re.match(INLINE_ANSWER_COMMENT, line.strip("/* "))
+        elif line.startswith(Constants.INLINE_COMMENT_START):
+            match = re.match(Constants.INLINE_ANSWER_COMMENT, line.strip("/* "))
             if match:
                 comment_id = f"task_{match.group(1)}_{match.group(2)}"  # Extract the id
                 comment_content = match.group(3).strip()  # Extract the comment
@@ -285,7 +273,7 @@ def process_cpp_code_for_comments(
 
 def generate_week_context(
     WEEKS_PATH: Path, logbook_start_date: str, cpp_files: list[dict[str, str]]
-) -> dict[str, dict[str, WEEK_ANNOTATION]]:
+) -> dict[str, dict[str, Constants.WEEK_ANNOTATION]]:
     """
     Generate the context for the weeks.
 
@@ -317,8 +305,8 @@ def generate_week_context(
     For example, `l01-variables-introduction.cpp` is a lab task with
     number 1, topic "variables", and task name "introduction".
     """
-    context: dict[str, dict[str, WEEK_ANNOTATION]] = {"weeks": {}}
-    start_date = datetime.datetime.strptime(logbook_start_date, DATE_FORMAT)
+    context: dict[str, dict[str, Constants.WEEK_ANNOTATION]] = {"weeks": {}}
+    start_date = datetime.datetime.strptime(logbook_start_date, Constants.DATE_FORMAT)
 
     for week_index, weekly_cpp_files in enumerate(cpp_files, start=1):
         week_key = str(week_index)
@@ -336,8 +324,8 @@ def generate_week_context(
 
         context["weeks"][week_key] = {
             "number": week_key,
-            "start_date": week_start_date.strftime(DATE_FORMAT),
-            "end_date": week_end_date.strftime(DATE_FORMAT),
+            "start_date": week_start_date.strftime(Constants.DATE_FORMAT),
+            "end_date": week_end_date.strftime(Constants.DATE_FORMAT),
             "reflection": reflection_content,
             "tasks": {
                 "lab": {},
