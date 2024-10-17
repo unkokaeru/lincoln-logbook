@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from file_handling import save_file
+from .file_handling import save_file
 
 
 def combine_logbook(markdown_path: Path, logbook_path: Path) -> None:
