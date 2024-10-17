@@ -3,7 +3,7 @@
  * @author William Fayers (william@fayers.com)
  * @brief Demonstrating basic input and math operations in C++
  * @version 0.1.1
- * @date 2024-10-14
+ * @date 2024-10-07
  * 
  * @copyright Copyright (c) 2024
  * 

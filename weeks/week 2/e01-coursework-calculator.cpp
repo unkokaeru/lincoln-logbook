@@ -3,7 +3,7 @@
  * @author William Fayers (william@fayers.com)
  * @brief A simple calculator program for pre-defined mathematical operations.
  * @version 0.1.0
- * @date 2024-10-14
+ * @date 2024-10-10
  * 
  * @copyright Copyright (c) 2024
  * 
