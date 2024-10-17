@@ -16,7 +16,7 @@
 
 **Coursework Question Answers**
 
-1. True.
+1. False, they're stored as binary numbers.
 2. Device.
 3. `.cpp` extension.
 4. Translate source code into machine readable code (or exectuable program) that the computer can run.
