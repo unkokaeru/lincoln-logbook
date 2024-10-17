@@ -1,4 +1,4 @@
-"""generate_logbook.py: Generate a logbook based on config and cpp/md files."""
+"""logbook.py: Generate a logbook based on config and cpp/md files."""
 
 import datetime
 import os
@@ -6,12 +6,12 @@ import re
 from pathlib import Path
 from typing import Any, Literal
 
-from utilities.combining import combine_logbook
-from utilities.file_handling import load_yaml, save_file
-from utilities.parsing import parse_cpp_files
-from utilities.rendering import render_template
+from .utilities.combining import combine_logbook
+from .utilities.file_handling import load_yaml, save_file
+from .utilities.parsing import parse_cpp_files
+from .utilities.rendering import render_template
 
-from config.constants import Constants
+from .config.constants import Constants
 
 
 def generate_logbook_cover(
