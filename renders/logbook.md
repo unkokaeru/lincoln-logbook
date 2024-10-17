@@ -175,7 +175,7 @@ cout << "\t\t\t\t      Made by William Fayers\n";
  * @author William Fayers (william@fayers.com)
  * @brief Outputs Pascal's triangle to the console, extending the concepts from lab 1.
  * @version 0.1.0
- * @date 2024-10-14
+ * @date 2024-10-01
  * 
  * @copyright Copyright (c) 2024
  * 
