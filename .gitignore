@@ -36,3 +36,6 @@ output/
 
 # VS Code files
 .vscode/
+
+# Old files
+.old*/
