@@ -37,7 +37,8 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;5.2 [Control Structures: While Loops](#control-structures-while-loops) | 17        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Algorithms: Babylonian Square Root](#algorithms-babylonian-square-root) | 18        |
 | **[References](#references)**                                                   | 19        |
-\newpage## **Week 1** – 2024-09-30 to 2024-10-07
+\newpage
+## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
 
@@ -78,8 +79,8 @@ Multiple choice: BCCBCCBBBA
 
 ### Basic Use: Using Cout
 
-#### Task 1.5
-The first bit of C++ code I've ever written!
+#### Task Task.1
+5
 
 ```
 cout << "Welcome to C++ Programming\n";
@@ -88,40 +89,38 @@ cout << "Welcome to C++ Programming\n";
 
 ### Basic Use: Special Characters
 
-#### Task 1.3
-The bell character `\a` makes a sound in some environments.
+#### Task Task.2
+3
 
 ```
 cout << "With bell character: Welcome to C++ Programming\a" << "---\n";
 ```
 
-The backspace character \b removes the last character.
+3
 
 ```
 cout << "With backspace character: Welcome to C++ Programming\b" << "---\n";
 ```
 
-The return character \r returns to the start of the line.
+3
 
 ```
 cout << "With return character: Welcome to C++ Programming\r" << "---\n";
 ```
 
-The tab character \t adds a tab space.
+3
 
 ```
 cout << "With tab character: Welcome to C++ Programming\t" << "---\n";
 ```
 
-#### Task 1.4
-Removing the backslash before the single quote causes a syntax error.
+4
 
 ```
 cout << "Escaped characters: Is the symbol \\n called \' Newline \' \? \n";
 ```
 
-#### Task 2.1
-The line terminator `endl` starts a new line.
+5
 
 ```
 cout << "A rose by any other name would smell as sweet";
@@ -135,8 +134,45 @@ cout << endl;
 
 
 ```
+/**
+ * @file l03-basic_use-pascals_triangle.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Exploring cout and special characters to print Pascal's Triangle.
+ * @version 0.1.0
+ * @date 2024-09-30
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include <iostream>
 
-return 0;
+using namespace std;
+
+
+/**
+ * @brief Main function to run the program.
+ * 
+ * @return int Success or failure (0 or 1).
+ */
+int main() {
+    /* Print Pascal's Triangle up to n=5 with cout and the tab character to center the numbers */
+    cout << "n\t\t\t\t   Pascal's Triangle up to n=5\n";
+    cout << "0\t\t\t\t\t\t1\n";
+    cout << "1\t\t\t\t\t1\t\t1\n";
+    cout << "2\t\t\t\t1\t\t2\t\t1\n";
+    cout << "3\t\t\t1\t\t3\t\t3\t\t1\n";
+    cout << "4\t\t1\t\t4\t\t6\t\t4\t\t1\n";
+    cout << "5\t1\t\t5\t\t10\t\t10\t\t5\t\t1\n";
+
+    cout << "\t\t\t\t      Made by William Fayers\n";
+    /**
+     * ANSWER (Task 3.1):
+     * I used the tab character, `\t` to center the numbers in the Pascal's Triangle, along with
+     * `cout` to print the numbers. This ended up with a fairly nice looking Pascal's Triangle.
+     */
+
+    /* Return 0 to indicate the program ran successfully */
+    return 0;
 }
 ```
 
@@ -148,14 +184,134 @@ return 0;
 
 
 ```
-return 0;
+/**
+ * @file e01-pascal_triangle-extended_project.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Outputs Pascal's triangle to the console, extending the concepts from lab 1.
+ * @version 0.1.0
+ * @date 2024-10-01
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
+#include <iostream> /* For std::cout, std::cin */
+#include <cmath> /* For std::ceil, std::pow */
+#include <stdexcept> /* For std::invalid_argument */
+#include <iomanip> /* For std::setw */
+
+
+const int MAX_ROWS = 29;
+const std::string ERROR_MESSAGE = "Error: rows must be between 0 and "
+                                    + std::to_string(MAX_ROWS) + "!";
+
+/**
+ * @brief Outputs Pascal's triangle to the console.
+ * 
+ * @details Calculates Pascal's triangle iteratively using the formula:
+ * \f[
+ * C(n, k+1) = C(n, k) \times \frac{n - k}{k + 1}
+ * \f]
+ * where \f$C(n, k)\f$ is the coefficient at row \f$n\f$ and column \f$k\f$.
+ * Ensures the triangle is centered in the console by calculating the maximum
+ * width of the triangle and the maximum width of the coefficients, using the
+ * power of 2 to estimate the width of the largest coefficient.
+ * 
+ * @note Designed to test the use of output streams, loops, error handling, libraries,
+ * and functions in C++. Extends the concepts from lab 1, exploring new concepts
+ * like using the `std::setw` function to set the width of the output instead of
+ * using the tab character.
+ * 
+ * @param rows The number of rows to output in Pascal's triangle. Must be non-negative
+ * and less than or equal to MAX_ROWS.
+ *
+ * @throw std::invalid_argument Throws an error if rows is less than 0 or greater than MAX_ROWS.
+ *
+ * @warning Since the coefficients in Pascal's triangle can grow very large, this
+ * function may not work as expected for rows greater than 29.
+ *
+ * @example
+ * \code{.cpp}
+ * output_pascals_triangle(4);
+ * \endcode
+ *
+ * Expected Output:
+ * \code{.plaintext}
+ *     1
+ *    1 1
+ *   1 2 1
+ *  1 3 3 1
+ * 1 4 6 4 1
+ * \endcode
+ */
+void output_pascals_triangle(int rows) {
+    /* Throw an error if rows is less than 0 or greater than MAX_ROWS. */
+    if (rows < 0 || rows > MAX_ROWS) {
+        throw std::invalid_argument(ERROR_MESSAGE);
+    }
+
+    /* Estimate the width of the largest coefficient using the power of 2 */
+    int estimated_max_coefficient = std::ceil(std::pow(2, rows));
+    int max_coefficient_width = std::to_string(estimated_max_coefficient).length() + 1;
+
+    /* Calculate the maximum width of the triangle. */
+    int max_triangle_width = max_coefficient_width * (rows + 1);
+
+    /* Loop through each row in Pascal's triangle. */
+    for (int row = 0; row <= rows; row++) {
+        /* Set the first coefficient to 1 */
+        int coefficient = 1;
+
+        /* Add leading spaces to center the triangle. */
+        int leading_spaces = (max_triangle_width - (max_coefficient_width * (row + 1))) / 2;
+        std::cout << std::string(leading_spaces, ' ');
+
+        /* Loop through each column in the current row. */
+        for (int column = 0; column <= row; column++) {
+            /* Output the current coefficient. */
+            std::cout << std::setw(max_coefficient_width) << coefficient;
+
+            /* Calculate the next coefficient. */
+            coefficient = coefficient * (row - column) / (column + 1);
+        }
+
+        /* Move to the next row. */
+        std::cout << std::endl;
+    }
+}
+
+/**
+ * @brief Main function to run the program.
+ *
+ * @details This function prompts the user for the number of rows to output
+ * in Pascal's triangle and calls the output_pascals_triangle function.
+ *
+ * @return Returns 0 to indicate the program has run successfully.
+ */
+int main() {
+    /* Prompt the user for the number of rows to output. */
+    std::cout << "Please enter the number of rows you would like to output (0 to "
+                << MAX_ROWS << "): ";
+    int rows;
+    std::cin >> rows;
+
+    /* Output Pascal's triangle to the console. */
+    try {
+        output_pascals_triangle(rows);
+    } catch (const std::invalid_argument& e) {
+        std::cout << e.what() << std::endl;
+    }
+
+    /* Output a goodbye message to the user. */
+    std::cout << "Made by William Fayers :)" << std::endl;
+
+    /* Return 0 to indicate the function has run successfully. */
+    return 0;
 }
 ```
 
 
-
-
-
+\newpage
 ## **Week 2** – 2024-10-07 to 2024-10-14
 
 **What did you learn in the lab tasks this week?**
@@ -189,8 +345,8 @@ return 0;
 
 ### Basic Use: Variables And Data Types
 
-#### Task 1.2
-Declare and initalise the variables
+#### Task Task.1
+2
 
 ```
 int total_children = 10;
@@ -198,7 +354,7 @@ int candies_per_child = 5;
 int extra_candies = 10;
 ```
 
-Output the starting values and the total number of candies
+2
 
 ```
 std::cout << "HALLOWEEN CANDY CALCULATOR" << std::endl;
@@ -209,7 +365,7 @@ std::cout << "---" << std::endl;
 std::cout << "Total Candies: " << total_candies << std::endl;
 ```
 
-Return 0 to indicate the program ran successfully
+2
 
 ```
 return 0;
@@ -218,14 +374,14 @@ return 0;
 
 ### Basic Use: Input And Math
 
-#### Task 2.3
-Declare variables to store the masses and distance.
+#### Task Task.2
+3
 
 ```
 float mass1, mass2, distance;
 ```
 
-We then input the masses and distance.
+3
 
 ```
 std::cout << "Enter the mass of the first object (kg): ";
@@ -236,7 +392,7 @@ std::cout << "Enter the distance between the objects (m): ";
 std::cin >> distance;
 ```
 
-And finally we call the function, catching any exceptions that occur.
+3
 
 ```
 try {
@@ -252,14 +408,14 @@ std::cerr << "Error: " << error.what() << std::endl;
 
 ### Coursework: Calculator
 
-#### Task 1.1
-Input the radius of the circle.
+#### Task Task.1
+1
 
 ```
 float radius;
 input_number(radius, "Enter the radius of the circle: ");
 ```
-Calculate the area and circumference of the circle.
+1
 
 ```
 float area = M_PI * radius * radius;
@@ -268,8 +424,7 @@ std::cout << "Area of a circle with radius " << radius << " = " << area << std::
 std::cout << "Circumference of a circle with radius " << radius << " = " << circumference
 << std::endl;
 ```
-#### Task 1.2
-Input the principal amount, rate of interest, and time period.
+2
 
 ```
 float principal, rate, time;
@@ -277,7 +432,7 @@ input_number(principal, "Enter the principal amount: ");
 input_number(rate, "Enter the rate of interest (%): ");
 input_number(time, "Enter the time period (years): ");
 ```
-Calculate the simple interest.
+2
 
 ```
 float simple_interest = (principal * rate * time) / 100;
@@ -286,9 +441,7 @@ std::cout << "Simple Interest on a principal amount of " << principal << " at a 
 ```
 
 
-
-
-
+\newpage
 ## **Week 3** – 2024-10-14 to 2024-10-21
 
 **What did you learn in the lab tasks this week?**
@@ -314,8 +467,8 @@ True or false: TTTT (note for the third statement, technically the return statem
 
 ### Basic Use: Data Size
 
-#### Task 1.1
-After reaching the max value of the data type, the number goes to zero.
+#### Task Task.1
+1
 
 ```
 std::cout << "Original number: " << unsigned_small_number << std::endl;
@@ -325,8 +478,7 @@ unsigned_small_number++;
 std::cout << "Incremented number (2x): " << unsigned_small_number << std::endl;
 ```
 
-#### Task 1.3
-Similar to overflow, it loops around as an underflow.
+3
 
 ```
 signed_small_number = -32768;
@@ -340,81 +492,80 @@ std::cout << "Decremented number (2x): " << signed_small_number << std::endl;
 
 ### Libraries: Using Cmath
 
-#### Task 2.1
-Calculate the square root of 9.0, which resulted in 3.
+#### Task Task.2
+1
 
 ```
 std::cout << sqrt(9.0) << std::endl;
 ```
 
-Calculate the natural logarithm of 1.1, which resulted in 0.0953102.
+1
 
 ```
 std::cout << log(1.1) << std::endl;
 ```
 
-Calculate 2.5 raised to the power of 3.0, which resulted in 15.625.
+1
 
 ```
 std::cout << pow(2.5, 3.0) << std::endl;
 ```
 
-Calculate the ceiling of 4.1, which resulted in 5.
+1
 
 ```
 std::cout << ceil(4.1) << std::endl;
 ```
 
-Calculate (7 + sqrt(7.0)) / 3.0, which resulted in 3.21525.
+1
 
 ```
 std::cout << (7 + sqrt(7.0)) / 3.0 << std::endl;
 ```
 
-Calculate the hyperbolic tan of 0.342, which resulted in 0.329262
+1
 
 ```
 std::cout << tanh(0.342) << std::endl;
 ```
 
-Calculate the remainder of 11.0 divided by 4.0, which resulted in 3.
+1
 
 ```
 std::cout << fmod(11.0, 4.0) << std::endl;
 ```
 
-Calculate the absolute value of -9, which resulted in 9.
+1
 
 ```
 std::cout << abs(-9) << std::endl;
 ```
 
-Calculate the (floating) absolute value of -4.5, which resulted in 4.5.
+1
 
 ```
 std::cout << fabs(-4.5) << std::endl;
 ```
 
-Calculate the floor of 8.8, which resulted in 8.
+1
 
 ```
 std::cout << floor(8.8) << std::endl;
 ```
 
-Calculate the base-10 logarithm of 1.0, which resulted in 0.
+1
 
 ```
 std::cout << log10(1.0) << std::endl;
 ```
 
-Calculate the cube root of 10.0, which resulted in 2.15443.
+1
 
 ```
 std::cout << cbrt(10.0) << std::endl;
 ```
 
-#### Task 2.3
-Prompt the user for a value of x.
+3
 
 ```
 double x;
@@ -423,7 +574,7 @@ std::cout << "Enter a value for x: ";
 std::cin >> x;
 ```
 
-Calculate the hyperbolic cosecant of x using the custom csch function.
+3
 
 ```
 double y = csch(x);
@@ -439,8 +590,8 @@ std::cout << "Hyperbolic cosecant is undefined for x = 0." << std::endl;
 
 ### Coursework: Trig Calculator
 
-#### Task 3.0
-Start with a verbose number input function to re-use.
+#### Task Task.3
+0
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -459,7 +610,29 @@ return;
 }
 }
 ```
-Implement the main program loop with the atanh and acosh functions.
+1
+
+```
+double atanh(double x) {
+if (x < -1 || x > 1) {
+std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
+return NAN;
+}
+return 0.5 * log((1 + x) / (1 - x));
+}
+```
+2
+
+```
+double acosh(double x) {
+if (x < 1) {
+std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
+return NAN;
+}
+return log(x + sqrt(x * x - 1));
+}
+```
+0
 
 ```
 int main() {
@@ -494,35 +667,9 @@ break;
 return 0;
 }
 ```
-#### Task 3.1
-Implement the atanh function, with error checking.
-
-```
-double atanh(double x) {
-if (x < -1 || x > 1) {
-std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
-return NAN;
-}
-return 0.5 * log((1 + x) / (1 - x));
-}
-```
-#### Task 3.2
-Implement the acosh function, with error checking.
-
-```
-double acosh(double x) {
-if (x < 1) {
-std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
-return NAN;
-}
-return log(x + sqrt(x * x - 1));
-}
-```
 
 
-
-
-
+\newpage
 ## **Week 4** – 2024-10-21 to 2024-10-28
 
 **What did you learn in the lab tasks this week?**
@@ -543,8 +690,8 @@ return log(x + sqrt(x * x - 1));
 
 ### Control Structures: If Else Statements
 
-#### Task 1.1
-Copy the function to calculate the first piecewise function.
+#### Task Task.1
+1
 
 ```
 std::tuple<double, double> evaluate_function1(double x, double &y) {
@@ -566,8 +713,7 @@ return std::make_tuple(x, y);
 }
 ```
 
-#### Task 1.3
-Evaluate the second piecewise function.
+3
 
 ```
 std::tuple<double, double> evaluate_function2(double x, double &y) {
@@ -592,15 +738,15 @@ return std::make_tuple(x, y);
 
 ### Control Structures: Input Validation
 
-#### Task 2.0
-Initalises the constant variables.
+#### Task Task.2
+0
 
 ```
 const double banned_number = 2.0;
 const double small_number = 10e-12;
 ```
 
-Fetch input from the user.
+0
 
 ```
 double x;
@@ -608,7 +754,7 @@ std::cout << "Enter a value for x (other than 2.0): ";
 std::cin >> x;
 ```
 
-Calculate the function and output the result.
+0
 
 ```
 cout << "When x = " << x << ", the function y = 1/(x^2 - 2) is equal to ";
@@ -619,8 +765,8 @@ cout << y << endl;
 
 ### Control Structures: Simple Calculator
 
-#### Task 3.0
-Create a function to input a number, avoiding a banned number.
+#### Task Task.3
+0
 
 ```
 void input_number(const std::string &input_message, double &number, const double &banned_number){
@@ -646,22 +792,57 @@ return;
 }
 ```
 
+0
+
+```
+while (true) {
+std::cout << "List of functions:" << std::endl;
+std::cout << "0. Exit" << std::endl;
+std::cout << "1. csch(x)" << std::endl;
+
+int choice;
+std::cout << "Enter the number of the function you would like to use: ";
+std::cin >> choice;
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+std::cout << "---" << std::endl;
+
+double x, y;
+switch (choice){
+case 0:
+std::cout << "Exiting..." << std::endl;
+return 0;
+case 1:
+input_number("Enter x: ", x, 0.0);
+std::cout << "csch(" << x << ") = ";
+y = 1.0 / std::sinh(x);
+break;
+default:
+std::cerr << "Invalid choice. Please enter a valid number." << std::endl;
+y = NAN;
+break;
+}
+
+if (!std::isnan(y)){
+std::cout << y << std::endl;
+}
+}
+```
+
 
 
 
 ### Coursework: Quadratic Calculator
 
-#### Task 5.0
-Include the necessary libraries.
+#### Task Task.5
+0
 
 ```
-
 #include <cmath>
 #include <iostream>
 #include <limits>
 #include <tuple>
 ```
-Start with a verbose number input function to re-use.
+0
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -680,7 +861,7 @@ return;
 }
 }
 ```
-Calculate the quadratic's solution.
+0
 
 ```
 std::tuple<double, double> solve_quadratic(const double a, const double b, const double c) {
@@ -695,7 +876,7 @@ double x2 = (-b - sqrt(discriminant)) / (2 * a);
 return std::make_tuple(x1, x2);
 }
 ```
-Implement the main program loop.
+0
 
 ```
 int main() {
@@ -733,9 +914,7 @@ return 0;
 ```
 
 
-
-
-
+\newpage
 ## **Week 5** – 2024-10-28 to 2024-11-04
 
 **What did you learn in the lab tasks this week?**
@@ -756,8 +935,8 @@ return 0;
 
 ### Control Structures: Switch Statements
 
-#### Task 1.1
-Example switch statement.
+#### Task Task.1
+1
 
 ```
 void example_switch_function() {
@@ -789,36 +968,86 @@ std::cout << "The number is: " << number << std::endl;
 }
 ```
 
-Call the example switch function.
+1
 
 ```
 // example_switch_function(); // uncomment this line to run the example
 ```
 
+2
+
+```
+
+const double small_number = 10e-12;
+double x, y;
+int selection;
+
+std::cout << "FUNCTION LIST" << std::endl;
+std::cout << "1. csch(x)" << std::endl;
+std::cout << "2. sech(x)" << std::endl;
+std::cout << "3. coth(x)" << std::endl;
+
+std::cout << "Select a function (1-3): ";
+std::cin >> selection;
+if (selection > 0 && selection < 4) {
+std::cout << "Enter a value for x: ";
+std::cin >> x;
+std::cout << "For x = " << x << ", ";
+}
+
+switch (selection) {
+case 1:
+if (std::abs(x) < small_number) {
+std::cout << "csch(x) is undefined for x = 0." << std::endl;
+return 1;
+}
+y = 1/sinh(x);
+std::cout << "csch(x) ";
+break;
+case 2:
+y = 1/cosh(x);
+std::cout << "sech(x) ";
+break;
+case 3:
+if (std::abs(x) < small_number) {
+std::cout << "coth(x) is undefined for x = 0." << std::endl;
+return 1;
+}
+y = 1/tanh(x);
+std::cout << "coth(x) ";
+break;
+default:
+std::cout << "Invalid selection." << std::endl;
+return 1;
+}
+
+std::cout << "= " << y << std::endl;
+```
+
 
 ### Control Structures: While Loops
 
-#### Task 2.1
-The precision is set to 10 decimal places.
+#### Task Task.2
+1
 
 ```
 std::setprecision(10);
 ```
 
-The mean is calculated by dividing the sum by the number of values.
+1
 
 ```
 double mean = sum / 6;
 ```
 
-Calculate the variance and hence standard deviation.
+1
 
 ```
 double variance = ((sum_of_squares / 6) - (mean * mean)) * 6 / 5;
 double standard_deviation = std::sqrt(variance);
 ```
 
-The calculated values are then outputted to the console.
+1
 
 ```
 std::cout << "The minimum value is: " << min << std::endl;
@@ -827,8 +1056,7 @@ std::cout << "The mean value is: " << mean << std::endl;
 std::cout << "The standard deviation is: " << standard_deviation << std::endl;
 ```
 
-#### Task 2.2
-The factorial is calculated using a do-while loop.
+2
 
 ```
 do {
@@ -837,7 +1065,7 @@ current_number++;
 } while (current_number <= input_number);
 ```
 
-The calculated factorial is outputted to the console.
+2
 
 ```
 std::cout << "The factorial of " << input_number << " is: " << factorial_result << std::endl;
@@ -846,41 +1074,27 @@ std::cout << "The factorial of " << input_number << " is: " << factorial_result 
 
 ### Algorithms: Babylonian Square Root
 
-
-
+#### Task Task.3
+1
 
 ```
-double babylonian_square_root(double number, double tolerance = 0.0001) {
-double guess = number / 2;
-double previous_guess = 0;
-
-while (std::abs(guess - previous_guess) > tolerance) {
-previous_guess = guess;
-guess = (guess + number / guess) / 2;
-}
-
-return guess;
-}
-
-
-int main() {
 double number = 0;
 std::cout << "Enter a number: ";
 std::cin >> number;
+```
 
+1
+
+```
 double square_root = babylonian_square_root(number);
 std::cout << "The square root of " << number << " is " << square_root << std::endl;
-
-return 0;
-}
 ```
 
 
 
 
 
-
-
+\newpage
 ## 📓 References
 
 
