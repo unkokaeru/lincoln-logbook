@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2024
  * 
  */
+#include <cmath>
 #include <iostream>
 
 
@@ -46,7 +47,54 @@ void example_switch_function() {
 
 
 int main() {
-    example_switch_function();
+    /* Call the example_switch_function() function */
+    // example_switch_function(); // uncomment this line to run the example
+    /* ANSWER (Task 1.1): Call the example switch function.*/
+
+    const double small_number = 10e-12;
+    double x, y;
+    int selection;
+
+    std::cout << "FUNCTION LIST" << std::endl;
+    std::cout << "1. csch(x)" << std::endl;
+    std::cout << "2. sech(x)" << std::endl;
+    std::cout << "3. coth(x)" << std::endl;
+    
+    std::cout << "Select a function (1-3): ";
+    std::cin >> selection;
+    if (selection > 0 && selection < 4) {
+        std::cout << "Enter a value for x: ";
+        std::cin >> x;
+        std::cout << "For x = " << x << ", ";
+    }
+
+    switch (selection) {
+        case 1:
+            if (std::abs(x) < small_number) {
+                std::cout << "csch(x) is undefined for x = 0." << std::endl;
+                return 1;
+            }
+            y = 1/sinh(x);
+            std::cout << "csch(x) ";
+            break;
+        case 2:
+            y = 1/cosh(x);
+            std::cout << "sech(x) ";
+            break;
+        case 3:
+            if (std::abs(x) < small_number) {
+                std::cout << "coth(x) is undefined for x = 0." << std::endl;
+                return 1;
+            }
+            y = 1/tanh(x);
+            std::cout << "coth(x) ";
+            break;
+        default:
+            std::cout << "Invalid selection." << std::endl;
+            return 1;
+    }
+
+    std::cout << "= " << y << std::endl;
 
     return 0;
 }
