@@ -94,8 +94,16 @@
 <td>16</td>
 </tr>
 <tr class="even">
-<td><strong><a href="#references">References</a></strong></td>
+<td>    5.2 <a href="#control-structures-while-loops">Control Structures: While Loops</a></td>
 <td>17</td>
+</tr>
+<tr class="odd">
+<td>    5.3 <a href="#algorithms-babylonian-square-root">Algorithms: Babylonian Square Root</a></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td><strong><a href="#references">References</a></strong></td>
+<td>19</td>
 </tr>
 </tbody>
 </table>
@@ -555,6 +563,54 @@ break;
 }
 
 std::cout &lt;&lt; &quot;The number is: &quot; &lt;&lt; number &lt;&lt; std::endl;
+}</code></pre>
+<p>Call the example switch function.</p>
+<pre><code>// example_switch_function(); // uncomment this line to run the example</code></pre>
+<h3 id="control-structures-while-loops">Control Structures: While Loops</h3>
+<h4 id="task-2.1-2">Task 2.1</h4>
+<p>The precision is set to 10 decimal places.</p>
+<pre><code>std::setprecision(10);</code></pre>
+<p>The mean is calculated by dividing the sum by the number of values.</p>
+<pre><code>double mean = sum / 6;</code></pre>
+<p>Calculate the variance and hence standard deviation.</p>
+<pre><code>double variance = ((sum_of_squares / 6) - (mean * mean)) * 6 / 5;
+double standard_deviation = std::sqrt(variance);</code></pre>
+<p>The calculated values are then outputted to the console.</p>
+<pre><code>std::cout &lt;&lt; &quot;The minimum value is: &quot; &lt;&lt; min &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;The maximum value is: &quot; &lt;&lt; max &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;The mean value is: &quot; &lt;&lt; mean &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;The standard deviation is: &quot; &lt;&lt; standard_deviation &lt;&lt; std::endl;</code></pre>
+<h4 id="task-2.2">Task 2.2</h4>
+<p>The factorial is calculated using a do-while loop.</p>
+<pre><code>do {
+factorial_result *= current_number;
+current_number++;
+} while (current_number &lt;= input_number);</code></pre>
+<p>The calculated factorial is outputted to the console.</p>
+<pre><code>std::cout &lt;&lt; &quot;The factorial of &quot; &lt;&lt; input_number &lt;&lt; &quot; is: &quot; &lt;&lt; factorial_result &lt;&lt; std::endl;</code></pre>
+<h3 id="algorithms-babylonian-square-root">Algorithms: Babylonian Square Root</h3>
+<pre><code>double babylonian_square_root(double number, double tolerance = 0.0001) {
+double guess = number / 2;
+double previous_guess = 0;
+
+while (std::abs(guess - previous_guess) &gt; tolerance) {
+previous_guess = guess;
+guess = (guess + number / guess) / 2;
+}
+
+return guess;
+}
+
+
+int main() {
+double number = 0;
+std::cout &lt;&lt; &quot;Enter a number: &quot;;
+std::cin &gt;&gt; number;
+
+double square_root = babylonian_square_root(number);
+std::cout &lt;&lt; &quot;The square root of &quot; &lt;&lt; number &lt;&lt; &quot; is &quot; &lt;&lt; square_root &lt;&lt; std::endl;
+
+return 0;
 }</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
