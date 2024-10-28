@@ -33,8 +33,10 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;4.3 [Control Structures: Simple Calculator](#control-structures-simple-calculator) | 14        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;*4.4 [Coursework: Quadratic Calculator](#coursework-quadratic-calculator)* | 15        | 
 | [**Week 5** – 2024-10-28 to 2024-11-04 ](#week-5-2024-10-28-to-2024-11-04) | 16        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Control Structures: Switch Statements](#control-structures-switch-statements) | 16        |
-| **[References](#references)**                                                   | 17        |
+| &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Control Structures: Switch Statements](#control-structures-switch-statements) | 16        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;5.2 [Control Structures: While Loops](#control-structures-while-loops) | 17        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Algorithms: Babylonian Square Root](#algorithms-babylonian-square-root) | 18        |
+| **[References](#references)**                                                   | 19        |
 \newpage## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
@@ -787,6 +789,91 @@ std::cout << "The number is: " << number << std::endl;
 }
 ```
 
+Call the example switch function.
+
+```
+// example_switch_function(); // uncomment this line to run the example
+```
+
+
+### Control Structures: While Loops
+
+#### Task 2.1
+The precision is set to 10 decimal places.
+
+```
+std::setprecision(10);
+```
+
+The mean is calculated by dividing the sum by the number of values.
+
+```
+double mean = sum / 6;
+```
+
+Calculate the variance and hence standard deviation.
+
+```
+double variance = ((sum_of_squares / 6) - (mean * mean)) * 6 / 5;
+double standard_deviation = std::sqrt(variance);
+```
+
+The calculated values are then outputted to the console.
+
+```
+std::cout << "The minimum value is: " << min << std::endl;
+std::cout << "The maximum value is: " << max << std::endl;
+std::cout << "The mean value is: " << mean << std::endl;
+std::cout << "The standard deviation is: " << standard_deviation << std::endl;
+```
+
+#### Task 2.2
+The factorial is calculated using a do-while loop.
+
+```
+do {
+factorial_result *= current_number;
+current_number++;
+} while (current_number <= input_number);
+```
+
+The calculated factorial is outputted to the console.
+
+```
+std::cout << "The factorial of " << input_number << " is: " << factorial_result << std::endl;
+```
+
+
+### Algorithms: Babylonian Square Root
+
+
+
+
+```
+double babylonian_square_root(double number, double tolerance = 0.0001) {
+double guess = number / 2;
+double previous_guess = 0;
+
+while (std::abs(guess - previous_guess) > tolerance) {
+previous_guess = guess;
+guess = (guess + number / guess) / 2;
+}
+
+return guess;
+}
+
+
+int main() {
+double number = 0;
+std::cout << "Enter a number: ";
+std::cin >> number;
+
+double square_root = babylonian_square_root(number);
+std::cout << "The square root of " << number << " is " << square_root << std::endl;
+
+return 0;
+}
+```
 
 
 
