@@ -8,7 +8,6 @@
  * @copyright Copyright (c) 2024
  * 
  */
-
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -67,9 +66,9 @@ double acosh(double x) {
 /* ANSWER (Task 3.2): Implement the acosh function, with error checking. */
 
 /**
- * @brief The main function to run the program.
+ * @brief Main function to run the program.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     while (true) {

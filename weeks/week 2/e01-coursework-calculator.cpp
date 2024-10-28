@@ -8,13 +8,12 @@
  * @copyright Copyright (c) 2024
  * 
  */
-
-#include <iostream>
 #include <cmath>
-#include <limits>
-#include <string>
 #include <functional>
+#include <iostream>
+#include <limits>
 #include <map>
+#include <string>
 
 
 /**
@@ -153,7 +152,7 @@ void perform_simple_interest() {
  * @details This function displays a menu of operations to the user and performs the selected
  * operation. The program continues to run until the user chooses to exit.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     /* Map the operation index to the corresponding function */
