@@ -45,7 +45,11 @@ void example_switch_function() {
 }
 /* ANSWER (Task 1.1): Example switch statement.*/
 
-
+/**
+ * @brief Main function to run the program
+ * 
+ * @return int Success or failure (0 or 1)
+ */
 int main() {
     /* Call the example_switch_function() function */
     // example_switch_function(); // uncomment this line to run the example
@@ -95,6 +99,8 @@ int main() {
     }
 
     std::cout << "= " << y << std::endl;
+    /* ANSWER (Task 1.2): Implement a switch statement to select a function. */
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

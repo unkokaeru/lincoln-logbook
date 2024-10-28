@@ -8,7 +8,6 @@
  * @copyright Copyright (c) 2024
  * 
  */
-
 #include <climits>
 #include <iostream>
 
@@ -16,7 +15,7 @@
 /**
  * @brief Experimenting with the size of data types in C++.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     unsigned short int unsigned_small_number = 65535;
@@ -96,5 +95,6 @@ int main() {
      * negative of the maximum value minus one.
      */
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

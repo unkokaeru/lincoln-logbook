@@ -18,7 +18,7 @@
  * @details Calculates the number of candies each person gets when dividing
  * the total number of candies equally among the number of people.
  *
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     /* Declare and initialise variables */

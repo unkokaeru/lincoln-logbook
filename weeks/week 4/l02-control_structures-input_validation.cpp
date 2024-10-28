@@ -8,10 +8,15 @@
  * @copyright Copyright (c) 2024
  * 
  */
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 
+/**
+ * @brief Main function to run the program.
+ * 
+ * @return int Success or failure (0 or 1).
+ */
 int main() {
     /* Constants */
     const double banned_number = 2.0;
@@ -40,5 +45,6 @@ int main() {
     cout << y << endl;
     /* ANSWER (Task 2.0): Calculate the function and output the result. */
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

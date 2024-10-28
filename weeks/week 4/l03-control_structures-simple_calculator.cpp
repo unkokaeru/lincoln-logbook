@@ -43,8 +43,13 @@ void input_number(const std::string &input_message, double &number, const double
 }
 /* ANSWER (Task 3.0): Create a function to input a number, avoiding a banned number. */
 
-
+/**
+ * @brief Main function to run the program.
+ * 
+ * @return int Success or failure (0 or 1).
+ */
 int main(){
+    /* Loop until the user chooses to exit */
     while (true) {
         std::cout << "List of functions:" << std::endl;
         std::cout << "0. Exit" << std::endl;
@@ -76,6 +81,8 @@ int main(){
             std::cout << y << std::endl;
         }
     }
+    /* ANSWER (Task 3.0): Loop selection until the user exits. */
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

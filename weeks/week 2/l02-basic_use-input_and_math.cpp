@@ -89,7 +89,7 @@ float calculate_gravitational_force(float mass1, float mass2, float distance) {
  * @details Controls the flow of the program, calling the basic_calculator function and
  * calculating the gravitational force between two objects.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     /* Call the basic_calculator function */

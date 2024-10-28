@@ -8,7 +8,6 @@
  * @copyright Copyright (c) 2024
  * 
  */
-
 #include <cmath>
 #include <iostream>
 
@@ -36,7 +35,7 @@ double csch(double x) {
 /**
  * @brief Experimenting with the cmath library in C++.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     /* Calculate the square root of 9.0 */
@@ -142,4 +141,7 @@ int main() {
         std::cout << "Hyperbolic cosecant is undefined for x = 0." << std::endl;
     }
     /* ANSWER (Task 2.3): Calculate the hyperbolic cosecant of x using the custom csch function. */
+
+    /* Return 0 to indicate the program ran successfully */
+    return 0;
 }

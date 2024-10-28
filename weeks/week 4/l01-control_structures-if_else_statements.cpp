@@ -8,9 +8,8 @@
  * @copyright Copyright (c) 2024
  * 
  */
-
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <math.h>
 #include <tuple>
 
@@ -70,9 +69,9 @@ std::tuple<double, double> evaluate_function2(double x, double &y) {
 
 
 /**
- * @brief The main function of the program.
+ * @brief Main function to run the program.
  * 
- * @return int 
+ * @return int Success or failure (0 or 1).
  */
 int main() {
     double x, y;
@@ -109,5 +108,6 @@ int main() {
 
     std::cout << y << std::endl;
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

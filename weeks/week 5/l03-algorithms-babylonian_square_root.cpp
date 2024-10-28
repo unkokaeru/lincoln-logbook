@@ -30,15 +30,29 @@ double babylonian_square_root(double number, double tolerance = 0.0001) {
 
     return guess;
 }
+/**
+ * ANSWER (Task 3.1):
+ * Calculate the square root of a number using the Babylonian method, with an optional
+ * tolerance parameter to specify the accuracy of the calculation.
+ */
 
-
+/**
+ * @brief Main function to run the program
+ * 
+ * @return int Success or failure (0 or 1)
+ */
 int main() {
+    /* Input the number to calculate the square root of */
     double number = 0;
     std::cout << "Enter a number: ";
     std::cin >> number;
+    /* ANSWER (Task 3.1): The user is prompted to input a number. */
 
+    /* Calculate the square root */
     double square_root = babylonian_square_root(number);
     std::cout << "The square root of " << number << " is " << square_root << std::endl;
+    /* ANSWER (Task 3.1): The square root is calculated and outputted to the console. */
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }

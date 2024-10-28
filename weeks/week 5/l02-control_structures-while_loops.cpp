@@ -127,5 +127,6 @@ int main () {
 
     find_factorial();
 
+    /* Return 0 to indicate the program ran successfully */
     return 0;
 }
