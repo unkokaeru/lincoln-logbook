@@ -31,8 +31,10 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;4.1 [Control Structures: If Else Statements](#control-structures-if-else-statements) | 12        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;4.2 [Control Structures: Input Validation](#control-structures-input-validation) | 13        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;4.3 [Control Structures: Simple Calculator](#control-structures-simple-calculator) | 14        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;*4.4 [Coursework: Quadratic Calculator](#coursework-quadratic-calculator)* | 15        |
-| **[References](#references)**                                                   | 16        |
+| &nbsp;&nbsp;&nbsp;&nbsp;*4.4 [Coursework: Quadratic Calculator](#coursework-quadratic-calculator)* | 15        | 
+| [**Week 5** – 2024-10-28 to 2024-11-04 ](#week-5-2024-10-28-to-2024-11-04) | 16        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Control Structures: Switch Statements](#control-structures-switch-statements) | 16        |
+| **[References](#references)**                                                   | 17        |
 \newpage## **Week 1** – 2024-09-30 to 2024-10-07
 
 **What did you learn in the lab tasks this week?**
@@ -537,10 +539,6 @@ return log(x + sqrt(x * x - 1));
 
 ...
 
-**Coursework Question Answers**
-
-
-
 ### Control Structures: If Else Statements
 
 #### Task 1.1
@@ -731,6 +729,66 @@ break;
 return 0;
 }
 ```
+
+
+
+
+
+## **Week 5** – 2024-10-28 to 2024-11-04
+
+**What did you learn in the lab tasks this week?**
+
+...
+
+**How well did I learn it?**
+
+...
+
+**How does my solution compare with the official solution?**
+
+...
+
+**How can I extend the concepts used in the tasks to form a new project**
+
+...
+
+### Control Structures: Switch Statements
+
+#### Task 1.1
+Example switch statement.
+
+```
+void example_switch_function() {
+unsigned int incrementor = 3;
+unsigned int number;
+
+switch (incrementor) {
+case 1:
+number = 1;
+break;
+case 2:
+number = 1;
+break;
+case 3:
+number = 2;
+break;
+case 4:
+number = 6;
+break;
+case 5:
+number = 24;
+break;
+default:
+number = 0;
+break;
+}
+
+std::cout << "The number is: " << number << std::endl;
+}
+```
+
+
+
 
 
 
