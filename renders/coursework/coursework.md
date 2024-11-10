@@ -35,6 +35,63 @@ std::cout << "Simple Interest on a principal amount of " << principal << " at a 
 ```
 
 
+### Task Task 2
+
+1
+
+```
+return 0;
+}
+
+
+```
+2
+
+```
+
+```
+3
+
+```
+
+```
+4
+
+```
+
+```
+5
+
+```
+
+```
+6
+
+```
+
+```
+7
+
+```
+
+```
+8
+
+```
+
+```
+9
+
+```
+
+```
+10
+
+```
+
+```
+
+
 
 ## **trig_calculator**
 
@@ -116,6 +173,21 @@ break;
 
 return 0;
 }
+```
+
+
+### Task Task 4
+
+1
+
+```
+
+
+```
+2
+
+```
+
 ```
 
 

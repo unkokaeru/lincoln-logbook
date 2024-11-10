@@ -53,7 +53,7 @@ I learned everything pretty quickly, making parallels with Python quite often. I
 
 **How does my solution compare with the official solution?**
 
-There aren't any official solutions right now, so I'll write this next week if they get released.
+The official solution for Task 3 adds an additional explanation of how Pascal's triangle is obtained, as well as uses a simplified solution using spaces rather than tab characters.
 
 **How can I extend the concepts used in the tasks to form a new project**
 
@@ -317,32 +317,23 @@ int main() {
 
 **What did you learn in the lab tasks this week?**
 
-...
+This week we explored variables and their data types a bit more, as well as how to use inputs and mathematics to prototype a simple calculator.
 
 **How well did I learn it?**
 
-...
+As I already spent last week diving into C++ a lot more, this week was very simple, so I tried to extend the task solutions slightly with error handling etc.
+
+Making great progress so far!
 
 **How does my solution compare with the official solution?**
 
-...
+Task 2.2's first offical solution differs the most by inputting the two numbers in one line, rather than separately.
+
+The second official solution to Task 2.2 is a little bit more different, simplifying the programming techniques used. For example, it doesn't handle any errors and doesn't use a separate functionto handle any calculations.
 
 **How can I extend the concepts used in the tasks to form a new project**
 
-...
-
-**Coursework Question Answers**
-
-1. False, they're stored as binary numbers.
-2. Device.
-3. `.cpp` extension.
-4. Translate source code into machine readable code (or exectuable program) that the computer can run.
-5. 8 bits.
-6. Hexadecimal (base 16).
-7. $15 * 16^5 + 10 * 16^4 + 12 * 16^3 + 10 * 16^2 + 13 * 16^1 + 14 * 16^0 = 16435934$.
-8. True.
-9. `cout` is used without the namespace `std`, and line 5 is missing a semicolon at the end of the line.
-10. Missing the insertion operator on line 8, correct line is `cin >> num1 >> num2;`
+To extend these concepts, I could create a fully functional calculator with verbose error/input handling, which could even be extended to evaluate simple LaTeX expressions.
 
 ### Basic Use: Variables And Data Types
 
@@ -376,6 +367,13 @@ return 0;
 ### Basic Use: Input And Math
 
 #### Task Task.2
+1
+
+```
+result = number1 / number2;
+std::cout << "Quotient: " << result << std::endl;
+```
+
 3
 
 ```
@@ -440,6 +438,60 @@ float simple_interest = (principal * rate * time) / 100;
 std::cout << "Simple Interest on a principal amount of " << principal << " at a rate of "
 << rate << "% for " << time << " years = " << simple_interest << std::endl;
 ```
+#### Task Task.2
+1
+
+```
+return 0;
+}
+
+
+```
+2
+
+```
+
+```
+3
+
+```
+
+```
+4
+
+```
+
+```
+5
+
+```
+
+```
+6
+
+```
+
+```
+7
+
+```
+
+```
+8
+
+```
+
+```
+9
+
+```
+
+```
+10
+
+```
+
+```
 
 
 \newpage
@@ -447,24 +499,17 @@ std::cout << "Simple Interest on a principal amount of " << principal << " at a 
 
 **What did you learn in the lab tasks this week?**
 
-...
+We learned more about data types, specifically how they're handled in memory and their sizes. On top of this, we started using the cmath library for more complex calculations.
 
 **How well did I learn it?**
 
-...
+It was quite simple to learn, and interesting to learn more about the lower-level hardware parts, too. It was slightly confusing answering the questions because of a few minor mistakes in the actual questions and example code, but apart from that I learned it all well!
 
 **How does my solution compare with the official solution?**
 
-...
+The official solutions for Task 2.2 are similar to mine, although handled numbers like 1. instead of 1.0 - this seems very confusing to me. It also wrote each expression in one long line, rather than breaking it across multiple with whitespace. The second expression is also incorrectly evaluated as not a real number in the offical solution.
 
-**How can I extend the concepts used in the tasks to form a new project**
-
-...
-
-**Coursework Question Answers**
-
-Multiple choice: bba.
-True or false: TTTT (note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there).
+The final part of this week's lab also added more than the question asked for, but so did I with error handling!
 
 ### Basic Use: Data Size
 
@@ -668,6 +713,18 @@ break;
 return 0;
 }
 ```
+#### Task Task.4
+1
+
+```
+
+
+```
+2
+
+```
+
+```
 
 
 \newpage
@@ -675,19 +732,19 @@ return 0;
 
 **What did you learn in the lab tasks this week?**
 
-...
+This lab we covered conditonal statements, input validation, and how we can apply these topics to a simple calculator.
 
 **How well did I learn it?**
 
-...
+It was quite quick to learn everything because of the extra work I've been doing, so yet again, I learned it pretty well!
 
 **How does my solution compare with the official solution?**
 
-...
+Generally, both solutions are the same but mine has more error handling and separates things into more functions. For the final task, the official solution also added another function to be calculated, `sech(x)`, whereas I didn't.
 
 **How can I extend the concepts used in the tasks to form a new project**
 
-...
+I could extend the trigonometric ideas to make a fully functional trig calculator, with various different trigonometric functions to be evaluated.
 
 ### Control Structures: If Else Statements
 
@@ -920,19 +977,19 @@ return 0;
 
 **What did you learn in the lab tasks this week?**
 
-...
+This week we extended the statements we know with the switch and while statements, then applied those concepts to making an algorithm to find the Babylonian square root.
 
 **How well did I learn it?**
 
-...
+I think I learned everything quite well, borrowing from my understanding of other programming languages really helped, too.
 
 **How does my solution compare with the official solution?**
 
-...
+The offical solutions aren't out yet, but I'll update this when they are - if they are in time for the logbook submission deadline.
 
 **How can I extend the concepts used in the tasks to form a new project**
 
-...
+As similarly suggested in previous weeks, I could extend these concepts to make a fully functional calculator - maybe I will between semesters!
 
 ### Control Structures: Switch Statements
 
