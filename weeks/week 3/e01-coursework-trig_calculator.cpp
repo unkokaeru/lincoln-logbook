@@ -102,3 +102,7 @@ int main() {
     return 0;
 }
 /* ANSWER (Task 3.0): Implement the main program loop with the atanh and acosh functions. */
+
+
+/* ANSWER (Task 4.1): bba. */
+/* ANSWER (Task 4.2): TTTT, although note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there. */

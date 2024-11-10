@@ -11,8 +11,3 @@ It was quite simple to learn, and interesting to learn more about the lower-leve
 The official solutions for Task 2.2 are similar to mine, although handled numbers like 1. instead of 1.0 - this seems very confusing to me. It also wrote each expression in one long line, rather than breaking it across multiple with whitespace. The second expression is also incorrectly evaluated as not a real number in the offical solution.
 
 The final part of this week's lab also added more than the question asked for, but so did I with error handling!
-
-**Coursework Question Answers**
-
-Multiple choice: bba.
-True or false: TTTT (note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there).
