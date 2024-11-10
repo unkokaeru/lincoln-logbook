@@ -34,6 +34,7 @@ jobs:
             run: |
                 sudo apt-get install -y pandoc
                 pandoc renders/logbook.md -o renders/logbook.docx --reference-doc=pandoc/style-reference.docx --lua-filter=pandoc/pagebreak.lua
+                pandoc renders/coursework/coursework.md -o renders/coursework/coursework.docx --reference-doc=pandoc/style-reference.docx --lua-filter=pandoc/pagebreak.lua
 
         -   name: Convert Markdown to HTML
             run: |
