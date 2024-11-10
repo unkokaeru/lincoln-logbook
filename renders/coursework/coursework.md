@@ -206,3 +206,42 @@ return 0;
 
 
 
+## **variable_manipulation**
+
+
+### Task Task 6
+
+0
+
+```
+#include <cmath>
+#include <iostream>
+```
+1
+
+```
+int x = 25;
+int y = 18;
+double pay_rate = 12.50;
+int first_number = 10;
+int temporary_number = first_number;
+```
+2
+
+```
+int temporary_x = x;
+x = y;
+y = temporary_x;
+```
+3
+
+```
+std::cout << "The value of x is: " << x << std::endl;
+std::cout << "The value of y is: " << y << std::endl;
+double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if correct expression
+std::cout << "Substituting these values into the expression (x + 12) / (y - 18 + x^3) gives: "
+<< evaluated_expression << std::endl;
+```
+
+
+

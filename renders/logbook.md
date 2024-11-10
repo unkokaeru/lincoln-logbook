@@ -35,8 +35,9 @@ geometry: margin=1in
 | [**Week 5** – 2024-10-28 to 2024-11-04 ](#week-5-2024-10-28-to-2024-11-04) | 16        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Control Structures: Switch Statements](#control-structures-switch-statements) | 16        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;5.2 [Control Structures: While Loops](#control-structures-while-loops) | 17        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Algorithms: Babylonian Square Root](#algorithms-babylonian-square-root) | 18        |
-| **[References](#references)**                                                   | 19        |
+| &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Algorithms: Babylonian Square Root](#algorithms-babylonian-square-root) | 18        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;*5.4 [Coursework: Variable Manipulation](#coursework-variable-manipulation)* | 19        |
+| **[References](#references)**                                                   | 20        |
 \newpage
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
@@ -1092,6 +1093,41 @@ std::cout << "The square root of " << number << " is " << square_root << std::en
 
 
 
+
+### Coursework: Variable Manipulation
+
+#### Task Task.6
+0
+
+```
+#include <cmath>
+#include <iostream>
+```
+1
+
+```
+int x = 25;
+int y = 18;
+double pay_rate = 12.50;
+int first_number = 10;
+int temporary_number = first_number;
+```
+2
+
+```
+int temporary_x = x;
+x = y;
+y = temporary_x;
+```
+3
+
+```
+std::cout << "The value of x is: " << x << std::endl;
+std::cout << "The value of y is: " << y << std::endl;
+double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if correct expression
+std::cout << "Substituting these values into the expression (x + 12) / (y - 18 + x^3) gives: "
+<< evaluated_expression << std::endl;
+```
 
 
 \newpage

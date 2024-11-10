@@ -102,8 +102,12 @@
 <td>18</td>
 </tr>
 <tr class="even">
-<td><strong><a href="#references">References</a></strong></td>
+<td>    <em>5.4 <a href="#coursework-variable-manipulation">Coursework: Variable Manipulation</a></em></td>
 <td>19</td>
+</tr>
+<tr class="odd">
+<td><strong><a href="#references">References</a></strong></td>
+<td>20</td>
 </tr>
 </tbody>
 </table>
@@ -824,6 +828,27 @@ std::cin &gt;&gt; number;</code></pre>
 <p>1</p>
 <pre><code>double square_root = babylonian_square_root(number);
 std::cout &lt;&lt; &quot;The square root of &quot; &lt;&lt; number &lt;&lt; &quot; is &quot; &lt;&lt; square_root &lt;&lt; std::endl;</code></pre>
+<h3 id="coursework-variable-manipulation">Coursework: Variable Manipulation</h3>
+<h4 id="task-task.6">Task Task.6</h4>
+<p>0</p>
+<pre><code>#include &lt;cmath&gt;
+#include &lt;iostream&gt;</code></pre>
+<p>1</p>
+<pre><code>int x = 25;
+int y = 18;
+double pay_rate = 12.50;
+int first_number = 10;
+int temporary_number = first_number;</code></pre>
+<p>2</p>
+<pre><code>int temporary_x = x;
+x = y;
+y = temporary_x;</code></pre>
+<p>3</p>
+<pre><code>std::cout &lt;&lt; &quot;The value of x is: &quot; &lt;&lt; x &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;The value of y is: &quot; &lt;&lt; y &lt;&lt; std::endl;
+double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if correct expression
+std::cout &lt;&lt; &quot;Substituting these values into the expression (x + 12) / (y - 18 + x^3) gives: &quot;
+&lt;&lt; evaluated_expression &lt;&lt; std::endl;</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
 <p>[2] “Official documentation for Doxygen’s documentation blocks and usage,” <em>Doxygen Manual - Documentation Blocks</em>, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).</p>
