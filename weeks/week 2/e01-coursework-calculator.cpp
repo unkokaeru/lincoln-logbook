@@ -197,3 +197,15 @@ int main() {
     /* Return 0 to indicate the program ran successfully */
     return 0;
 }
+
+
+/* ANSWER (Task 2.1): False, they are stored as binary numbers. */
+/* ANSWER (Task 2.2): Device. */
+/* ANSWER (Task 2.3): `.cpp` extension. */
+/* ANSWER (Task 2.4): Translate source code into machine readable code (or exectuable program) that the computer can run. */
+/* ANSWER (Task 2.5): 8 bits. */
+/* ANSWER (Task 2.6): Hexadecimal (base 16). */
+/* ANSWER (Task 2.7): $15 * 16^5 + 10 * 16^4 + 12 * 16^3 + 10 * 16^2 + 13 * 16^1 + 14 * 16^0 = 16435934$. */
+/* ANSWER (Task 2.8): True. */
+/* ANSWER (Task 2.9): `cout` is used without the namespace `std`, and line 5 is missing a semicolon at the end of the line. */
+/* ANSWER (Task 2.10): Missing the insertion operator on line 8, correct line is `cin >> num1 >> num2;` */
