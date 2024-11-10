@@ -107,16 +107,16 @@ int main() {
 
     /* Perform another complex calculation */
     double calculation_2 = pow(
-        abs((-9) * pow((-5), (-2)) - (1)),
+        fabs(-9.0 * pow(-5.0, -2.0) - 1.0),
         sin(1.0)
     ) * (
-        (pow((4.0 / 2.0), (2)) + pow((1.0 / 3.0), (-2)) - cbrt(-5)) /
+        (pow((4.0 / 2.0), 2.0) + pow((1.0 / 3.0), -2.0) - cbrt(-5.0)) /
         sqrt(17.0 / 3.0)
     );
     std::cout << calculation_2 << std::endl;
     /**
      * ANSWER (Task 2.2):
-     * Perform the complex calculation (resulting in 6.17943):
+     * Perform the complex calculation (resulting in 8.00419):
      * $$
      * \left|-9\cdot(-5)^{-2}-1\right|^{\sin(1.0)}\cdot
      * \frac{\left(\left(\frac{4}{2}\right)^{2}+\left(\frac{1}{3}\right)^{-2}-\sqrt[3]{-5}\right)}
