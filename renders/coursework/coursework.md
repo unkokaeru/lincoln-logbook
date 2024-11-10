@@ -1,15 +1,15 @@
 ## **calculator**
 
 
-### Task Task 1
+### Task 1 1
 
-1
+Input the radius of the circle.
 
 ```
 float radius;
 input_number(radius, "Enter the radius of the circle: ");
 ```
-1
+Calculate the area and circumference of the circle.
 
 ```
 float area = M_PI * radius * radius;
@@ -18,7 +18,11 @@ std::cout << "Area of a circle with radius " << radius << " = " << area << std::
 std::cout << "Circumference of a circle with radius " << radius << " = " << circumference
 << std::endl;
 ```
-2
+
+
+### Task 1 2
+
+Input the principal amount, rate of interest, and time period.
 
 ```
 float principal, rate, time;
@@ -26,7 +30,7 @@ input_number(principal, "Enter the principal amount: ");
 input_number(rate, "Enter the rate of interest (%): ");
 input_number(time, "Enter the time period (years): ");
 ```
-2
+Calculate the simple interest.
 
 ```
 float simple_interest = (principal * rate * time) / 100;
@@ -35,9 +39,9 @@ std::cout << "Simple Interest on a principal amount of " << principal << " at a 
 ```
 
 
-### Task Task 2
+### Task 2 1
 
-1
+False, they are stored as binary numbers.
 
 ```
 return 0;
@@ -45,47 +49,83 @@ return 0;
 
 
 ```
-2
+
+
+### Task 2 2
+
+Device.
 
 ```
 
 ```
-3
+
+
+### Task 2 3
+
+`.cpp` extension.
 
 ```
 
 ```
-4
+
+
+### Task 2 4
+
+Translate source code into machine readable code (or exectuable program) that the computer can run.
 
 ```
 
 ```
-5
+
+
+### Task 2 5
+
+8 bits.
 
 ```
 
 ```
-6
+
+
+### Task 2 6
+
+Hexadecimal (base 16).
 
 ```
 
 ```
-7
+
+
+### Task 2 7
+
+$15 * 16^5 + 10 * 16^4 + 12 * 16^3 + 10 * 16^2 + 13 * 16^1 + 14 * 16^0 = 16435934$.
 
 ```
 
 ```
-8
+
+
+### Task 2 8
+
+True.
 
 ```
 
 ```
-9
+
+
+### Task 2 9
+
+`cout` is used without the namespace `std`, and line 5 is missing a semicolon at the end of the line.
 
 ```
 
 ```
-10
+
+
+### Task 2 10
+
+Missing the insertion operator on line 8, correct line is `cin >> num1 >> num2;`
 
 ```
 
@@ -96,9 +136,9 @@ return 0;
 ## **trig_calculator**
 
 
-### Task Task 3
+### Task 3 0
 
-0
+Start with a verbose number input function to re-use.
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -117,29 +157,7 @@ return;
 }
 }
 ```
-1
-
-```
-double atanh(double x) {
-if (x < -1 || x > 1) {
-std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
-return NAN;
-}
-return 0.5 * log((1 + x) / (1 - x));
-}
-```
-2
-
-```
-double acosh(double x) {
-if (x < 1) {
-std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
-return NAN;
-}
-return log(x + sqrt(x * x - 1));
-}
-```
-0
+Implement the main program loop with the atanh and acosh functions.
 
 ```
 int main() {
@@ -176,15 +194,49 @@ return 0;
 ```
 
 
-### Task Task 4
+### Task 3 1
 
-1
+Implement the atanh function, with error checking.
+
+```
+double atanh(double x) {
+if (x < -1 || x > 1) {
+std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
+return NAN;
+}
+return 0.5 * log((1 + x) / (1 - x));
+}
+```
+
+
+### Task 3 2
+
+Implement the acosh function, with error checking.
+
+```
+double acosh(double x) {
+if (x < 1) {
+std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
+return NAN;
+}
+return log(x + sqrt(x * x - 1));
+}
+```
+
+
+### Task 4 1
+
+bba.
 
 ```
 
 
 ```
-2
+
+
+### Task 4 2
+
+TTTT, although note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there.
 
 ```
 
@@ -195,9 +247,9 @@ return 0;
 ## **quadratic_calculator**
 
 
-### Task Task 5
+### Task 5 0
 
-0
+Include the necessary libraries.
 
 ```
 #include <cmath>
@@ -205,7 +257,7 @@ return 0;
 #include <limits>
 #include <tuple>
 ```
-0
+Start with a verbose number input function to re-use.
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -224,7 +276,7 @@ return;
 }
 }
 ```
-0
+Calculate the quadratic's solution.
 
 ```
 std::tuple<double, double> solve_quadratic(const double a, const double b, const double c) {
@@ -239,7 +291,7 @@ double x2 = (-b - sqrt(discriminant)) / (2 * a);
 return std::make_tuple(x1, x2);
 }
 ```
-0
+Implement the main program loop.
 
 ```
 int main() {
@@ -281,15 +333,19 @@ return 0;
 ## **variable_manipulation**
 
 
-### Task Task 6
+### Task 6 0
 
-0
+Include the necessary libraries.
 
 ```
 #include <cmath>
 #include <iostream>
 ```
-1
+
+
+### Task 6 1
+
+Declare the variables with their respective data types.
 
 ```
 int x = 25;
@@ -298,14 +354,22 @@ double pay_rate = 12.50;
 int first_number = 10;
 int temporary_number = first_number;
 ```
-2
+
+
+### Task 6 2
+
+Swap the values of x and y using a temporary variable.
 
 ```
 int temporary_x = x;
 x = y;
 y = temporary_x;
 ```
-3
+
+
+### Task 6 3
+
+Output the values of x and y and evaluate the expression.
 
 ```
 std::cout << "The value of x is: " << x << std::endl;

@@ -138,22 +138,24 @@
 </ol>
 <p>Multiple choice: BCCBCCBBBA</p>
 <h3 id="basic-use-using-cout">Basic Use: Using Cout</h3>
-<h4 id="task-task.1">Task Task.1</h4>
-<p>5</p>
+<h4 id="task-1.5">Task 1.5</h4>
+<p>The first bit of C++ code I’ve ever written!</p>
 <pre><code>cout &lt;&lt; &quot;Welcome to C++ Programming\n&quot;;</code></pre>
 <h3 id="basic-use-special-characters">Basic Use: Special Characters</h3>
-<h4 id="task-task.2">Task Task.2</h4>
-<p>3</p>
+<h4 id="task-2.3">Task 2.3</h4>
+<p>The bell character <code>\a</code> makes a sound in some environments.</p>
 <pre><code>cout &lt;&lt; &quot;With bell character: Welcome to C++ Programming\a&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>3</p>
+<p>The backspace character  the last character.</p>
 <pre><code>cout &lt;&lt; &quot;With backspace character: Welcome to C++ Programming\b&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>3</p>
+<p>The return character  to the start of the line.</p>
 <pre><code>cout &lt;&lt; &quot;With return character: Welcome to C++ Programming\r&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>3</p>
+<p>The tab character  a tab space.</p>
 <pre><code>cout &lt;&lt; &quot;With tab character: Welcome to C++ Programming\t&quot; &lt;&lt; &quot;---\n&quot;;</code></pre>
-<p>4</p>
+<h4 id="task-2.4">Task 2.4</h4>
+<p>Removing the backslash before the single quote causes a syntax error.</p>
 <pre><code>cout &lt;&lt; &quot;Escaped characters: Is the symbol \\n called \&#39; Newline \&#39; \? \n&quot;;</code></pre>
-<p>5</p>
+<h4 id="task-2.5">Task 2.5</h4>
+<p>The line terminator <code>endl</code> starts a new line.</p>
 <pre><code>cout &lt;&lt; &quot;A rose by any other name would smell as sweet&quot;;
 cout &lt;&lt; endl;</code></pre>
 <h3 id="basic-use-pascals-triangle">Basic Use: Pascals Triangle</h3>
@@ -334,35 +336,36 @@ int main() {
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
 <p>To extend these concepts, I could create a fully functional calculator with verbose error/input handling, which could even be extended to evaluate simple LaTeX expressions.</p>
 <h3 id="basic-use-variables-and-data-types">Basic Use: Variables And Data Types</h3>
-<h4 id="task-task.1-1">Task Task.1</h4>
-<p>2</p>
+<h4 id="task-1.2">Task 1.2</h4>
+<p>Declare and initalise the variables</p>
 <pre><code>int total_children = 10;
 int candies_per_child = 5;
 int extra_candies = 10;</code></pre>
-<p>2</p>
+<p>Output the starting values and the total number of candies</p>
 <pre><code>std::cout &lt;&lt; &quot;HALLOWEEN CANDY CALCULATOR&quot; &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Total Children: &quot; &lt;&lt; total_children &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Candies per Child: &quot; &lt;&lt; candies_per_child &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Extra Candies: &quot; &lt;&lt; extra_candies &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;---&quot; &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Total Candies: &quot; &lt;&lt; total_candies &lt;&lt; std::endl;</code></pre>
-<p>2</p>
+<p>Return 0 to indicate the program ran successfully</p>
 <pre><code>return 0;</code></pre>
 <h3 id="basic-use-input-and-math">Basic Use: Input And Math</h3>
-<h4 id="task-task.2-1">Task Task.2</h4>
-<p>1</p>
+<h4 id="task-2.1">Task 2.1</h4>
+<p>Calculate the quotient on top of the given code for completion.</p>
 <pre><code>result = number1 / number2;
 std::cout &lt;&lt; &quot;Quotient: &quot; &lt;&lt; result &lt;&lt; std::endl;</code></pre>
-<p>3</p>
+<h4 id="task-2.3-1">Task 2.3</h4>
+<p>Declare variables to store the masses and distance.</p>
 <pre><code>float mass1, mass2, distance;</code></pre>
-<p>3</p>
+<p>We then input the masses and distance.</p>
 <pre><code>std::cout &lt;&lt; &quot;Enter the mass of the first object (kg): &quot;;
 std::cin &gt;&gt; mass1;
 std::cout &lt;&lt; &quot;Enter the mass of the second object (kg): &quot;;
 std::cin &gt;&gt; mass2;
 std::cout &lt;&lt; &quot;Enter the distance between the objects (m): &quot;;
 std::cin &gt;&gt; distance;</code></pre>
-<p>3</p>
+<p>And finally we call the function, catching any exceptions that occur.</p>
 <pre><code>try {
 float force = calculate_gravitational_force(mass1, mass2, distance);
 std::cout &lt;&lt; &quot;Gravitational Force: &quot; &lt;&lt; force &lt;&lt; &quot; N&quot; &lt;&lt; std::endl;
@@ -370,48 +373,58 @@ std::cout &lt;&lt; &quot;Gravitational Force: &quot; &lt;&lt; force &lt;&lt; &qu
 std::cerr &lt;&lt; &quot;Error: &quot; &lt;&lt; error.what() &lt;&lt; std::endl;
 }</code></pre>
 <h3 id="coursework-calculator">Coursework: Calculator</h3>
-<h4 id="task-task.1-2">Task Task.1</h4>
-<p>1</p>
+<h4 id="task-1.1">Task 1.1</h4>
+<p>Input the radius of the circle.</p>
 <pre><code>float radius;
 input_number(radius, &quot;Enter the radius of the circle: &quot;);</code></pre>
-<p>1</p>
+<p>Calculate the area and circumference of the circle.</p>
 <pre><code>float area = M_PI * radius * radius;
 float circumference = 2 * M_PI * radius;
 std::cout &lt;&lt; &quot;Area of a circle with radius &quot; &lt;&lt; radius &lt;&lt; &quot; = &quot; &lt;&lt; area &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Circumference of a circle with radius &quot; &lt;&lt; radius &lt;&lt; &quot; = &quot; &lt;&lt; circumference
 &lt;&lt; std::endl;</code></pre>
-<p>2</p>
+<h4 id="task-1.2-1">Task 1.2</h4>
+<p>Input the principal amount, rate of interest, and time period.</p>
 <pre><code>float principal, rate, time;
 input_number(principal, &quot;Enter the principal amount: &quot;);
 input_number(rate, &quot;Enter the rate of interest (%): &quot;);
 input_number(time, &quot;Enter the time period (years): &quot;);</code></pre>
-<p>2</p>
+<p>Calculate the simple interest.</p>
 <pre><code>float simple_interest = (principal * rate * time) / 100;
 std::cout &lt;&lt; &quot;Simple Interest on a principal amount of &quot; &lt;&lt; principal &lt;&lt; &quot; at a rate of &quot;
 &lt;&lt; rate &lt;&lt; &quot;% for &quot; &lt;&lt; time &lt;&lt; &quot; years = &quot; &lt;&lt; simple_interest &lt;&lt; std::endl;</code></pre>
-<h4 id="task-task.2-2">Task Task.2</h4>
-<p>1</p>
+<h4 id="task-2.1-1">Task 2.1</h4>
+<p>False, they are stored as binary numbers.</p>
 <pre><code>return 0;
 }
 
 </code></pre>
-<p>2</p>
+<h4 id="task-2.2">Task 2.2</h4>
+<p>Device.</p>
 <pre><code></code></pre>
-<p>3</p>
+<h4 id="task-2.3-2">Task 2.3</h4>
+<p><code>.cpp</code> extension.</p>
 <pre><code></code></pre>
-<p>4</p>
+<h4 id="task-2.4-1">Task 2.4</h4>
+<p>Translate source code into machine readable code (or exectuable program) that the computer can run.</p>
 <pre><code></code></pre>
-<p>5</p>
+<h4 id="task-2.5-1">Task 2.5</h4>
+<p>8 bits.</p>
 <pre><code></code></pre>
-<p>6</p>
+<h4 id="task-2.6">Task 2.6</h4>
+<p>Hexadecimal (base 16).</p>
 <pre><code></code></pre>
-<p>7</p>
+<h4 id="task-2.7">Task 2.7</h4>
+<p><span class="math inline">15 * 16<sup>5</sup> + 10 * 16<sup>4</sup> + 12 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 13 * 16<sup>1</sup> + 14 * 16<sup>0</sup> = 16435934</span>.</p>
 <pre><code></code></pre>
-<p>8</p>
+<h4 id="task-2.8">Task 2.8</h4>
+<p>True.</p>
 <pre><code></code></pre>
-<p>9</p>
+<h4 id="task-2.9">Task 2.9</h4>
+<p><code>cout</code> is used without the namespace <code>std</code>, and line 5 is missing a semicolon at the end of the line.</p>
 <pre><code></code></pre>
-<p>10</p>
+<h4 id="task-2.10">Task 2.10</h4>
+<p>Missing the insertion operator on line 8, correct line is <code>cin &gt;&gt; num1 &gt;&gt; num2;</code></p>
 <pre><code></code></pre>
 <h2 id="week-3-2024-10-14-to-2024-10-21"><strong>Week 3</strong> – 2024-10-14 to 2024-10-21</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
@@ -422,14 +435,15 @@ std::cout &lt;&lt; &quot;Simple Interest on a principal amount of &quot; &lt;&lt
 <p>The official solutions for Task 2.2 are similar to mine, although handled numbers like 1. instead of 1.0 - this seems very confusing to me. It also wrote each expression in one long line, rather than breaking it across multiple with whitespace. The second expression is also incorrectly evaluated as not a real number in the offical solution.</p>
 <p>The final part of this week’s lab also added more than the question asked for, but so did I with error handling!</p>
 <h3 id="basic-use-data-size">Basic Use: Data Size</h3>
-<h4 id="task-task.1-3">Task Task.1</h4>
-<p>1</p>
+<h4 id="task-1.1-1">Task 1.1</h4>
+<p>After reaching the max value of the data type, the number goes to zero.</p>
 <pre><code>std::cout &lt;&lt; &quot;Original number: &quot; &lt;&lt; unsigned_small_number &lt;&lt; std::endl;
 unsigned_small_number++;
 std::cout &lt;&lt; &quot;Incremented number (1x): &quot; &lt;&lt; unsigned_small_number &lt;&lt; std::endl;
 unsigned_small_number++;
 std::cout &lt;&lt; &quot;Incremented number (2x): &quot; &lt;&lt; unsigned_small_number &lt;&lt; std::endl;</code></pre>
-<p>3</p>
+<h4 id="task-1.3">Task 1.3</h4>
+<p>Similar to overflow, it loops around as an underflow.</p>
 <pre><code>signed_small_number = -32768;
 std::cout &lt;&lt; &quot;Original number: &quot; &lt;&lt; signed_small_number &lt;&lt; std::endl;
 signed_small_number--;
@@ -437,37 +451,38 @@ std::cout &lt;&lt; &quot;Decremented number (1x): &quot; &lt;&lt; signed_small_n
 signed_small_number--;
 std::cout &lt;&lt; &quot;Decremented number (2x): &quot; &lt;&lt; signed_small_number &lt;&lt; std::endl;</code></pre>
 <h3 id="libraries-using-cmath">Libraries: Using Cmath</h3>
-<h4 id="task-task.2-3">Task Task.2</h4>
-<p>1</p>
+<h4 id="task-2.1-2">Task 2.1</h4>
+<p>Calculate the square root of 9.0, which resulted in 3.</p>
 <pre><code>std::cout &lt;&lt; sqrt(9.0) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the natural logarithm of 1.1, which resulted in 0.0953102.</p>
 <pre><code>std::cout &lt;&lt; log(1.1) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate 2.5 raised to the power of 3.0, which resulted in 15.625.</p>
 <pre><code>std::cout &lt;&lt; pow(2.5, 3.0) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the ceiling of 4.1, which resulted in 5.</p>
 <pre><code>std::cout &lt;&lt; ceil(4.1) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate (7 + sqrt(7.0)) / 3.0, which resulted in 3.21525.</p>
 <pre><code>std::cout &lt;&lt; (7 + sqrt(7.0)) / 3.0 &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the hyperbolic tan of 0.342, which resulted in 0.329262</p>
 <pre><code>std::cout &lt;&lt; tanh(0.342) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the remainder of 11.0 divided by 4.0, which resulted in 3.</p>
 <pre><code>std::cout &lt;&lt; fmod(11.0, 4.0) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the absolute value of -9, which resulted in 9.</p>
 <pre><code>std::cout &lt;&lt; abs(-9) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the (floating) absolute value of -4.5, which resulted in 4.5.</p>
 <pre><code>std::cout &lt;&lt; fabs(-4.5) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the floor of 8.8, which resulted in 8.</p>
 <pre><code>std::cout &lt;&lt; floor(8.8) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the base-10 logarithm of 1.0, which resulted in 0.</p>
 <pre><code>std::cout &lt;&lt; log10(1.0) &lt;&lt; std::endl;</code></pre>
-<p>1</p>
+<p>Calculate the cube root of 10.0, which resulted in 2.15443.</p>
 <pre><code>std::cout &lt;&lt; cbrt(10.0) &lt;&lt; std::endl;</code></pre>
-<p>3</p>
+<h4 id="task-2.3-3">Task 2.3</h4>
+<p>Prompt the user for a value of x.</p>
 <pre><code>double x;
 std::cout &lt;&lt; &quot;Calculation of the hyperbolic cosecant function...&quot; &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;Enter a value for x: &quot;;
 std::cin &gt;&gt; x;</code></pre>
-<p>3</p>
+<p>Calculate the hyperbolic cosecant of x using the custom csch function.</p>
 <pre><code>double y = csch(x);
 if (!std::isnan(y)) {
 std::cout &lt;&lt; &quot;Hyperbolic cosecant of &quot; &lt;&lt; x &lt;&lt; &quot; is: &quot; &lt;&lt; y &lt;&lt; std::endl;
@@ -475,8 +490,8 @@ std::cout &lt;&lt; &quot;Hyperbolic cosecant of &quot; &lt;&lt; x &lt;&lt; &quot
 std::cout &lt;&lt; &quot;Hyperbolic cosecant is undefined for x = 0.&quot; &lt;&lt; std::endl;
 }</code></pre>
 <h3 id="coursework-trig-calculator">Coursework: Trig Calculator</h3>
-<h4 id="task-task.3">Task Task.3</h4>
-<p>0</p>
+<h4 id="task-3.0">Task 3.0</h4>
+<p>Start with a verbose number input function to re-use.</p>
 <pre><code>void input_number(double&amp; number, const std::string&amp; input_message) {
 while (true) {
 std::cout &lt;&lt; input_message;
@@ -492,23 +507,7 @@ return;
 }
 }
 }</code></pre>
-<p>1</p>
-<pre><code>double atanh(double x) {
-if (x &lt; -1 || x &gt; 1) {
-std::cerr &lt;&lt; &quot;\nError: The input value must be between -1 and 1.&quot; &lt;&lt; std::endl;
-return NAN;
-}
-return 0.5 * log((1 + x) / (1 - x));
-}</code></pre>
-<p>2</p>
-<pre><code>double acosh(double x) {
-if (x &lt; 1) {
-std::cerr &lt;&lt; &quot;\nError: The input value must be greater than or equal to 1.&quot; &lt;&lt; std::endl;
-return NAN;
-}
-return log(x + sqrt(x * x - 1));
-}</code></pre>
-<p>0</p>
+<p>Implement the main program loop with the atanh and acosh functions.</p>
 <pre><code>int main() {
 while (true) {
 double choice;
@@ -540,11 +539,30 @@ break;
 
 return 0;
 }</code></pre>
-<h4 id="task-task.4">Task Task.4</h4>
-<p>1</p>
+<h4 id="task-3.1">Task 3.1</h4>
+<p>Implement the atanh function, with error checking.</p>
+<pre><code>double atanh(double x) {
+if (x &lt; -1 || x &gt; 1) {
+std::cerr &lt;&lt; &quot;\nError: The input value must be between -1 and 1.&quot; &lt;&lt; std::endl;
+return NAN;
+}
+return 0.5 * log((1 + x) / (1 - x));
+}</code></pre>
+<h4 id="task-3.2">Task 3.2</h4>
+<p>Implement the acosh function, with error checking.</p>
+<pre><code>double acosh(double x) {
+if (x &lt; 1) {
+std::cerr &lt;&lt; &quot;\nError: The input value must be greater than or equal to 1.&quot; &lt;&lt; std::endl;
+return NAN;
+}
+return log(x + sqrt(x * x - 1));
+}</code></pre>
+<h4 id="task-4.1">Task 4.1</h4>
+<p>bba.</p>
 <pre><code>
 </code></pre>
-<p>2</p>
+<h4 id="task-4.2">Task 4.2</h4>
+<p>TTTT, although note for the third statement, technically the return statement can be implicit, but it’s always required even if it’s implicitly there.</p>
 <pre><code></code></pre>
 <h2 id="week-4-2024-10-21-to-2024-10-28"><strong>Week 4</strong> – 2024-10-21 to 2024-10-28</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
@@ -556,8 +574,8 @@ return 0;
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
 <p>I could extend the trigonometric ideas to make a fully functional trig calculator, with various different trigonometric functions to be evaluated.</p>
 <h3 id="control-structures-if-else-statements">Control Structures: If Else Statements</h3>
-<h4 id="task-task.1-4">Task Task.1</h4>
-<p>1</p>
+<h4 id="task-1.1-2">Task 1.1</h4>
+<p>Copy the function to calculate the first piecewise function.</p>
 <pre><code>std::tuple&lt;double, double&gt; evaluate_function1(double x, double &amp;y) {
 if (x &gt;= 2) {
 std::cout &lt;&lt; &quot;x is greater than or equal to 2, so \n&quot;;
@@ -575,7 +593,8 @@ y = fabs(x + 5);
 
 return std::make_tuple(x, y);
 }</code></pre>
-<p>3</p>
+<h4 id="task-1.3-1">Task 1.3</h4>
+<p>Evaluate the second piecewise function.</p>
 <pre><code>std::tuple&lt;double, double&gt; evaluate_function2(double x, double &amp;y) {
 if (x &lt; -M_PI/2) {
 std::cout &lt;&lt; &quot;x is less than -pi/2, so \n&quot;;
@@ -594,21 +613,21 @@ y = x;
 return std::make_tuple(x, y);
 }</code></pre>
 <h3 id="control-structures-input-validation">Control Structures: Input Validation</h3>
-<h4 id="task-task.2-4">Task Task.2</h4>
-<p>0</p>
+<h4 id="task-2.0">Task 2.0</h4>
+<p>Initalises the constant variables.</p>
 <pre><code>const double banned_number = 2.0;
 const double small_number = 10e-12;</code></pre>
-<p>0</p>
+<p>Fetch input from the user.</p>
 <pre><code>double x;
 std::cout &lt;&lt; &quot;Enter a value for x (other than 2.0): &quot;;
 std::cin &gt;&gt; x;</code></pre>
-<p>0</p>
+<p>Calculate the function and output the result.</p>
 <pre><code>cout &lt;&lt; &quot;When x = &quot; &lt;&lt; x &lt;&lt; &quot;, the function y = 1/(x^2 - 2) is equal to &quot;;
 double y = 1 / (std::pow(x, 2.0) - 2.0);
 cout &lt;&lt; y &lt;&lt; endl;</code></pre>
 <h3 id="control-structures-simple-calculator">Control Structures: Simple Calculator</h3>
-<h4 id="task-task.3-1">Task Task.3</h4>
-<p>0</p>
+<h4 id="task-3.0-1">Task 3.0</h4>
+<p>Create a function to input a number, avoiding a banned number.</p>
 <pre><code>void input_number(const std::string &amp;input_message, double &amp;number, const double &amp;banned_number){
 const double float_error_resolution = 10e-12;
 
@@ -630,7 +649,7 @@ return;
 }
 }
 }</code></pre>
-<p>0</p>
+<p>Loop selection until the user exits.</p>
 <pre><code>while (true) {
 std::cout &lt;&lt; &quot;List of functions:&quot; &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;0. Exit&quot; &lt;&lt; std::endl;
@@ -663,13 +682,13 @@ std::cout &lt;&lt; y &lt;&lt; std::endl;
 }
 }</code></pre>
 <h3 id="coursework-quadratic-calculator">Coursework: Quadratic Calculator</h3>
-<h4 id="task-task.5">Task Task.5</h4>
-<p>0</p>
+<h4 id="task-5.0">Task 5.0</h4>
+<p>Include the necessary libraries.</p>
 <pre><code>#include &lt;cmath&gt;
 #include &lt;iostream&gt;
 #include &lt;limits&gt;
 #include &lt;tuple&gt;</code></pre>
-<p>0</p>
+<p>Start with a verbose number input function to re-use.</p>
 <pre><code>void input_number(double&amp; number, const std::string&amp; input_message) {
 while (true) {
 std::cout &lt;&lt; input_message;
@@ -685,7 +704,7 @@ return;
 }
 }
 }</code></pre>
-<p>0</p>
+<p>Calculate the quadratic’s solution.</p>
 <pre><code>std::tuple&lt;double, double&gt; solve_quadratic(const double a, const double b, const double c) {
 double discriminant = pow(b, 2) - 4 * a * c;
 if (discriminant &lt; 0) {
@@ -697,7 +716,7 @@ double x2 = (-b - sqrt(discriminant)) / (2 * a);
 
 return std::make_tuple(x1, x2);
 }</code></pre>
-<p>0</p>
+<p>Implement the main program loop.</p>
 <pre><code>int main() {
 while (true) {
 double a, b, c;
@@ -740,8 +759,8 @@ return 0;
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
 <p>As similarly suggested in previous weeks, I could extend these concepts to make a fully functional calculator - maybe I will between semesters!</p>
 <h3 id="control-structures-switch-statements">Control Structures: Switch Statements</h3>
-<h4 id="task-task.1-5">Task Task.1</h4>
-<p>1</p>
+<h4 id="task-1.1-3">Task 1.1</h4>
+<p>Example switch statement.</p>
 <pre><code>void example_switch_function() {
 unsigned int incrementor = 3;
 unsigned int number;
@@ -769,9 +788,10 @@ break;
 
 std::cout &lt;&lt; &quot;The number is: &quot; &lt;&lt; number &lt;&lt; std::endl;
 }</code></pre>
-<p>1</p>
+<p>Call the example switch function.</p>
 <pre><code>// example_switch_function(); // uncomment this line to run the example</code></pre>
-<p>2</p>
+<h4 id="task-1.2-2">Task 1.2</h4>
+<p>Implement a switch statement to select a function.</p>
 <pre><code>
 const double small_number = 10e-12;
 double x, y;
@@ -818,51 +838,55 @@ return 1;
 
 std::cout &lt;&lt; &quot;= &quot; &lt;&lt; y &lt;&lt; std::endl;</code></pre>
 <h3 id="control-structures-while-loops">Control Structures: While Loops</h3>
-<h4 id="task-task.2-5">Task Task.2</h4>
-<p>1</p>
+<h4 id="task-2.1-3">Task 2.1</h4>
+<p>The precision is set to 10 decimal places.</p>
 <pre><code>std::setprecision(10);</code></pre>
-<p>1</p>
+<p>The mean is calculated by dividing the sum by the number of values.</p>
 <pre><code>double mean = sum / 6;</code></pre>
-<p>1</p>
+<p>Calculate the variance and hence standard deviation.</p>
 <pre><code>double variance = ((sum_of_squares / 6) - (mean * mean)) * 6 / 5;
 double standard_deviation = std::sqrt(variance);</code></pre>
-<p>1</p>
+<p>The calculated values are then outputted to the console.</p>
 <pre><code>std::cout &lt;&lt; &quot;The minimum value is: &quot; &lt;&lt; min &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;The maximum value is: &quot; &lt;&lt; max &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;The mean value is: &quot; &lt;&lt; mean &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;The standard deviation is: &quot; &lt;&lt; standard_deviation &lt;&lt; std::endl;</code></pre>
-<p>2</p>
+<h4 id="task-2.2-1">Task 2.2</h4>
+<p>The factorial is calculated using a do-while loop.</p>
 <pre><code>do {
 factorial_result *= current_number;
 current_number++;
 } while (current_number &lt;= input_number);</code></pre>
-<p>2</p>
+<p>The calculated factorial is outputted to the console.</p>
 <pre><code>std::cout &lt;&lt; &quot;The factorial of &quot; &lt;&lt; input_number &lt;&lt; &quot; is: &quot; &lt;&lt; factorial_result &lt;&lt; std::endl;</code></pre>
 <h3 id="algorithms-babylonian-square-root">Algorithms: Babylonian Square Root</h3>
-<h4 id="task-task.3-2">Task Task.3</h4>
-<p>1</p>
+<h4 id="task-3.1-1">Task 3.1</h4>
+<p>The user is prompted to input a number.</p>
 <pre><code>double number = 0;
 std::cout &lt;&lt; &quot;Enter a number: &quot;;
 std::cin &gt;&gt; number;</code></pre>
-<p>1</p>
+<p>The square root is calculated and outputted to the console.</p>
 <pre><code>double square_root = babylonian_square_root(number);
 std::cout &lt;&lt; &quot;The square root of &quot; &lt;&lt; number &lt;&lt; &quot; is &quot; &lt;&lt; square_root &lt;&lt; std::endl;</code></pre>
 <h3 id="coursework-variable-manipulation">Coursework: Variable Manipulation</h3>
-<h4 id="task-task.6">Task Task.6</h4>
-<p>0</p>
+<h4 id="task-6.0">Task 6.0</h4>
+<p>Include the necessary libraries.</p>
 <pre><code>#include &lt;cmath&gt;
 #include &lt;iostream&gt;</code></pre>
-<p>1</p>
+<h4 id="task-6.1">Task 6.1</h4>
+<p>Declare the variables with their respective data types.</p>
 <pre><code>int x = 25;
 int y = 18;
 double pay_rate = 12.50;
 int first_number = 10;
 int temporary_number = first_number;</code></pre>
-<p>2</p>
+<h4 id="task-6.2">Task 6.2</h4>
+<p>Swap the values of x and y using a temporary variable.</p>
 <pre><code>int temporary_x = x;
 x = y;
 y = temporary_x;</code></pre>
-<p>3</p>
+<h4 id="task-6.3">Task 6.3</h4>
+<p>Output the values of x and y and evaluate the expression.</p>
 <pre><code>std::cout &lt;&lt; &quot;The value of x is: &quot; &lt;&lt; x &lt;&lt; std::endl;
 std::cout &lt;&lt; &quot;The value of y is: &quot; &lt;&lt; y &lt;&lt; std::endl;
 double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if correct expression

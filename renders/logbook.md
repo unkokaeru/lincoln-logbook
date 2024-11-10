@@ -80,8 +80,8 @@ Multiple choice: BCCBCCBBBA
 
 ### Basic Use: Using Cout
 
-#### Task Task.1
-5
+#### Task 1.5
+The first bit of C++ code I've ever written!
 
 ```
 cout << "Welcome to C++ Programming\n";
@@ -90,38 +90,40 @@ cout << "Welcome to C++ Programming\n";
 
 ### Basic Use: Special Characters
 
-#### Task Task.2
-3
+#### Task 2.3
+The bell character `\a` makes a sound in some environments.
 
 ```
 cout << "With bell character: Welcome to C++ Programming\a" << "---\n";
 ```
 
-3
+The backspace character \b removes the last character.
 
 ```
 cout << "With backspace character: Welcome to C++ Programming\b" << "---\n";
 ```
 
-3
+The return character \r returns to the start of the line.
 
 ```
 cout << "With return character: Welcome to C++ Programming\r" << "---\n";
 ```
 
-3
+The tab character \t adds a tab space.
 
 ```
 cout << "With tab character: Welcome to C++ Programming\t" << "---\n";
 ```
 
-4
+#### Task 2.4
+Removing the backslash before the single quote causes a syntax error.
 
 ```
 cout << "Escaped characters: Is the symbol \\n called \' Newline \' \? \n";
 ```
 
-5
+#### Task 2.5
+The line terminator `endl` starts a new line.
 
 ```
 cout << "A rose by any other name would smell as sweet";
@@ -337,8 +339,8 @@ To extend these concepts, I could create a fully functional calculator with verb
 
 ### Basic Use: Variables And Data Types
 
-#### Task Task.1
-2
+#### Task 1.2
+Declare and initalise the variables
 
 ```
 int total_children = 10;
@@ -346,7 +348,7 @@ int candies_per_child = 5;
 int extra_candies = 10;
 ```
 
-2
+Output the starting values and the total number of candies
 
 ```
 std::cout << "HALLOWEEN CANDY CALCULATOR" << std::endl;
@@ -357,7 +359,7 @@ std::cout << "---" << std::endl;
 std::cout << "Total Candies: " << total_candies << std::endl;
 ```
 
-2
+Return 0 to indicate the program ran successfully
 
 ```
 return 0;
@@ -366,21 +368,22 @@ return 0;
 
 ### Basic Use: Input And Math
 
-#### Task Task.2
-1
+#### Task 2.1
+Calculate the quotient on top of the given code for completion.
 
 ```
 result = number1 / number2;
 std::cout << "Quotient: " << result << std::endl;
 ```
 
-3
+#### Task 2.3
+Declare variables to store the masses and distance.
 
 ```
 float mass1, mass2, distance;
 ```
 
-3
+We then input the masses and distance.
 
 ```
 std::cout << "Enter the mass of the first object (kg): ";
@@ -391,7 +394,7 @@ std::cout << "Enter the distance between the objects (m): ";
 std::cin >> distance;
 ```
 
-3
+And finally we call the function, catching any exceptions that occur.
 
 ```
 try {
@@ -407,14 +410,14 @@ std::cerr << "Error: " << error.what() << std::endl;
 
 ### Coursework: Calculator
 
-#### Task Task.1
-1
+#### Task 1.1
+Input the radius of the circle.
 
 ```
 float radius;
 input_number(radius, "Enter the radius of the circle: ");
 ```
-1
+Calculate the area and circumference of the circle.
 
 ```
 float area = M_PI * radius * radius;
@@ -423,7 +426,8 @@ std::cout << "Area of a circle with radius " << radius << " = " << area << std::
 std::cout << "Circumference of a circle with radius " << radius << " = " << circumference
 << std::endl;
 ```
-2
+#### Task 1.2
+Input the principal amount, rate of interest, and time period.
 
 ```
 float principal, rate, time;
@@ -431,15 +435,15 @@ input_number(principal, "Enter the principal amount: ");
 input_number(rate, "Enter the rate of interest (%): ");
 input_number(time, "Enter the time period (years): ");
 ```
-2
+Calculate the simple interest.
 
 ```
 float simple_interest = (principal * rate * time) / 100;
 std::cout << "Simple Interest on a principal amount of " << principal << " at a rate of "
 << rate << "% for " << time << " years = " << simple_interest << std::endl;
 ```
-#### Task Task.2
-1
+#### Task 2.1
+False, they are stored as binary numbers.
 
 ```
 return 0;
@@ -447,47 +451,56 @@ return 0;
 
 
 ```
-2
+#### Task 2.2
+Device.
 
 ```
 
 ```
-3
+#### Task 2.3
+`.cpp` extension.
 
 ```
 
 ```
-4
+#### Task 2.4
+Translate source code into machine readable code (or exectuable program) that the computer can run.
 
 ```
 
 ```
-5
+#### Task 2.5
+8 bits.
 
 ```
 
 ```
-6
+#### Task 2.6
+Hexadecimal (base 16).
 
 ```
 
 ```
-7
+#### Task 2.7
+$15 * 16^5 + 10 * 16^4 + 12 * 16^3 + 10 * 16^2 + 13 * 16^1 + 14 * 16^0 = 16435934$.
 
 ```
 
 ```
-8
+#### Task 2.8
+True.
 
 ```
 
 ```
-9
+#### Task 2.9
+`cout` is used without the namespace `std`, and line 5 is missing a semicolon at the end of the line.
 
 ```
 
 ```
-10
+#### Task 2.10
+Missing the insertion operator on line 8, correct line is `cin >> num1 >> num2;`
 
 ```
 
@@ -513,8 +526,8 @@ The final part of this week's lab also added more than the question asked for, b
 
 ### Basic Use: Data Size
 
-#### Task Task.1
-1
+#### Task 1.1
+After reaching the max value of the data type, the number goes to zero.
 
 ```
 std::cout << "Original number: " << unsigned_small_number << std::endl;
@@ -524,7 +537,8 @@ unsigned_small_number++;
 std::cout << "Incremented number (2x): " << unsigned_small_number << std::endl;
 ```
 
-3
+#### Task 1.3
+Similar to overflow, it loops around as an underflow.
 
 ```
 signed_small_number = -32768;
@@ -538,80 +552,81 @@ std::cout << "Decremented number (2x): " << signed_small_number << std::endl;
 
 ### Libraries: Using Cmath
 
-#### Task Task.2
-1
+#### Task 2.1
+Calculate the square root of 9.0, which resulted in 3.
 
 ```
 std::cout << sqrt(9.0) << std::endl;
 ```
 
-1
+Calculate the natural logarithm of 1.1, which resulted in 0.0953102.
 
 ```
 std::cout << log(1.1) << std::endl;
 ```
 
-1
+Calculate 2.5 raised to the power of 3.0, which resulted in 15.625.
 
 ```
 std::cout << pow(2.5, 3.0) << std::endl;
 ```
 
-1
+Calculate the ceiling of 4.1, which resulted in 5.
 
 ```
 std::cout << ceil(4.1) << std::endl;
 ```
 
-1
+Calculate (7 + sqrt(7.0)) / 3.0, which resulted in 3.21525.
 
 ```
 std::cout << (7 + sqrt(7.0)) / 3.0 << std::endl;
 ```
 
-1
+Calculate the hyperbolic tan of 0.342, which resulted in 0.329262
 
 ```
 std::cout << tanh(0.342) << std::endl;
 ```
 
-1
+Calculate the remainder of 11.0 divided by 4.0, which resulted in 3.
 
 ```
 std::cout << fmod(11.0, 4.0) << std::endl;
 ```
 
-1
+Calculate the absolute value of -9, which resulted in 9.
 
 ```
 std::cout << abs(-9) << std::endl;
 ```
 
-1
+Calculate the (floating) absolute value of -4.5, which resulted in 4.5.
 
 ```
 std::cout << fabs(-4.5) << std::endl;
 ```
 
-1
+Calculate the floor of 8.8, which resulted in 8.
 
 ```
 std::cout << floor(8.8) << std::endl;
 ```
 
-1
+Calculate the base-10 logarithm of 1.0, which resulted in 0.
 
 ```
 std::cout << log10(1.0) << std::endl;
 ```
 
-1
+Calculate the cube root of 10.0, which resulted in 2.15443.
 
 ```
 std::cout << cbrt(10.0) << std::endl;
 ```
 
-3
+#### Task 2.3
+Prompt the user for a value of x.
 
 ```
 double x;
@@ -620,7 +635,7 @@ std::cout << "Enter a value for x: ";
 std::cin >> x;
 ```
 
-3
+Calculate the hyperbolic cosecant of x using the custom csch function.
 
 ```
 double y = csch(x);
@@ -636,8 +651,8 @@ std::cout << "Hyperbolic cosecant is undefined for x = 0." << std::endl;
 
 ### Coursework: Trig Calculator
 
-#### Task Task.3
-0
+#### Task 3.0
+Start with a verbose number input function to re-use.
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -656,29 +671,7 @@ return;
 }
 }
 ```
-1
-
-```
-double atanh(double x) {
-if (x < -1 || x > 1) {
-std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
-return NAN;
-}
-return 0.5 * log((1 + x) / (1 - x));
-}
-```
-2
-
-```
-double acosh(double x) {
-if (x < 1) {
-std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
-return NAN;
-}
-return log(x + sqrt(x * x - 1));
-}
-```
-0
+Implement the main program loop with the atanh and acosh functions.
 
 ```
 int main() {
@@ -713,14 +706,39 @@ break;
 return 0;
 }
 ```
-#### Task Task.4
-1
+#### Task 3.1
+Implement the atanh function, with error checking.
+
+```
+double atanh(double x) {
+if (x < -1 || x > 1) {
+std::cerr << "\nError: The input value must be between -1 and 1." << std::endl;
+return NAN;
+}
+return 0.5 * log((1 + x) / (1 - x));
+}
+```
+#### Task 3.2
+Implement the acosh function, with error checking.
+
+```
+double acosh(double x) {
+if (x < 1) {
+std::cerr << "\nError: The input value must be greater than or equal to 1." << std::endl;
+return NAN;
+}
+return log(x + sqrt(x * x - 1));
+}
+```
+#### Task 4.1
+bba.
 
 ```
 
 
 ```
-2
+#### Task 4.2
+TTTT, although note for the third statement, technically the return statement can be implicit, but it's always required even if it's implicitly there.
 
 ```
 
@@ -748,8 +766,8 @@ I could extend the trigonometric ideas to make a fully functional trig calculato
 
 ### Control Structures: If Else Statements
 
-#### Task Task.1
-1
+#### Task 1.1
+Copy the function to calculate the first piecewise function.
 
 ```
 std::tuple<double, double> evaluate_function1(double x, double &y) {
@@ -771,7 +789,8 @@ return std::make_tuple(x, y);
 }
 ```
 
-3
+#### Task 1.3
+Evaluate the second piecewise function.
 
 ```
 std::tuple<double, double> evaluate_function2(double x, double &y) {
@@ -796,15 +815,15 @@ return std::make_tuple(x, y);
 
 ### Control Structures: Input Validation
 
-#### Task Task.2
-0
+#### Task 2.0
+Initalises the constant variables.
 
 ```
 const double banned_number = 2.0;
 const double small_number = 10e-12;
 ```
 
-0
+Fetch input from the user.
 
 ```
 double x;
@@ -812,7 +831,7 @@ std::cout << "Enter a value for x (other than 2.0): ";
 std::cin >> x;
 ```
 
-0
+Calculate the function and output the result.
 
 ```
 cout << "When x = " << x << ", the function y = 1/(x^2 - 2) is equal to ";
@@ -823,8 +842,8 @@ cout << y << endl;
 
 ### Control Structures: Simple Calculator
 
-#### Task Task.3
-0
+#### Task 3.0
+Create a function to input a number, avoiding a banned number.
 
 ```
 void input_number(const std::string &input_message, double &number, const double &banned_number){
@@ -850,7 +869,7 @@ return;
 }
 ```
 
-0
+Loop selection until the user exits.
 
 ```
 while (true) {
@@ -891,8 +910,8 @@ std::cout << y << std::endl;
 
 ### Coursework: Quadratic Calculator
 
-#### Task Task.5
-0
+#### Task 5.0
+Include the necessary libraries.
 
 ```
 #include <cmath>
@@ -900,7 +919,7 @@ std::cout << y << std::endl;
 #include <limits>
 #include <tuple>
 ```
-0
+Start with a verbose number input function to re-use.
 
 ```
 void input_number(double& number, const std::string& input_message) {
@@ -919,7 +938,7 @@ return;
 }
 }
 ```
-0
+Calculate the quadratic's solution.
 
 ```
 std::tuple<double, double> solve_quadratic(const double a, const double b, const double c) {
@@ -934,7 +953,7 @@ double x2 = (-b - sqrt(discriminant)) / (2 * a);
 return std::make_tuple(x1, x2);
 }
 ```
-0
+Implement the main program loop.
 
 ```
 int main() {
@@ -993,8 +1012,8 @@ As similarly suggested in previous weeks, I could extend these concepts to make 
 
 ### Control Structures: Switch Statements
 
-#### Task Task.1
-1
+#### Task 1.1
+Example switch statement.
 
 ```
 void example_switch_function() {
@@ -1026,13 +1045,14 @@ std::cout << "The number is: " << number << std::endl;
 }
 ```
 
-1
+Call the example switch function.
 
 ```
 // example_switch_function(); // uncomment this line to run the example
 ```
 
-2
+#### Task 1.2
+Implement a switch statement to select a function.
 
 ```
 
@@ -1085,27 +1105,27 @@ std::cout << "= " << y << std::endl;
 
 ### Control Structures: While Loops
 
-#### Task Task.2
-1
+#### Task 2.1
+The precision is set to 10 decimal places.
 
 ```
 std::setprecision(10);
 ```
 
-1
+The mean is calculated by dividing the sum by the number of values.
 
 ```
 double mean = sum / 6;
 ```
 
-1
+Calculate the variance and hence standard deviation.
 
 ```
 double variance = ((sum_of_squares / 6) - (mean * mean)) * 6 / 5;
 double standard_deviation = std::sqrt(variance);
 ```
 
-1
+The calculated values are then outputted to the console.
 
 ```
 std::cout << "The minimum value is: " << min << std::endl;
@@ -1114,7 +1134,8 @@ std::cout << "The mean value is: " << mean << std::endl;
 std::cout << "The standard deviation is: " << standard_deviation << std::endl;
 ```
 
-2
+#### Task 2.2
+The factorial is calculated using a do-while loop.
 
 ```
 do {
@@ -1123,7 +1144,7 @@ current_number++;
 } while (current_number <= input_number);
 ```
 
-2
+The calculated factorial is outputted to the console.
 
 ```
 std::cout << "The factorial of " << input_number << " is: " << factorial_result << std::endl;
@@ -1132,8 +1153,8 @@ std::cout << "The factorial of " << input_number << " is: " << factorial_result 
 
 ### Algorithms: Babylonian Square Root
 
-#### Task Task.3
-1
+#### Task 3.1
+The user is prompted to input a number.
 
 ```
 double number = 0;
@@ -1141,7 +1162,7 @@ std::cout << "Enter a number: ";
 std::cin >> number;
 ```
 
-1
+The square root is calculated and outputted to the console.
 
 ```
 double square_root = babylonian_square_root(number);
@@ -1153,14 +1174,15 @@ std::cout << "The square root of " << number << " is " << square_root << std::en
 
 ### Coursework: Variable Manipulation
 
-#### Task Task.6
-0
+#### Task 6.0
+Include the necessary libraries.
 
 ```
 #include <cmath>
 #include <iostream>
 ```
-1
+#### Task 6.1
+Declare the variables with their respective data types.
 
 ```
 int x = 25;
@@ -1169,14 +1191,16 @@ double pay_rate = 12.50;
 int first_number = 10;
 int temporary_number = first_number;
 ```
-2
+#### Task 6.2
+Swap the values of x and y using a temporary variable.
 
 ```
 int temporary_x = x;
 x = y;
 y = temporary_x;
 ```
-3
+#### Task 6.3
+Output the values of x and y and evaluate the expression.
 
 ```
 std::cout << "The value of x is: " << x << std::endl;
