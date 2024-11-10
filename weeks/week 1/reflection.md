@@ -10,7 +10,7 @@ I learned everything pretty quickly, making parallels with Python quite often. I
 
 **How does my solution compare with the official solution?**
 
-The officail solution for Task 3 adds an additional explanation of how Pascal's trianle is obtained, as well as uses a simplified solution using spaces rather than tab characters.
+The official solution for Task 3 adds an additional explanation of how Pascal's triangle is obtained, as well as uses a simplified solution using spaces rather than tab characters.
 
 **How can I extend the concepts used in the tasks to form a new project**
 
