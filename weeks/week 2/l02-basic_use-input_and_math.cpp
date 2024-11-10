@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2024
  * 
  */
+#include <cmath>
 #include <iostream>
 #include <stdexcept>
 
@@ -42,16 +43,21 @@ void basic_calculator() {
     result = number1 * number2;
     std::cout << "Product: " << result << std::endl;
 
+    /* Calculate the quotient */
+    result = number1 / number2;
+    std::cout << "Quotient: " << result << std::endl;
+    /* ANSWER (Task 2.1): Calculate the quotient on top of the given code for completion. */
+
     /* Calculate the remainder */
-    result = number1 - (static_cast<int>(number1 / number2) * number2);
+    result = fmod(number1, number2);
     std::cout << "Remainder: " << result << std::endl;
     /**
      * ANSWER (Task 2.2):
-     * To calculate the remainder of two floats without using any library functions, we can cast
-     * the result of the division to an integer, multiply it by the second number, and subtract
-     * it from the first number. This will give us the remainder of the division.
-     * If we used the `fmod` function from the `cmath` library, we could calculate the remainder
-     * directly without the need for casting. I only found this out after writing the code, though.
+     * Calculate the remainder using the cmath library function fmod instead of `%` so
+     * that we can handle floating-point numbers. To avoid using an external library, we
+     * could cast the numbers to integers and use the `%` operator, or even evaluate the
+     * remainder manually using the formula:
+     * `remainder = number1 - number2 * floor(number1 / number2)`.
      */
 }
 
