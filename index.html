@@ -118,7 +118,7 @@
 <p><strong>How well did I learn it?</strong></p>
 <p>I learned everything pretty quickly, making parallels with Python quite often. It’s been really fun learning a completely new, more low-level language and deepening my understanding of programming in general. I did some extra work outside of my lab session, too, which definitely helped me reinforce any new knowledge and understand C++ even quicker.</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>There aren’t any official solutions right now, so I’ll write this next week if they get released.</p>
+<p>The official solution for Task 3 adds an additional explanation of how Pascal’s triangle is obtained, as well as uses a simplified solution using spaces rather than tab characters.</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
 <p>In my extra work this week, I’ve extended the concepts used to make Pascal’s triangle by changing the logic to a more loop-based system so that I can use render any number of rows. I also tried an alternative to using the tab characters, <code>setd::setw</code>. Not only this, but I decided to take this number of rows as a user input with <code>std::cin</code> and validated the input, throwing an exception if invalid.</p>
 <p>I also researched C++ best practices and styling guidelines, referencing documents like Google Style Guides <a href="#references">[1]</a> and Doxygen <a href="#references">[2]</a>. The main points are learned from this were: consistent comment style (I opted for /* and /**), function return rationale (i.e. when to use <code>void</code>), explicitly returning 0 in a main function (to tell the console it ran correctly), docstring placement (before a function, contrasting with Python), and function declaration (placing the opening curly bracket on the same line).</p>
@@ -324,26 +324,15 @@ int main() {
 }</code></pre>
 <h2 id="week-2-2024-10-07-to-2024-10-14"><strong>Week 2</strong> – 2024-10-07 to 2024-10-14</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>…</p>
+<p>This week we explored variables and their data types a bit more, as well as how to use inputs and mathematics to prototype a simple calculator.</p>
 <p><strong>How well did I learn it?</strong></p>
-<p>…</p>
+<p>As I already spent last week diving into C++ a lot more, this week was very simple, so I tried to extend the task solutions slightly with error handling etc.</p>
+<p>Making great progress so far!</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>…</p>
+<p>Task 2.2’s first offical solution differs the most by inputting the two numbers in one line, rather than separately.</p>
+<p>The second official solution to Task 2.2 is a little bit more different, simplifying the programming techniques used. For example, it doesn’t handle any errors and doesn’t use a separate functionto handle any calculations.</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>…</p>
-<p><strong>Coursework Question Answers</strong></p>
-<ol type="1">
-<li>False, they’re stored as binary numbers.</li>
-<li>Device.</li>
-<li><code>.cpp</code> extension.</li>
-<li>Translate source code into machine readable code (or exectuable program) that the computer can run.</li>
-<li>8 bits.</li>
-<li>Hexadecimal (base 16).</li>
-<li><span class="math inline">15 * 16<sup>5</sup> + 10 * 16<sup>4</sup> + 12 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 13 * 16<sup>1</sup> + 14 * 16<sup>0</sup> = 16435934</span>.</li>
-<li>True.</li>
-<li><code>cout</code> is used without the namespace <code>std</code>, and line 5 is missing a semicolon at the end of the line.</li>
-<li>Missing the insertion operator on line 8, correct line is <code>cin &gt;&gt; num1 &gt;&gt; num2;</code></li>
-</ol>
+<p>To extend these concepts, I could create a fully functional calculator with verbose error/input handling, which could even be extended to evaluate simple LaTeX expressions.</p>
 <h3 id="basic-use-variables-and-data-types">Basic Use: Variables And Data Types</h3>
 <h4 id="task-task.1-1">Task Task.1</h4>
 <p>2</p>
@@ -361,6 +350,9 @@ std::cout &lt;&lt; &quot;Total Candies: &quot; &lt;&lt; total_candies &lt;&lt; s
 <pre><code>return 0;</code></pre>
 <h3 id="basic-use-input-and-math">Basic Use: Input And Math</h3>
 <h4 id="task-task.2-1">Task Task.2</h4>
+<p>1</p>
+<pre><code>result = number1 / number2;
+std::cout &lt;&lt; &quot;Quotient: &quot; &lt;&lt; result &lt;&lt; std::endl;</code></pre>
 <p>3</p>
 <pre><code>float mass1, mass2, distance;</code></pre>
 <p>3</p>
@@ -397,17 +389,38 @@ input_number(time, &quot;Enter the time period (years): &quot;);</code></pre>
 <pre><code>float simple_interest = (principal * rate * time) / 100;
 std::cout &lt;&lt; &quot;Simple Interest on a principal amount of &quot; &lt;&lt; principal &lt;&lt; &quot; at a rate of &quot;
 &lt;&lt; rate &lt;&lt; &quot;% for &quot; &lt;&lt; time &lt;&lt; &quot; years = &quot; &lt;&lt; simple_interest &lt;&lt; std::endl;</code></pre>
+<h4 id="task-task.2-2">Task Task.2</h4>
+<p>1</p>
+<pre><code>return 0;
+}
+
+</code></pre>
+<p>2</p>
+<pre><code></code></pre>
+<p>3</p>
+<pre><code></code></pre>
+<p>4</p>
+<pre><code></code></pre>
+<p>5</p>
+<pre><code></code></pre>
+<p>6</p>
+<pre><code></code></pre>
+<p>7</p>
+<pre><code></code></pre>
+<p>8</p>
+<pre><code></code></pre>
+<p>9</p>
+<pre><code></code></pre>
+<p>10</p>
+<pre><code></code></pre>
 <h2 id="week-3-2024-10-14-to-2024-10-21"><strong>Week 3</strong> – 2024-10-14 to 2024-10-21</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>…</p>
+<p>We learned more about data types, specifically how they’re handled in memory and their sizes. On top of this, we started using the cmath library for more complex calculations.</p>
 <p><strong>How well did I learn it?</strong></p>
-<p>…</p>
+<p>It was quite simple to learn, and interesting to learn more about the lower-level hardware parts, too. It was slightly confusing answering the questions because of a few minor mistakes in the actual questions and example code, but apart from that I learned it all well!</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>…</p>
-<p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>…</p>
-<p><strong>Coursework Question Answers</strong></p>
-<p>Multiple choice: bba. True or false: TTTT (note for the third statement, technically the return statement can be implicit, but it’s always required even if it’s implicitly there).</p>
+<p>The official solutions for Task 2.2 are similar to mine, although handled numbers like 1. instead of 1.0 - this seems very confusing to me. It also wrote each expression in one long line, rather than breaking it across multiple with whitespace. The second expression is also incorrectly evaluated as not a real number in the offical solution.</p>
+<p>The final part of this week’s lab also added more than the question asked for, but so did I with error handling!</p>
 <h3 id="basic-use-data-size">Basic Use: Data Size</h3>
 <h4 id="task-task.1-3">Task Task.1</h4>
 <p>1</p>
@@ -424,7 +437,7 @@ std::cout &lt;&lt; &quot;Decremented number (1x): &quot; &lt;&lt; signed_small_n
 signed_small_number--;
 std::cout &lt;&lt; &quot;Decremented number (2x): &quot; &lt;&lt; signed_small_number &lt;&lt; std::endl;</code></pre>
 <h3 id="libraries-using-cmath">Libraries: Using Cmath</h3>
-<h4 id="task-task.2-2">Task Task.2</h4>
+<h4 id="task-task.2-3">Task Task.2</h4>
 <p>1</p>
 <pre><code>std::cout &lt;&lt; sqrt(9.0) &lt;&lt; std::endl;</code></pre>
 <p>1</p>
@@ -527,15 +540,21 @@ break;
 
 return 0;
 }</code></pre>
+<h4 id="task-task.4">Task Task.4</h4>
+<p>1</p>
+<pre><code>
+</code></pre>
+<p>2</p>
+<pre><code></code></pre>
 <h2 id="week-4-2024-10-21-to-2024-10-28"><strong>Week 4</strong> – 2024-10-21 to 2024-10-28</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>…</p>
+<p>This lab we covered conditonal statements, input validation, and how we can apply these topics to a simple calculator.</p>
 <p><strong>How well did I learn it?</strong></p>
-<p>…</p>
+<p>It was quite quick to learn everything because of the extra work I’ve been doing, so yet again, I learned it pretty well!</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>…</p>
+<p>Generally, both solutions are the same but mine has more error handling and separates things into more functions. For the final task, the official solution also added another function to be calculated, <code>sech(x)</code>, whereas I didn’t.</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>…</p>
+<p>I could extend the trigonometric ideas to make a fully functional trig calculator, with various different trigonometric functions to be evaluated.</p>
 <h3 id="control-structures-if-else-statements">Control Structures: If Else Statements</h3>
 <h4 id="task-task.1-4">Task Task.1</h4>
 <p>1</p>
@@ -575,7 +594,7 @@ y = x;
 return std::make_tuple(x, y);
 }</code></pre>
 <h3 id="control-structures-input-validation">Control Structures: Input Validation</h3>
-<h4 id="task-task.2-3">Task Task.2</h4>
+<h4 id="task-task.2-4">Task Task.2</h4>
 <p>0</p>
 <pre><code>const double banned_number = 2.0;
 const double small_number = 10e-12;</code></pre>
@@ -713,13 +732,13 @@ return 0;
 }</code></pre>
 <h2 id="week-5-2024-10-28-to-2024-11-04"><strong>Week 5</strong> – 2024-10-28 to 2024-11-04</h2>
 <p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>…</p>
+<p>This week we extended the statements we know with the switch and while statements, then applied those concepts to making an algorithm to find the Babylonian square root.</p>
 <p><strong>How well did I learn it?</strong></p>
-<p>…</p>
+<p>I think I learned everything quite well, borrowing from my understanding of other programming languages really helped, too.</p>
 <p><strong>How does my solution compare with the official solution?</strong></p>
-<p>…</p>
+<p>The offical solutions aren’t out yet, but I’ll update this when they are - if they are in time for the logbook submission deadline.</p>
 <p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>…</p>
+<p>As similarly suggested in previous weeks, I could extend these concepts to make a fully functional calculator - maybe I will between semesters!</p>
 <h3 id="control-structures-switch-statements">Control Structures: Switch Statements</h3>
 <h4 id="task-task.1-5">Task Task.1</h4>
 <p>1</p>
@@ -799,7 +818,7 @@ return 1;
 
 std::cout &lt;&lt; &quot;= &quot; &lt;&lt; y &lt;&lt; std::endl;</code></pre>
 <h3 id="control-structures-while-loops">Control Structures: While Loops</h3>
-<h4 id="task-task.2-4">Task Task.2</h4>
+<h4 id="task-task.2-5">Task Task.2</h4>
 <p>1</p>
 <pre><code>std::setprecision(10);</code></pre>
 <p>1</p>
