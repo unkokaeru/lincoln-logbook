@@ -13,7 +13,7 @@
 
 
 /**
- * @brief Calculate the square root of a number using the Babylonian method
+ * @brief Calculate the square root of a number using the Babylonian method (iteratively)
  * 
  * @param number The number to calculate the square root of
  * @param tolerance The tolerance to which the square root should be calculated
