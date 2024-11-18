@@ -39,8 +39,11 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;*5.4 [Coursework: Variable Manipulation](#coursework-variable-manipulation)* | 19        | 
 | [**Week 6** – 2024-11-04 to 2024-11-11 ](#week-6-2024-11-04-to-2024-11-11) | 20        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;6.1 [Control Structures: For Loops](#control-structures-for-loops) | 20        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Functions: Introduction](#functions-introduction) | 21        |
-| **[References](#references)**                                                   | 22        |
+| &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Functions: Introduction](#functions-introduction) | 21        | 
+| [**Week 7** – 2024-11-11 to 2024-11-18 ](#week-7-2024-11-11-to-2024-11-18) | 22        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;7.1 [Pointers: Introduction](#pointers-introduction) | 22        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;7.2 [Pointers: Quadratic Calculator](#pointers-quadratic-calculator) | 23        |
+| **[References](#references)**                                                   | 24        |
 \newpage
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
@@ -1315,6 +1318,155 @@ int main() {
  */
 #include <iostream>
 #include <cmath>
+```
+
+
+
+
+\newpage
+## **Week 7** – 2024-11-11 to 2024-11-18
+
+**What did you learn in the lab tasks this week?**
+
+...
+
+**How well did I learn it?**
+
+...
+
+**How does my solution compare with the official solution?**
+
+...
+
+**How can I extend the concepts used in the tasks to form a new project**
+
+...
+
+### Pointers: Introduction
+
+
+
+
+```
+/**
+ * @file l01-pointers-introduction.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Introduction to pointers in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include <iostream>
+
+void pointer_example1() {
+    // Declare two integers
+    int number_1 = 8, number_2 = 16;
+
+    // Declare two pointers to integers
+    int* p_number_1 = &number_1;
+    int* p_number_2 = &number_2;
+
+    // Output addresses of the two integers
+    std::cout << "Address of number_1: " << &number_1 << std::endl;
+    std::cout << "Address of number_2: " << &number_2 << std::endl;
+
+    // Output stored addresses of the two pointers
+    std::cout << "Address stored in p_number_1: " << p_number_1 << std::endl;
+    std::cout << "Address stored in p_number_2: " << p_number_2 << std::endl;
+
+    // Output values stored at the addresses stored in the pointers
+    std::cout << "Value stored at address stored in p_number_1: " << *p_number_1 << std::endl;
+    std::cout << "Value stored at address stored in p_number_2: " << *p_number_2 << std::endl;
+}
+
+void write_output(int* value) {
+    std::cout << "Value stored at address: " << *value << std::endl;
+}
+
+void compute_triple(int* value) {
+    *value *= 3;
+}
+
+void pointer_example2() {
+    int number = 5;
+    int* p_number = &number;
+    
+    write_output(p_number);
+    *p_number += 15;
+    write_output(p_number);
+    compute_triple(p_number);
+    write_output(p_number);
+}
+
+int main() {
+    // pointer_example1();
+    pointer_example2();
+
+    return 0;
+}
+```
+
+### Pointers: Quadratic Calculator
+
+
+
+
+```
+/**
+ * @file l02-pointers-quadratic_calculator.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Quadratic calculator using pointers in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include <iostream>
+#include <cmath>
+
+bool solve_quadratic(float a, float b, float c, float* x1, float* x2) {
+    float discriminant = b * b - 4 * a * c;
+    if (discriminant < 0) {
+        *x1 = -b / (2 * a); // Real part
+        *x2 = sqrt(-discriminant) / (2 * a); // Imaginary part
+        return false; // No real roots
+    }
+
+    *x1 = (-b + sqrt(discriminant)) / (2 * a);
+    *x2 = (-b - sqrt(discriminant)) / (2 * a);
+    return true; // Real roots
+}
+
+int main() {
+    float a, b, c;
+    std::cout << "Enter a, b, and c: ";
+    std::cin >> a >> b >> c;
+
+    std::cout << "Solving " << a << "x^2 + " << b << "x + " << c << " = 0" << std::endl;
+
+    float x1, x2;
+    if (solve_quadratic(a, b, c, &x1, &x2)) {
+        if (x1 == x2) {
+            std::cout << "Root of the auxillary equation: " << x1 << std::endl;
+            std::cout << "Solution of the homogenous equation: y = C1 * e^(" << x1
+                        << "x) + C2 * x * e^(" << x1 << "x)" << std::endl;
+        } else {
+            std::cout << "Roots of the auxillary equation: " << x1 << ", " << x2 << std::endl;
+            std::cout << "Solution of the homogenous equation: y = C1 * e^(" << x1
+                        << "x) + C2 * e^(" << x2 << "x)" << std::endl;
+        }
+    } else {
+        std::cout << "Roots of the auxillary equation: " << x1 << " + " << x2 << "i, " << x1
+                    << " - " << x2 << "i" << std::endl;
+        std::cout << "Solution of the homogenous equation: y = C1 * e^(" << x1
+                    << "x) * cos(" << x2 << "x) + C2 * e^(" << x1 << "x) * sin(" << x2 << "x)" << std::endl;
+    }
+
+    return 0;
+}
 ```
 
 
