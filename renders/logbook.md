@@ -36,8 +36,11 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;5.1 [Control Structures: Switch Statements](#control-structures-switch-statements) | 16        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;5.2 [Control Structures: While Loops](#control-structures-while-loops) | 17        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Algorithms: Babylonian Square Root](#algorithms-babylonian-square-root) | 18        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;*5.4 [Coursework: Variable Manipulation](#coursework-variable-manipulation)* | 19        |
-| **[References](#references)**                                                   | 20        |
+| &nbsp;&nbsp;&nbsp;&nbsp;*5.4 [Coursework: Variable Manipulation](#coursework-variable-manipulation)* | 19        | 
+| [**Week 6** – 2024-11-04 to 2024-11-11 ](#week-6-2024-11-04-to-2024-11-11) | 20        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;6.1 [Control Structures: For Loops](#control-structures-for-loops) | 20        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Functions: Introduction](#functions-introduction) | 21        |
+| **[References](#references)**                                                   | 22        |
 \newpage
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
@@ -1209,6 +1212,112 @@ double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if corr
 std::cout << "Substituting these values into the expression (x + 12) / (y - 18 + x^3) gives: "
 << evaluated_expression << std::endl;
 ```
+
+
+\newpage
+## **Week 6** – 2024-11-04 to 2024-11-11
+
+**What did you learn in the lab tasks this week?**
+
+...
+
+**How well did I learn it?**
+
+...
+
+**How does my solution compare with the official solution?**
+
+...
+
+**How can I extend the concepts used in the tasks to form a new project**
+
+...
+
+### Control Structures: For Loops
+
+
+
+
+```
+/**
+ * @file l01-control_structures-for_loops.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Explore the for loop in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include <iostream>
+
+void even_odd_printer(int count_limit) {
+    for (int count = 0; count < count_limit; count++) {
+        if (count % 2 == 0) {
+            std::cout << count << " is even" << std::endl;
+        } else {
+            std::cout << count << " is odd" << std::endl;
+        }
+    }
+}
+
+void geometric_progression(int count_limit) {
+    for (int count = 0; count < count_limit; count++) {
+        std::cout << "2^" << count << " = " << (1 << count) << std::endl;
+    }
+}
+
+void sum_of_cubes(int count_limit) {
+    int sum = 0;
+    for (int count = 0; count < count_limit; count++) {
+        sum += count * count * count;
+    }
+    std::cout << "The sum of the cubes of the first " << count_limit << " numbers is " << sum << std::endl;
+}
+
+void fibonacci(int count_limit) {
+    int number_1 = 0;
+    int number_2 = 1;
+    for (int count = 0; count < count_limit; count++) {
+        std::cout << number_1 << std::endl;
+
+        // Swap the numbers to get the next number in the sequence
+        int temp = number_1;
+        number_1 = number_2;
+        number_2 += temp;
+    }
+}
+
+int main() {
+    // even_odd_printer(10);
+    // geometric_progression(10);
+    // sum_of_cubes(10);
+    fibonacci(10);
+    return 0;
+}
+```
+
+### Functions: Introduction
+
+
+
+
+```
+/**
+ * @file l02-functions-introduction.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Explore functions in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include <iostream>
+#include <cmath>
+```
+
+
 
 
 \newpage
