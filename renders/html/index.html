@@ -106,8 +106,20 @@
 <td>19</td>
 </tr>
 <tr class="odd">
-<td><strong><a href="#references">References</a></strong></td>
+<td><a href="#week-6-2024-11-04-to-2024-11-11"><strong>Week 6</strong> – 2024-11-04 to 2024-11-11</a></td>
 <td>20</td>
+</tr>
+<tr class="even">
+<td>    6.1 <a href="#control-structures-for-loops">Control Structures: For Loops</a></td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>    6.2 <a href="#functions-introduction">Functions: Introduction</a></td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td><strong><a href="#references">References</a></strong></td>
+<td>22</td>
 </tr>
 </tbody>
 </table>
@@ -892,6 +904,85 @@ std::cout &lt;&lt; &quot;The value of y is: &quot; &lt;&lt; y &lt;&lt; std::endl
 double evaluated_expression = (x + 12) / (y - 18 + pow(x, 3)); // Unsure if correct expression
 std::cout &lt;&lt; &quot;Substituting these values into the expression (x + 12) / (y - 18 + x^3) gives: &quot;
 &lt;&lt; evaluated_expression &lt;&lt; std::endl;</code></pre>
+<h2 id="week-6-2024-11-04-to-2024-11-11"><strong>Week 6</strong> – 2024-11-04 to 2024-11-11</h2>
+<p><strong>What did you learn in the lab tasks this week?</strong></p>
+<p>…</p>
+<p><strong>How well did I learn it?</strong></p>
+<p>…</p>
+<p><strong>How does my solution compare with the official solution?</strong></p>
+<p>…</p>
+<p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
+<p>…</p>
+<h3 id="control-structures-for-loops">Control Structures: For Loops</h3>
+<pre><code>/**
+ * @file l01-control_structures-for_loops.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Explore the for loop in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include &lt;iostream&gt;
+
+void even_odd_printer(int count_limit) {
+    for (int count = 0; count &lt; count_limit; count++) {
+        if (count % 2 == 0) {
+            std::cout &lt;&lt; count &lt;&lt; &quot; is even&quot; &lt;&lt; std::endl;
+        } else {
+            std::cout &lt;&lt; count &lt;&lt; &quot; is odd&quot; &lt;&lt; std::endl;
+        }
+    }
+}
+
+void geometric_progression(int count_limit) {
+    for (int count = 0; count &lt; count_limit; count++) {
+        std::cout &lt;&lt; &quot;2^&quot; &lt;&lt; count &lt;&lt; &quot; = &quot; &lt;&lt; (1 &lt;&lt; count) &lt;&lt; std::endl;
+    }
+}
+
+void sum_of_cubes(int count_limit) {
+    int sum = 0;
+    for (int count = 0; count &lt; count_limit; count++) {
+        sum += count * count * count;
+    }
+    std::cout &lt;&lt; &quot;The sum of the cubes of the first &quot; &lt;&lt; count_limit &lt;&lt; &quot; numbers is &quot; &lt;&lt; sum &lt;&lt; std::endl;
+}
+
+void fibonacci(int count_limit) {
+    int number_1 = 0;
+    int number_2 = 1;
+    for (int count = 0; count &lt; count_limit; count++) {
+        std::cout &lt;&lt; number_1 &lt;&lt; std::endl;
+
+        // Swap the numbers to get the next number in the sequence
+        int temp = number_1;
+        number_1 = number_2;
+        number_2 += temp;
+    }
+}
+
+int main() {
+    // even_odd_printer(10);
+    // geometric_progression(10);
+    // sum_of_cubes(10);
+    fibonacci(10);
+    return 0;
+}</code></pre>
+<h3 id="functions-introduction">Functions: Introduction</h3>
+<pre><code>/**
+ * @file l02-functions-introduction.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Explore functions in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
 <p>[2] “Official documentation for Doxygen’s documentation blocks and usage,” <em>Doxygen Manual - Documentation Blocks</em>, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).</p>
