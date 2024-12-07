@@ -996,14 +996,41 @@ int main() {
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;</code></pre>
 <h2 id="week-7-2024-11-11-to-2024-11-18"><strong>Week 7</strong> – 2024-11-11 to 2024-11-18</h2>
-<p><strong>What did you learn in the lab tasks this week?</strong></p>
-<p>…</p>
-<p><strong>How well did I learn it?</strong></p>
-<p>…</p>
-<p><strong>How does my solution compare with the official solution?</strong></p>
-<p>…</p>
-<p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
-<p>…</p>
+<p>Some questions answers in LAB tasks:</p>
+<p>Here are the answers to your questions about pointers and functions in C++:</p>
+<ol type="1">
+<li><p><strong>What is a pointer in C++?</strong> A pointer in C++ is a variable that stores the memory address of another variable. Pointers are used for dynamic memory allocation, arrays, and for passing large structures or classes to functions efficiently.</p></li>
+<li><p><strong>How do you declare a pointer in C++?</strong> To declare a pointer in C++, you use the asterisk (*) symbol. For example:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true"></a><span class="dt">int</span>* ptr; <span class="co">// Declares a pointer to an integer</span></span></code></pre></div></li>
+<li><p><strong>Explain the concept of the “null pointer.”</strong> A null pointer is a pointer that does not point to any valid memory location. It is often used to indicate that the pointer is not currently assigned to any object or variable. In C++, you can assign a pointer to null using:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true"></a><span class="dt">int</span>* ptr = <span class="kw">nullptr</span>; <span class="co">// C++11 and later</span></span></code></pre></div></li>
+<li><p><strong>What is the difference between pass-by-value and pass-by-reference in function parameters?</strong></p>
+<ul>
+<li><strong>Pass-by-value</strong> means that a copy of the actual parameter is passed to the function. Changes made to the parameter inside the function do not affect the original argument.</li>
+<li><strong>Pass-by-reference</strong> means that a reference (or alias) to the actual parameter is passed to the function. Changes made to the parameter inside the function will affect the original argument.</li>
+</ul></li>
+<li><p><strong>Define a function in C++ that calculates the factorial of a number using recursion.</strong> Here is an example of a recursive function to calculate the factorial:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true"></a><span class="dt">int</span> factorial(<span class="dt">int</span> n) {</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true"></a>    <span class="cf">if</span> (n &lt;= <span class="dv">1</span>) {</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">1</span>; <span class="co">// Base case</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true"></a>    }</span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true"></a>    <span class="cf">return</span> n * factorial(n - <span class="dv">1</span>); <span class="co">// Recursive case</span></span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true"></a>}</span></code></pre></div></li>
+<li><p><strong>What is the purpose of the <code>const</code> keyword in function declarations?</strong> The <code>const</code> keyword in function declarations is used to indicate that a parameter or member function will not modify the value of the variable or object it refers to. For example, a <code>const</code> parameter prevents the function from changing the argument passed to it, and a <code>const</code> member function cannot modify the object’s member variables.</p></li>
+<li><p><strong>How do you return multiple values from a function in C++?</strong> You can return multiple values from a function in C++ using several methods:</p>
+<ul>
+<li>Using <code>std::pair</code> or <code>std::tuple</code> to return multiple values.</li>
+<li>Using output parameters (pass-by-reference).</li>
+<li>Using a struct or class to encapsulate the return values.</li>
+</ul>
+<p>Example using <code>std::pair</code>:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;utility&gt;</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true"></a></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true"></a><span class="bu">std::</span>pair&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; getValues() {</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">std::</span>make_pair(<span class="dv">1</span>, <span class="dv">2</span>);</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true"></a>}</span></code></pre></div></li>
+<li><p><strong>Explain the difference between <code>void*</code> and other pointer types.</strong> A <code>void*</code> pointer is a special type of pointer that can point to any data type, but it does not have a specific type associated with it. This means you cannot dereference a <code>void*</code> pointer directly without casting it to another pointer type. Other pointer types (like <code>int*</code>, <code>char*</code>, etc.) are strongly typed, meaning they are associated with a specific data type, allowing for direct dereferencing and type-safe operations.</p></li>
+</ol>
 <h3 id="pointers-introduction">Pointers: Introduction</h3>
 <pre><code>/**
  * @file l01-pointers-introduction.cpp
