@@ -118,8 +118,20 @@
 <td>21</td>
 </tr>
 <tr class="even">
-<td><strong><a href="#references">References</a></strong></td>
+<td><a href="#week-7-2024-11-11-to-2024-11-18"><strong>Week 7</strong> – 2024-11-11 to 2024-11-18</a></td>
 <td>22</td>
+</tr>
+<tr class="odd">
+<td>    7.1 <a href="#pointers-introduction">Pointers: Introduction</a></td>
+<td>22</td>
+</tr>
+<tr class="even">
+<td>    7.2 <a href="#pointers-quadratic-calculator">Pointers: Quadratic Calculator</a></td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td><strong><a href="#references">References</a></strong></td>
+<td>24</td>
 </tr>
 </tbody>
 </table>
@@ -983,6 +995,128 @@ int main() {
  */
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;</code></pre>
+<h2 id="week-7-2024-11-11-to-2024-11-18"><strong>Week 7</strong> – 2024-11-11 to 2024-11-18</h2>
+<p><strong>What did you learn in the lab tasks this week?</strong></p>
+<p>…</p>
+<p><strong>How well did I learn it?</strong></p>
+<p>…</p>
+<p><strong>How does my solution compare with the official solution?</strong></p>
+<p>…</p>
+<p><strong>How can I extend the concepts used in the tasks to form a new project</strong></p>
+<p>…</p>
+<h3 id="pointers-introduction">Pointers: Introduction</h3>
+<pre><code>/**
+ * @file l01-pointers-introduction.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Introduction to pointers in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include &lt;iostream&gt;
+
+void pointer_example1() {
+    // Declare two integers
+    int number_1 = 8, number_2 = 16;
+
+    // Declare two pointers to integers
+    int* p_number_1 = &amp;number_1;
+    int* p_number_2 = &amp;number_2;
+
+    // Output addresses of the two integers
+    std::cout &lt;&lt; &quot;Address of number_1: &quot; &lt;&lt; &amp;number_1 &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Address of number_2: &quot; &lt;&lt; &amp;number_2 &lt;&lt; std::endl;
+
+    // Output stored addresses of the two pointers
+    std::cout &lt;&lt; &quot;Address stored in p_number_1: &quot; &lt;&lt; p_number_1 &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Address stored in p_number_2: &quot; &lt;&lt; p_number_2 &lt;&lt; std::endl;
+
+    // Output values stored at the addresses stored in the pointers
+    std::cout &lt;&lt; &quot;Value stored at address stored in p_number_1: &quot; &lt;&lt; *p_number_1 &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Value stored at address stored in p_number_2: &quot; &lt;&lt; *p_number_2 &lt;&lt; std::endl;
+}
+
+void write_output(int* value) {
+    std::cout &lt;&lt; &quot;Value stored at address: &quot; &lt;&lt; *value &lt;&lt; std::endl;
+}
+
+void compute_triple(int* value) {
+    *value *= 3;
+}
+
+void pointer_example2() {
+    int number = 5;
+    int* p_number = &amp;number;
+    
+    write_output(p_number);
+    *p_number += 15;
+    write_output(p_number);
+    compute_triple(p_number);
+    write_output(p_number);
+}
+
+int main() {
+    // pointer_example1();
+    pointer_example2();
+
+    return 0;
+}</code></pre>
+<h3 id="pointers-quadratic-calculator">Pointers: Quadratic Calculator</h3>
+<pre><code>/**
+ * @file l02-pointers-quadratic_calculator.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Quadratic calculator using pointers in C++
+ * @version 0.1.0
+ * @date 2024-11-18
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+bool solve_quadratic(float a, float b, float c, float* x1, float* x2) {
+    float discriminant = b * b - 4 * a * c;
+    if (discriminant &lt; 0) {
+        *x1 = -b / (2 * a); // Real part
+        *x2 = sqrt(-discriminant) / (2 * a); // Imaginary part
+        return false; // No real roots
+    }
+
+    *x1 = (-b + sqrt(discriminant)) / (2 * a);
+    *x2 = (-b - sqrt(discriminant)) / (2 * a);
+    return true; // Real roots
+}
+
+int main() {
+    float a, b, c;
+    std::cout &lt;&lt; &quot;Enter a, b, and c: &quot;;
+    std::cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+    std::cout &lt;&lt; &quot;Solving &quot; &lt;&lt; a &lt;&lt; &quot;x^2 + &quot; &lt;&lt; b &lt;&lt; &quot;x + &quot; &lt;&lt; c &lt;&lt; &quot; = 0&quot; &lt;&lt; std::endl;
+
+    float x1, x2;
+    if (solve_quadratic(a, b, c, &amp;x1, &amp;x2)) {
+        if (x1 == x2) {
+            std::cout &lt;&lt; &quot;Root of the auxillary equation: &quot; &lt;&lt; x1 &lt;&lt; std::endl;
+            std::cout &lt;&lt; &quot;Solution of the homogenous equation: y = C1 * e^(&quot; &lt;&lt; x1
+                        &lt;&lt; &quot;x) + C2 * x * e^(&quot; &lt;&lt; x1 &lt;&lt; &quot;x)&quot; &lt;&lt; std::endl;
+        } else {
+            std::cout &lt;&lt; &quot;Roots of the auxillary equation: &quot; &lt;&lt; x1 &lt;&lt; &quot;, &quot; &lt;&lt; x2 &lt;&lt; std::endl;
+            std::cout &lt;&lt; &quot;Solution of the homogenous equation: y = C1 * e^(&quot; &lt;&lt; x1
+                        &lt;&lt; &quot;x) + C2 * e^(&quot; &lt;&lt; x2 &lt;&lt; &quot;x)&quot; &lt;&lt; std::endl;
+        }
+    } else {
+        std::cout &lt;&lt; &quot;Roots of the auxillary equation: &quot; &lt;&lt; x1 &lt;&lt; &quot; + &quot; &lt;&lt; x2 &lt;&lt; &quot;i, &quot; &lt;&lt; x1
+                    &lt;&lt; &quot; - &quot; &lt;&lt; x2 &lt;&lt; &quot;i&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;Solution of the homogenous equation: y = C1 * e^(&quot; &lt;&lt; x1
+                    &lt;&lt; &quot;x) * cos(&quot; &lt;&lt; x2 &lt;&lt; &quot;x) + C2 * e^(&quot; &lt;&lt; x1 &lt;&lt; &quot;x) * sin(&quot; &lt;&lt; x2 &lt;&lt; &quot;x)&quot; &lt;&lt; std::endl;
+    }
+
+    return 0;
+}</code></pre>
 <h2 id="references">📓 References</h2>
 <p>[1] “A comprehensive guide to C++ coding standards and best practices,” <em>C++ Style Guide</em>, 2024. [Online] Available: https://google.github.io/styleguide/cppguide.html (accessed 2024-10-05).</p>
 <p>[2] “Official documentation for Doxygen’s documentation blocks and usage,” <em>Doxygen Manual - Documentation Blocks</em>, 2024. [Online] Available: https://www.doxygen.nl/manual/docblocks.html (accessed 2024-10-05).</p>
