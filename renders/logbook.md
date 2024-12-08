@@ -42,8 +42,14 @@ geometry: margin=1in
 | &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Functions: Introduction](#functions-introduction) | 21        | 
 | [**Week 7** – 2024-11-11 to 2024-11-18 ](#week-7-2024-11-11-to-2024-11-18) | 22        | 
 | &nbsp;&nbsp;&nbsp;&nbsp;7.1 [Pointers: Introduction](#pointers-introduction) | 22        | 
-| &nbsp;&nbsp;&nbsp;&nbsp;7.2 [Pointers: Quadratic Calculator](#pointers-quadratic-calculator) | 23        |
-| **[References](#references)**                                                   | 24        |
+| &nbsp;&nbsp;&nbsp;&nbsp;7.2 [Pointers: Quadratic Calculator](#pointers-quadratic-calculator) | 23        | 
+| [**Week 8** – 2024-11-18 to 2024-11-25 ](#week-8-2024-11-18-to-2024-11-25) | 24        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;8.1 [Applications: Quadratic Calculator](#applications-quadratic-calculator) | 24        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;8.2 [Applications: Maclaurin](#applications-maclaurin) | 25        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;8.3 [Applications: Array Copy Check](#applications-array-copy-check) | 26        | 
+| [**Week 9** – 2024-11-25 to 2024-12-02 ](#week-9-2024-11-25-to-2024-12-02) | 27        | 
+| &nbsp;&nbsp;&nbsp;&nbsp;9.1 [File Handling: Overview](#file-handling-overview) | 27        |
+| **[References](#references)**                                                   | 28        |
 \newpage
 ## **Week 1** – 2024-09-30 to 2024-10-07
 
@@ -1502,6 +1508,649 @@ int main() {
                     << " - " << x2 << "i" << std::endl;
         std::cout << "Solution of the homogenous equation: y = C1 * e^(" << x1
                     << "x) * cos(" << x2 << "x) + C2 * e^(" << x1 << "x) * sin(" << x2 << "x)" << std::endl;
+    }
+
+    return 0;
+}
+```
+
+
+
+
+\newpage
+## **Week 8** – 2024-11-18 to 2024-11-25
+
+...
+
+### Applications: Quadratic Calculator
+
+
+
+
+```
+/**
+ * @file l01-applications-quadratic_calculator.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Applying C++ to solve quadratic equations
+ * @version 0.1.0
+ * @date 2024-12-07
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+#include <iostream>
+#include <limits>
+#include <cmath>
+#include <complex>
+#include <stdexcept>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <cctype>
+
+/**
+ * @brief Class representing a quadratic equation.
+ *
+ */
+class QuadraticEquation
+{
+private:
+    long double a;
+    long double b;
+    long double c;
+
+public:
+    // Constructor
+    QuadraticEquation(long double coeff_a, long double coeff_b, long double coeff_c)
+    {
+        if (std::isnan(coeff_a) || std::isnan(coeff_b) || std::isnan(coeff_c))
+        {
+            throw std::invalid_argument("Coefficients must be valid numbers.");
+        }
+        a = coeff_a;
+        b = coeff_b;
+        c = coeff_c;
+    }
+
+    /**
+     * @brief Solves the equation, which could be quadratic or linear.
+     *
+     * @return std::pair<std::complex<long double>, std::complex<long double>> Pair of roots.
+     * If linear, returns one root and NaN for the second.
+     * If infinitely many solutions, both roots are represented as NaN.
+     */
+    std::pair<std::complex<long double>, std::complex<long double>> solve() const
+    {
+        if (a != 0.0L)
+        {
+            // Quadratic case
+            long double discriminant = b * b - 4.0L * a * c;
+
+            // Check for potential overflow/underflow
+            if (std::isinf(discriminant))
+            {
+                throw std::overflow_error("Discriminant is too large, causing overflow.");
+            }
+
+            // Using complex numbers to handle real and complex roots
+            std::complex<long double> sqrt_discriminant = std::sqrt(std::complex<long double>(discriminant, 0));
+
+            // Calculate two roots
+            std::complex<long double> two_a = 2.0L * a;
+            std::complex<long double> root1 = (-b + sqrt_discriminant) / two_a;
+            std::complex<long double> root2 = (-b - sqrt_discriminant) / two_a;
+
+            return std::make_pair(root1, root2);
+        }
+        else if (b != 0.0L)
+        {
+            // Linear case: bx + c = 0 => x = -c / b
+            std::complex<long double> root = -c / b;
+            return std::make_pair(root, std::complex<long double>(NAN, NAN));
+        }
+        else
+        {
+            if (c == 0.0L)
+            {
+                // Infinite solutions: 0 = 0
+                return std::make_pair(std::complex<long double>(INFINITY, 0.0L),
+                                      std::complex<long double>(INFINITY, 0.0L));
+            }
+            else
+            {
+                // No solution: c = 0 where c != 0
+                return std::make_pair(std::complex<long double>(NAN, NAN),
+                                      std::complex<long double>(NAN, NAN));
+            }
+        }
+    }
+
+    /**
+     * @brief Formats the equation as a string.
+     *
+     * @return std::string Representation of the equation.
+     */
+    std::string to_string() const
+    {
+        std::ostringstream equation;
+        bool first = true;
+
+        // Format a*x^2
+        if (a != 0.0L)
+        {
+            equation << a << "x^2 ";
+            first = false;
+        }
+
+        // Format b*x
+        if (b != 0.0L)
+        {
+            if (!first && b > 0)
+            {
+                equation << "+ ";
+            }
+            else if (b < 0)
+            {
+                equation << "- ";
+            }
+            equation << std::abs(b) << "x ";
+            first = false;
+        }
+
+        // Format c
+        if (c != 0.0L || first)
+        { // Display '0' if all coefficients are zero
+            if (!first && c > 0)
+            {
+                equation << "+ ";
+            }
+            else if (c < 0)
+            {
+                equation << "- ";
+            }
+            equation << std::abs(c) << " ";
+        }
+
+        equation << "= 0";
+        return equation.str();
+    }
+};
+
+/**
+ * @brief Safely reads a number from the user with validation and limited attempts.
+ *
+ * @param prompt Prompt to display to the user.
+ * @param number Reference to store the validated number.
+ * @param max_attempts Maximum number of invalid attempts allowed (default is 5).
+ * @return bool True if a valid number was read, False otherwise.
+ */
+bool read_number(const std::string &prompt, long double &number, int max_attempts = 5)
+{
+    int attempts = 0;
+    while (attempts < max_attempts)
+    {
+        std::cout << prompt;
+        std::string input;
+        std::getline(std::cin, input);
+        std::stringstream ss(input);
+        ss >> number;
+
+        // Check if entire input was consumed and was a valid number
+        if (!ss.fail() && ss.eof())
+        {
+            return true;
+        }
+        else
+        {
+            std::cerr << "Invalid input. Please enter a valid number." << std::endl;
+            attempts++;
+        }
+    }
+    std::cerr << "Maximum invalid attempts reached. Exiting input process." << std::endl;
+    return false;
+}
+
+/**
+ * @brief Formats a complex number as a string in the form "a + bi".
+ *
+ * @param num The complex number to format.
+ * @return std::string The formatted string.
+ */
+std::string format_complex(const std::complex<long double> &num)
+{
+    if (std::isnan(num.real()) && std::isnan(num.imag()))
+    {
+        return "No Solution.";
+    }
+    if (std::isinf(num.real()) && std::isinf(num.imag()))
+    {
+        return "Infinite Solutions.";
+    }
+
+    std::ostringstream oss;
+    oss << num.real();
+
+    if (num.imag() >= 0.0L)
+    {
+        oss << " + " << num.imag() << "i";
+    }
+    else
+    {
+        oss << " - " << std::abs(num.imag()) << "i";
+    }
+
+    return oss.str();
+}
+
+/**
+ * @brief Main function to run the Quadratic Solver.
+ *
+ * @return int
+ */
+int main()
+{
+    std::cout << "=====================================" << std::endl;
+    std::cout << "          Quadratic Solver           " << std::endl;
+    std::cout << "=====================================" << std::endl;
+
+    std::vector<std::string> equation_log; // To keep track of all solved equations
+    char continue_calculating = 'y';
+
+    while (std::tolower(continue_calculating) == 'y')
+    {
+        try
+        {
+            long double a, b, c;
+
+            // Read coefficients with validation
+            if (!read_number("Enter coefficient a (a can be 0 for linear equations): ", a))
+            {
+                throw std::runtime_error("Failed to read coefficient 'a'.");
+            }
+            if (!read_number("Enter coefficient b: ", b))
+            {
+                throw std::runtime_error("Failed to read coefficient 'b'.");
+            }
+            if (!read_number("Enter coefficient c: ", c))
+            {
+                throw std::runtime_error("Failed to read coefficient 'c'.");
+            }
+
+            // Create a QuadraticEquation object
+            QuadraticEquation equation(a, b, c);
+
+            // Display the equation
+            std::cout << "\nSolving the equation: " << equation.to_string() << std::endl;
+
+            // Solve the equation
+            auto roots = equation.solve();
+
+            // Prepare solution string
+            std::string solution;
+            if (a != 0.0L)
+            {
+                // Quadratic case
+                long double discriminant = b * b - 4.0L * a * c;
+                if (discriminant > 0.0L)
+                {
+                    // Two distinct real roots
+                    solution = "x1 = " + format_complex(roots.first) + ", x2 = " + format_complex(roots.second);
+                }
+                else if (discriminant == 0.0L)
+                {
+                    // One repeated real root
+                    solution = "x = " + format_complex(roots.first);
+                }
+                else
+                {
+                    // Complex roots
+                    solution = "x1 = " + format_complex(roots.first) + ", x2 = " + format_complex(roots.second);
+                }
+            }
+            else
+            {
+                // Linear or no/infinite solutions
+                if (b != 0.0L)
+                {
+                    solution = "x = " + format_complex(roots.first);
+                }
+                else
+                {
+                    if (c == 0.0L)
+                    {
+                        solution = "Infinite solutions.";
+                    }
+                    else
+                    {
+                        solution = "No solution.";
+                    }
+                }
+            }
+
+            // Display the roots
+            std::cout << "Solution: " << solution << "\n"
+                      << std::endl;
+
+            // Log the equation and solution
+            equation_log.push_back("Equation: " + equation.to_string() + " | Solution: " + solution);
+        }
+        catch (const std::exception &ex)
+        {
+            std::cerr << "An error occurred: " << ex.what() << "\n"
+                      << std::endl;
+        }
+
+        // Continuation prompt with validation
+        while (true)
+        {
+            std::cout << "Would you like to solve another equation? (y/n): ";
+            std::cin >> continue_calculating;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
+
+            continue_calculating = std::tolower(continue_calculating);
+            if (continue_calculating == 'y' || continue_calculating == 'n')
+            {
+                break;
+            }
+            else
+            {
+                std::cerr << "Invalid response. Please enter 'y' for yes or 'n' for no." << std::endl;
+            }
+        }
+
+        std::cout << std::endl;
+    }
+
+    // Optionally, display the log of all equations solved
+    if (!equation_log.empty())
+    {
+        std::cout << "=====================================" << std::endl;
+        std::cout << "          Solved Equations           " << std::endl;
+        std::cout << "=====================================" << std::endl;
+        for (size_t i = 0; i < equation_log.size(); ++i)
+        {
+            std::cout << i + 1 << ". " << equation_log[i] << std::endl;
+        }
+        std::cout << "=====================================" << std::endl;
+    }
+
+    std::cout << "Thank you for using the Quadratic Solver." << std::endl;
+    return 0;
+}
+```
+
+### Applications: Maclaurin
+
+
+
+
+```
+/**
+ * @file l02-applications-maclaurin.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Calculating the Maclaurin series of functions using C++
+ * @version 0.1.0
+ * @date 2024-12-08
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <limits>
+#include <sstream>
+#include <string>
+#include <vector>
+
+// Function 1: \frac{1}{\pi + x}
+// Function 2: \ln(3 + x)
+
+/**
+ * @brief Function to calculate the Maclaurin series of \frac{1}{\pi + x}.
+ *
+ * @param x Value of x.
+ * @param terms_to_calculate Number of terms to calculate.
+ * @return double Maclaurin series value.
+ */
+double maclaurin_series_1(double x, int terms_to_calculate)
+{
+    double sum = 0.0;
+    for (int term = 0; term < terms_to_calculate; ++term)
+    {
+        sum += std::pow(-1, term) * std::pow(x / M_PI, term) / M_PI;
+    }
+    return sum;
+}
+
+/**
+ * @brief Function to calculate the Maclaurin series of \ln(3 + x).
+ *
+ * @param x Value of x.
+ * @param terms_to_calculate Number of terms to calculate.
+ * @return double Maclaurin series value.
+ */
+double maclaurin_series_2(double x, int terms_to_calculate)
+{
+    double sum = std::log(3.0);
+    for (int term = 1; term <= terms_to_calculate; ++term)
+    {
+        sum += std::pow(-1, term + 1) * std::pow(x / 3.0, term) / term;
+    }
+    return sum;
+}
+
+/**
+ * @brief Function to display the Maclaurin series of a function.
+ *
+ * @param x Value of x.
+ * @param terms_to_calculate Number of terms to calculate.
+ */
+void display_maclaurin_series(double x, int terms_to_calculate)
+{
+    std::cout << "Calculating the Maclaurin series of 1/(pi + x) at x = " << x
+              << " with " << terms_to_calculate << " terms." << std::endl;
+    std::cout << "Result: " << maclaurin_series_1(x, terms_to_calculate) << std::endl;
+    std::cout << "Expected: " << 1.0 / (M_PI + x) << std::endl;
+
+    std::cout << "Calculating the Maclaurin series of ln(3 + x) at x = " << x
+              << " with " << terms_to_calculate << " terms." << std::endl;
+    std::cout << "Result: " << maclaurin_series_2(x, terms_to_calculate) << std::endl;
+    std::cout << "Expected: " << std::log(3 + x) << std::endl;
+}
+
+/**
+ * @brief Main function to run the Maclaurin series calculator.
+ *
+ * @return int
+ */
+int main()
+{
+    display_maclaurin_series(0.5, 100);
+}
+```
+
+### Applications: Array Copy Check
+
+
+
+
+```
+/**
+ * @file l03-applications-array_copy_check.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Duplicate an array and check if the copy is correct.
+ * @version 0.1.0
+ * @date 2024-12-08
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <iterator>
+
+/**
+ * @brief Function to duplicate an array using std::copy.
+ *
+ * @param arr Array to duplicate.
+ * @return std::vector<int> Duplicated array.
+ */
+std::vector<int> duplicate_array(const std::vector<int> &arr)
+{
+    std::vector<int> copy(arr.size());
+    std::copy(arr.begin(), arr.end(), copy.begin());
+    return copy;
+}
+
+/**
+ * @brief Function to check if two arrays are equal.
+ *
+ * @param arr1 First array.
+ * @param arr2 Second array.
+ * @return bool True if arrays are equal, False otherwise.
+ */
+bool arrays_equal(const std::vector<int> &arr1, const std::vector<int> &arr2)
+{
+    return arr1 == arr2;
+}
+
+/**
+ * @brief Main function to duplicate an array and check if the copy is correct.
+ *
+ * @return int
+ */
+int main()
+{
+    std::vector<int> original_array = {1, 2, 3, 4, 5};
+    std::vector<int> copied_array = duplicate_array(original_array);
+
+    // Display the original and copied arrays
+    std::cout << "Original Array: ";
+    std::copy(original_array.begin(), original_array.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << "\n";
+
+    std::cout << "Copied Array: ";
+    std::copy(copied_array.begin(), copied_array.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << "\n";
+
+    // Check if the arrays are equal
+    if (arrays_equal(original_array, copied_array))
+    {
+        std::cout << "The copied array is correct." << std::endl;
+    }
+    else
+    {
+        std::cout << "The copied array is incorrect." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+
+
+
+\newpage
+## **Week 9** – 2024-11-25 to 2024-12-02
+
+...
+
+### File Handling: Overview
+
+
+
+
+```
+/**
+ * @file l01-file_handling-overview.cpp
+ * @author William Fayers (william@fayers.com)
+ * @brief Reading/writing to a file in C++
+ * @version 0.1.0
+ * @date 2024-12-08
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+/**
+ * @brief Function to write a vector of strings to a file.
+ *
+ * @param filename Name of the file to write to.
+ * @param data Vector of strings to write to the file.
+ */
+void write_to_file(const std::string &filename, const std::vector<std::string> &data)
+{
+    std::ofstream file(filename);
+    if (!file.is_open())
+    {
+        throw std::runtime_error("Failed to open file for writing.");
+    }
+
+    for (const std::string &line : data)
+    {
+        file << line << std::endl;
+    }
+
+    file.close();
+}
+
+/**
+ * @brief Reads a file and returns the contents as a vector of strings.
+ *
+ * @param filename Name of the file to read.
+ * @return std::vector<std::string> Contents of the file.
+ */
+std::vector<std::string> read_from_file(const std::string &filename)
+{
+    std::vector<std::string> data;
+    std::ifstream file(filename);
+    if (!file.is_open())
+    {
+        throw std::runtime_error("Failed to open file for reading.");
+    }
+
+    std::string line;
+    while (std::getline(file, line))
+    {
+        data.push_back(line);
+    }
+
+    file.close();
+    return data;
+}
+
+/**
+ * @brief Main function to write/read to a file.
+ *
+ * @return int
+ */
+int main()
+{
+    std::vector<std::string> data = {
+        "Hello, World!",
+        "This is a test file.",
+        "Writing to a file in C++ is easy.",
+        "This is the last line of the file."};
+
+    std::string filename = "output.txt";
+    write_to_file(filename, data);
+
+    std::cout << "Data written to file: " << filename << std::endl;
+
+    std::vector<std::string> read_data = read_from_file(filename);
+
+    std::cout << "Data read from file: " << filename << std::endl;
+
+    for (const std::string &line : read_data)
+    {
+        std::cout << line << std::endl;
     }
 
     return 0;
