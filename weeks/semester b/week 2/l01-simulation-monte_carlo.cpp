@@ -1,5 +1,5 @@
 /**
- * @file l01-simultation-monte_carlo.cpp
+ * @file l01-simulation-monte_carlo.cpp
  * @author William Fayers (william@fayers.com)
  * @brief Implementation of a Monte Carlo simulation for statistical analysis.
  * @version 0.1.0
